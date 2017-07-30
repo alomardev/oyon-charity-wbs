@@ -1,0 +1,11 @@
+<header>
+<div class='container'>
+	<div id='header-logo'><h1>تواصل اللجان</h1></div>
+	<nav>
+	@@if (labels.length > 0) {<ul class='inline-list right'>
+		@@for (var i = 0; i < labels.length; i++) {<li><a href='`+links[i]+`'>`+labels[i]+`</a></li>}
+	</ul>}
+	</nav>
+	<button id='login-btn' class='btn dark'>تسجيل الدخول</button>
+</div>
+</header>

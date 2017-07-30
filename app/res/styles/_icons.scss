@@ -1,0 +1,48 @@
+@mixin icon($row, $col) {
+	background-image: url(icons.svg);
+	@if $row == 0 {
+		width: 40px;
+		height: 40px;
+		background-position: 40 * $col * -1px 0;
+	} @else if $row == 1 {
+		width: 32px;
+		height: 32px;
+		background-position: 32 * $col * -1px -40px;
+	} @else if $row == 2 {
+		width: 24px;
+		height: 24px;
+		background-position: 24 * $col * -1px -72px;
+	} @else if $row == 3 {
+		width: 16px;
+		height: 16px;
+		background-position: 16 * $col * -1px -96px;
+	}
+}
+
+.icon-twitter {
+	@include icon(1, 0);
+}
+
+.icon-facebook {
+	@include icon(1, 1);
+}
+
+.icon-instagram {
+	@include icon(1, 2);
+}
+
+.icon-add {
+	@include icon(2, 0);
+}
+
+.icon-remove {
+	@include icon(2, 1);
+}
+
+.icon-mention {
+	@include icon(3, 0);
+}
+
+.icon-next {
+	@include icon(2, 2);
+}

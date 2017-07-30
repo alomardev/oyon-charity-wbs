@@ -1,0 +1,27 @@
+@@include("../../_top.html", {"title": "تسجيل الدخول", "resdir": "../../res"})
+@@include("../_header.html", {
+	"labels": ["الخطابات", "إنشاء جديد"],
+	"links": ["#", "#"]
+})
+
+<section id='login-section'>
+	<div class='container'>
+		<h2>تسجيل الدخول</h2>
+		<div class='card'>
+			<form class='card-section' action='.' method='POST'>
+				<table>
+					<tbody>
+						<tr><td><label for='username'>اسم المستخدم</label></td></tr>
+						<tr><td><input name='username' class='et' type='text' placeholder='اسم المستخدم'></td></tr>
+						<tr><td><label for='password'>كلمة المرور</label></td></tr>
+						<tr><td><input name='password' class='et' type='password' placeholder='كلمة المرور'></td></tr>
+						<tr><td><button name='submit' class='btn'>تسجيل الدخول</button></td></tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</section>
+
+@@include("../_footer.html")
+@@include("../../_bottom.html", {"resdir": "../../res"})

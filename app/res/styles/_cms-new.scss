@@ -1,0 +1,42 @@
+#new-section {
+	.card-section {
+		&:first-child {
+			display: flex;
+			flex-direction: rows;
+			input[name=title] {
+				flex: 1 0 auto;
+			}
+			input[type=text] {
+				margin-left: $space-small;
+				&:last-child {
+					margin-left: 0;
+				}
+			}
+			label {
+				margin-left: $space-smaller;
+			}
+		}
+		&:nth-child(2) {
+			display: flex;
+			align-items: center;
+			.workflow-entity {
+				@extend .btn;
+				display: flex;
+				align-items: center;
+				.workflow-entity-label {
+					display: block;
+					flex: 1 0 auto;
+				}
+				.workflow-entity-remove-btn {
+					margin-left: -$space-smaller;
+					margin-right: $space-smaller;
+				}
+			}
+			#workflow-add-btn {
+				@extend .btn;
+				padding: $space-smaller / 1.5;
+				border-radius: 50%;
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+#list-section {
+	align-items: flex-start;
+	flex-direction: column;
+	.container {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+		min-height: 500px;
+		margin-bottom: $space;
+	}
+	.card {
+		flex: 1 0 auto;
+		.card-section:first-child {
+			display: flex;
+			flex-direction: row;
+			input[type=text] {
+				flex: 1 0 auto;
+				margin-left: $space-small;
+			}
+
+			.btn-group {
+				margin-left: $space-small;
+				&:last-child {
+					margin-left: 0;
+				}
+			}
+		}
+		.card-list .card-list-item {
+			transition-property: background-color, border-right-width;
+			transition-duration: 200ms;
+			* {
+				float: right;
+				&:last-child {
+					float: left;
+				}
+			}
+			&.mention {
+				border-right: solid 4px $mention-color;
+			}
+			&:hover {
+				border-right-width: 8px;
+			}
+			&:after {
+				@include clearfix;
+			}
+		}
+	}
+}
