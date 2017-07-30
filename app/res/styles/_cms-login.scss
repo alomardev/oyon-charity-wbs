@@ -29,9 +29,7 @@
 					margin-top: $space-small;
 				}
 
-				&::after {
-					@include clearfix;
-				}
+				@include clearfix;
 			}
 		}
 	}

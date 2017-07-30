@@ -12,7 +12,7 @@ input, select, textarea, button {
 	border: solid 2px $accent-dark;
 	padding: $space-smaller - 4px $space-small - 2px;
 	color: $accent-darker;
-	background: $accent-normal;
+	background: $accent;
 	&:hover {
 		background: $accent-dark;
 		color: white;
@@ -40,7 +40,7 @@ input, select, textarea, button {
 		}
 	}
 	&[readonly] {
-		background: $background-card;
+		background: inherit;
 	}
 
 }

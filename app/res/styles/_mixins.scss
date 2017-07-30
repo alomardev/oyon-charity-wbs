@@ -1,5 +1,14 @@
 @mixin clearfix {
-	display: block;
-	content: '';
-	clear: both;
+	&::after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+}
+
+@mixin flexing($dir, $justify: null, $align: null) {
+	display: flex;
+	flex-direction: $dir;
+	justify-content: $justify;
+	align-items: $align;
 }

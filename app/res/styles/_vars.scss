@@ -11,7 +11,7 @@ $space: 18px;
 $space-large: 24px;
 $space-larger: 30px;
 
-$highlight-color: #00AEFF;
+$highlight-color: #00AEFF; // private
 $highlight: transparentize($highlight-color, .4);
 $highlight-weak: transparentize($highlight-color, .5);
 $highlight-strong: transparentize($highlight-color, 0);
@@ -20,23 +20,23 @@ $shadow: rgba(0, 0, 0, .2);
 $shadow-weak: rgba(0, 0, 0, .1);
 $shadow-strong: rgba(0, 0, 0, .4);
 
-$background-dark: #414141;
-$background-light: #D0D0D0;
-$background-card: #F2F2F2;
-
-$text-primary-light: #525252;
-$text-secondary-light: #9B9B9B;
+$text-primary: #525252;
+$text-secondary: #9B9B9B;
 
 $text-primary-dark: #FFFFFF;
 $text-secondary-dark: #D8D8D8;
 
+$accent: #99CD56;
+$accent-light: saturate(lighten($accent, 18%), 25%);
+$accent-lighter: saturate(lighten($accent, 30%), 20%);
+$accent-dark: saturate(darken($accent, 18%), 10%);
+$accent-darker: saturate(darken($accent, 35%), 20%);
+
 /* apps */
 $apps-default-width: 900px;
 
-$mention-color: #FF999B;
+$apps-mention: #FF999B;
 
-$accent-normal: #99CD56;
-$accent-light: saturate(lighten($accent-normal, 18%), 25%);
-$accent-lighter: saturate(lighten($accent-normal, 30%), 20%);
-$accent-dark: saturate(darken($accent-normal, 18%), 10%);
-$accent-darker: saturate(darken($accent-normal, 35%), 20%);
+$apps-background: #D0D0D0;
+$apps-background-card: #F2F2F2;
+$apps-background-dark: #414141;

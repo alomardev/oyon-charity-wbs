@@ -1,18 +1,17 @@
 #list-section {
-	align-items: flex-start;
-	flex-direction: column;
+	@include flexing(column, flex-start, flex-start);
 	.container {
 		flex: 1 0 auto;
-		display: flex;
-		flex-direction: column;
 		min-height: 500px;
 		margin-bottom: $space;
+
+		@include flexing(column, flex-start, stretch);
 	}
 	.card {
 		flex: 1 0 auto;
 		.card-section:first-child {
-			display: flex;
-			flex-direction: row;
+			@include flexing(row, flex-start, stretch);
+
 			input[type=text] {
 				flex: 1 0 auto;
 				margin-left: $space-small;
@@ -35,14 +34,12 @@
 				}
 			}
 			&.mention {
-				border-right: solid 4px $mention-color;
+				border-right: solid 4px $apps-mention;
 			}
 			&:hover {
 				border-right-width: 8px;
 			}
-			&:after {
-				@include clearfix;
-			}
+			@include clearfix;
 		}
 	}
 }
