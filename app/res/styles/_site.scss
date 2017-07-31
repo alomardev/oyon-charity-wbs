@@ -1,16 +1,72 @@
 body.site {
+	background: #EBEBEB;
 	.container {
-		@include flexing(column, center, center)
-		height: 500px;
+		max-width: 900px;
+		margin: 0 auto;
 	}
-	.box {
-		background-color: black;
-		width: 50px;
-		height: 50px;
-		&:nth-child(2) {
-			background-color: red;
-			width: 100px;
-			height: 100px;
+
+	header .container {
+		margin-top: 10px;
+		.logo {
+			background-image: url(charity-logo.png);
+			background-size: 0.15 * 1000px 0.15 * 854px;
+			margin: 0 auto;
+			width: 0.15 * 1000px;
+			height: 0.15 * 854px;
+		}
+		h1 {
+			font-size: .8em;
+			text-align: center;
+		}
+	}
+
+	section .container {
+		box-shadow: 0 3px 5px $shadow-weak;
+		margin-top: 10px;
+		border-radius: $radius;
+		background: #F8F8F8;
+		nav {
+			background: $theme;
+			border: solid 1px $theme-dark;
+			border-top-right-radius: $radius;
+			border-top-left-radius: $radius;
+			padding: 0 $radius;
+			box-shadow: inset 0 1px 0 white;
+			ul {
+				float: right;
+				li {
+					a {
+						display: block;
+						padding: $space-smaller $space-small;
+						color: darken($theme-darker, 10%);
+						transition-property: background-color;
+						transition-duration: 200ms;
+						&:hover {
+							background-color: $highlight-strong;
+						}
+					}
+				}
+			}
+			.search {
+				background-color: $theme-lighter;
+				float: left;
+				margin-top: $space-smaller;
+				margin-left: -$space-smaller;
+				border-color: $theme-dark;
+				&:focus {
+					background: white;
+					box-shadow: 0 0 5px white;
+				}
+			}
+			@include clearfix;
+		}
+		.content {
+			padding: $space-small;
+			border-bottom-right-radius: $radius;
+			border-bottom-left-radius: $radius;
+			border-bottom: solid 1px $shadow-strong;
+			border-left: solid 1px $shadow-strong;
+			border-right: solid 1px $shadow-strong;
 		}
 	}
 }

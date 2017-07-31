@@ -16,11 +16,11 @@ a {
 	text-decoration: none;
 	color: inherit;
 	&:hover {
-		color: $accent;
+		color: $theme-dark;
 	}
 
 	&:focus {
-		text-shadow: 0 0 $radius $highlight-strong;
+		text-shadow: 0 0 3px $highlight-strong;
 	}
 }
 
@@ -29,11 +29,6 @@ ul.inline-list {
 	li {
 		float: right;
 		display: block;
-		padding-left: $space;
-
-		&:last-child {
-			padding-left: 0;
-		}
 	}
 
 	@include clearfix;
