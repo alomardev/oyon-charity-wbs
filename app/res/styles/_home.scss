@@ -67,24 +67,18 @@ body.site {
 			display: table;
 			.card {
 				display: table-cell;
-			}
-			&:first-child {
-				.card:first-child {
-					width: 45%;
-					padding-left: $space-small;
-				}
-				.card:last-child {
-					width: 55%;
+				padding-left: $space-small;
+				&:last-child {
+					padding-left: 0;
 				}
 			}
-			&:nth-child(2) {
-				padding-top: $space-small;
-				.card:first-child {
+			@media screen and (max-width: 750px) {
+				display: block;
+				.card {
+					padding-left: 0;
+					display: block;
 					width: 100%;
-					padding-left: $space-small;
-				}
-				.card:last-child .content-box {
-					width: 300px;
+					padding-bottom: $space-small;
 				}
 			}
 		}
@@ -102,57 +96,62 @@ body.site {
 				}
 			}
 			.content-box {
-				height: 200px;
-				overflow-y: auto;
 				border-left: solid 1px $shadow-color-stronger;
 				border-right: solid 1px $shadow-color-stronger;
 				border-bottom: solid 1px $shadow-color-stronger;
 			}
 		}
 	}
-	#content-box-links {
-		padding: $space-smaller;
-		ul {
-			list-style: none;
-		}
-	}
-	#content-box-news {
-		padding: $space-smaller;
-		line-height: 1em;
-		.news-item {
-			height: 50px;
-			box-sizing: content-box;
-			margin-bottom: $space-smaller;
-			display: table;
-			width: 100%;
-			color: inherit;
-			&:hover {
-				background-color: $shadow-color-weak;
-			}
-			&:last-child {
-				margin-bottom: 0;
-			}
-			img {
-				display: table-cell;
-				margin-left: $space-smaller;
-				display: block;
-				width: 50px;
+	#card-news {
+		.content-box {
+			padding: $space-smaller;
+			line-height: 1em;
+			.news-item {
 				height: 50px;
-				background-color: #BFBFBF;
-				border-spacing: 0px;
-			}
-			.news-text {
+				box-sizing: content-box;
+				margin-bottom: $space-smaller;
+				display: table;
 				width: 100%;
-				display: table-cell;
-				vertical-align: middle;
+				color: inherit;
+				&:hover {
+					background-color: $shadow-color-weak;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+				img {
+					display: table-cell;
+					margin-left: $space-smaller;
+					display: block;
+					width: 50px;
+					height: 50px;
+					background-color: #BFBFBF;
+					border-spacing: 0px;
+				}
+				.news-text {
+					width: 100%;
+					display: table-cell;
+					vertical-align: middle;
+				}
+				@extends .u-cf;
 			}
-			@extends .u-cf;
 		}
 	}
-	#content-box-donation {
-		padding: $space-smaller $space-small;
-		ol {
-			margin-right: 1em;
+	#card-donation {
+		width: 65%;
+		.content-box {
+			padding: $space-smaller $space-small;
+			ol {
+				margin-right: 1em;
+			}
+		}
+	}
+	#card-ibans {
+		width: 35%;
+		.content-box {
+			button {
+				margin: $space-smaller;
+			}
 		}
 	}
 }

@@ -1,5 +1,6 @@
 $max-width: 950px;
-$inputs-font-size: .8em;
+
+$input-font-size: 0.8em;
 
 $radius-small: 6px;
 $radius: 12px;
@@ -39,3 +40,7 @@ $text-color-link: #349CDD;
 $text-color-link-hover: #4FBCFF;
 
 $text-color-footer: #606060;
+
+
+$input-color: #217877;
+$input-color-focus: saturate(lighten($input-color, 10%), 20%);

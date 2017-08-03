@@ -1,29 +1,89 @@
 @@include("_top.html", {"type": "site", "title": "Homepage", "resdir": "res"})
-
-<header>
-	<div class='container'>
-		<div class='logo'></div>
-	</div>
-</header>
-<section>
-<div class='container'>
-	<nav>
-		<ul class='inline-list'>
-			<li><a href='#'>الهيكم الإداري</a></li>
-			<li><a href='#'>اللجان العاملة</a></li>
-			<li><a href='#'>شركاؤنا</a></li>
-			<li><a href='#'>اتصل بنا</a></li>
-		</ul>
-		<input type='text' class='search et' placeholder='البحث'>
-	</nav>
-	<div class='content'>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+@@include("_header.html", {"active": "none"})
+<div class='slide-show'>
+	<div class='slide-show-pager'></div>
+	<div class='slide-show-next-btn icon-slide-show-next'></div>
+	<div class='slide-show-prev-btn icon-slide-show-prev'></div>
+	<div class='slide-show-image'></div>
+</div>
+<div id='services'>
+	<h1>برامجنا</h1>
+	<div class='services-row'>
+		<div>توزيع الزكاة</div>
+		<div>مساعدات سداد إيجار</div>
+		<div>كفالة أيتام وأسر</div>
+		<div>كسوة الصيف والشتاء</div>
+	</div><div class='services-row'>
+		<div>مساعدات رمضانية</div>
+		<div>تحسين المساكن</div>
+		<div>تدريب وتأهيل</div>
+		<div>مساعدات أسر السجناء</div>
+	</div><div class='services-row'>
+		<div>الوقف الخيري</div>
+		<div>سداد الكهرباء</div>
+		<div>روضة الأطفال</div>
+		<div>مساعدات زواج</div>
+	</div><div class='services-row'>
+		<div>السلة الغذائية</div>
+		<div>سقيا الماء</div>
+		<div>مساعدات طلابية</div>
+		<div>فرحة مولود</div>
 	</div>
 </div>
-</section>
+<div id='cards'>
+	<div class='cards-row'>
+		<div id='card-donation' class='card'>
+			<div class='subject'><h3>كيف تتبرع</h3></div>
+			<div class='content-box'>
+				<strong>يمكنك أخي/أختي التبرع عن طريق:</strong>
+				<ol>
+					<li>الاستقطاع الشهري: ويتم عن طريق زيارة مقر الجمعية أو أحد فروع البنوك بتعبئة استمارة الاستقطاع الشهري</li>
+					<li>الصراف الآلي: ويتم عن طريق التحويل من حسابكم إلى حسابات الجمعية</li>
+					<li>إسعادنا بزيارة <a href='/about.html#map'>مقر الجمعية</a> لتسليم التبرعات النقدية والعينية (غذائية، أجهزة، أثاث)</li>
+					<li>عمل شيك باسم (جمعية العيون الخيرية للخدمات الاجتماعية) والتفضل بتسليمه في مقر الجمعية أو <a href='/contact.html'>الاتصال بنا</a></li>
+				</ol>
+			</div>
+		</div>
+		<div id='card-ibans' class='card'>
+			<div class='subject'><h3>الحسابات البنكية</h3></div>
+			<div class='content-box'>
+				<button>اعرض الحسابات</button>
+			</div>
+		</div>
+	</div>
+		<!-- <div id='card-news' class='card'>
+			<div class='subject'><h3>أحدث الأخبار</h3></div>
+			<div class='content-box'>
+						<a href='#' class='news-item'>
+							<img><div class='news-text'>خبر جديد<br>محتوى قصير</div>
+						</a>
+						<a href='#' class='news-item'>
+							<img><div class='news-text'>خبر جديد<br>محتوى قصير</div>
+						</a>
+						<a href='#' class='news-item'>
+							<img><div class='news-text'>خبر جديد<br>محتوى قصير</div>
+						</a>
+			</div>
+		</div> 
+		<div class='card'>
+			<div class='subject'><h3>روابط تهمك</h3></div>
+			<div id='content-box-links' class='content-box'>
+				<ul>
+					<li><a href='#'>رابط ١</a></li>
+					<li><a href='#'>رابط ٢</a></li>
+					<li><a href='#'>رابط ٣</a></li>
+					<li><a href='#'>رابط ٤</a></li>
+					<li><a href='#'>رابط ٥</a></li>
+				</ul>
+			</div>
+		</div> -->
+	<!-- <div class='cards-row'>
+		<div class='card'>
+			<div class='subject'><h3>راسلنا</h3></div>
+			<div id='content-box-contact-us' class='content-box'>
+			</div>
+		</div>
+	</div> -->
+</div>
+@@include("_footer.html")
 @@include("_bottom.html", {"resdir": "res"})

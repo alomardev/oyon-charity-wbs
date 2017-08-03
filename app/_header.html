@@ -1,0 +1,25 @@
+<header>
+	<div class='container u-cf'>
+		<a id='header-main-logo' class='u-fr u-cf' href='.' class='u-cf'>
+			<img class='u-fr' src='res/charity-logo.png' width='96' height='86'>
+			<img class='u-fr' src='res/charity-title.png' width='317' height='86'>
+		</a>
+		<div id='header-sub-logos' class='u-cf u-fl'>
+			<a class='u-fl' target="_blank" href='http://vision2030.gov.sa'><img src='res/vision-logo.png' width='108' height='86'></a>
+			<a class='u-fl' target="_blank" href='https://mlsd.gov.sa'><img src='res/mlsd-logo.png' width='108' height='86'></a>
+		</div>
+	</div>
+</header>
+<div id='main-wrapper'>
+	<div class='container'>
+		<nav id='main-nav'>
+			<ul>
+				<li @@if (active == 'admin-structure') {class='active'}><a href='/admins.html'>الهيكل الإداري</a></li>
+				<li @@if (active == 'committees') {class='active'}><a href='/committees.html'>اللجان العاملة</a></li>
+				<li @@if (active == 'partners') {class='active'}><a href='/partners.html'>شركاؤنا</a></li>
+				<li @@if (active == 'about-us') {class='active'}><a href='/about.html'>من نحن</a></li>
+				<li @@if (active == 'contact-us') {class='active'}><a href='/contact.html'>تواصل معنا</a></li>
+			</ul>
+			<!-- <a id='search-btn' href='#'><div class='icon-search'></div></a> -->
+		</nav>
+		<section id='main-section'>

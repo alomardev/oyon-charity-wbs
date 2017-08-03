@@ -31,7 +31,7 @@ gulp.task('styles', ['clean:styles'], function() {
 	return gulp.src(dir.app + '/res/styles/main.{scss,sass}')
 	.pipe(plumber())
 	.pipe(sass())
-	.pipe(autoprefixer())
+	.pipe(autoprefixer('last 10 versions'))
 	.pipe(gulp.dest(dir.dev + '/res'))
 	.pipe(connect.reload());
 });

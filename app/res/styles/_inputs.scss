@@ -1,0 +1,13 @@
+input, button, textarea, select {
+	font-size: $input-font-size;
+}
+button, input[type=submit] {
+	cursor: pointer;
+	@include decorated-block($input-color, false);
+	padding: $space-smaller / 2 $space-small;
+	border-radius: $radius-small;
+	transition: background-color 100ms;
+	&:hover {
+		background-color: $input-color-focus;
+	}
+}

@@ -50,12 +50,14 @@ body.site {
 		ul {
 			list-style: none;
 			a {
-				color: #7F7F7F;
-				display: block;
 				margin-left: $space;
-				&:hover {
-					color: #A0A0A0;
-				}
+			}
+		}
+		a {
+			color: #7F7F7F;
+			display: block;
+			&:hover {
+				color: #A0A0A0;
 			}
 		}
 		#social-links {
