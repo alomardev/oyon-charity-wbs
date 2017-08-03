@@ -102,6 +102,19 @@ body.site {
 			}
 		}
 	}
+	.content-show-btn {
+		padding: 0 $space-small;
+		min-height: 100px;
+		cursor: pointer;
+		background-repeat: no-repeat;
+		background-position: 50% 63%;
+		background-image: url('/res/ic_visibility_off.svg');
+		transition: background-color 100ms, background-image 200ms;
+		&:hover {
+			background-image: url('/res/ic_visibility_on.svg');
+			background-color: $shadow-color-weak;
+		}
+	}
 	#card-news {
 		.content-box {
 			padding: $space-smaller;
@@ -138,7 +151,7 @@ body.site {
 		}
 	}
 	#card-donation {
-		width: 65%;
+		width: 50%;
 		.content-box {
 			padding: $space-smaller $space-small;
 			ol {
@@ -147,10 +160,21 @@ body.site {
 		}
 	}
 	#card-ibans {
-		width: 35%;
+		width: 50%;
 		.content-box {
-			button {
-				margin: $space-smaller;
+			table {
+				color: white;
+				width: 100%;
+				td {
+					padding: $space-smaller / 2 $space-smaller;
+					&:first-child {
+						text-align: left;
+					}
+					&:last-child {
+						text-align: center;
+						min-width: 260px;
+					}
+				}
 			}
 		}
 	}

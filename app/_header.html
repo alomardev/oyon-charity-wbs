@@ -14,11 +14,12 @@
 	<div class='container'>
 		<nav id='main-nav'>
 			<ul>
-				<li @@if (active == 'admin-structure') {class='active'}><a href='/admins.html'>الهيكل الإداري</a></li>
+				<li @@if (active == 'home') {class='active'}><a href='/'>الرئيسية</a></li>
+				<li @@if (active == 'admins') {class='active'}><a href='/admins.html'>الهيكل الإداري</a></li>
 				<li @@if (active == 'committees') {class='active'}><a href='/committees.html'>اللجان العاملة</a></li>
 				<li @@if (active == 'partners') {class='active'}><a href='/partners.html'>شركاؤنا</a></li>
-				<li @@if (active == 'about-us') {class='active'}><a href='/about.html'>من نحن</a></li>
-				<li @@if (active == 'contact-us') {class='active'}><a href='/contact.html'>تواصل معنا</a></li>
+				<li @@if (active == 'about') {class='active'}><a href='/about.html'>من نحن</a></li>
+				<li @@if (active == 'contact') {class='active'}><a href='/contact.html'>تواصل معنا</a></li>
 			</ul>
 			<!-- <a id='search-btn' href='#'><div class='icon-search'></div></a> -->
 		</nav>
