@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo');
 @import 'vars';
 @import 'mixins';
-
+@import 'utils';
 @import 'icons';
-
 @import 'global';
-@import 'inputs';
-
 @import 'site';
-@import 'apps';
-
-@import 'cms-login';
-@import 'cms-list';
-@import 'cms-new';
+@import 'home';
+@import 'admins';

@@ -3,33 +3,22 @@
 	box-sizing: border-box;
 	padding: 0;
 	font-family: 'Cairo';
+	font-weight: normal;
 	&:focus {
 		outline: 0;
 	}
 }
 
-html {
-	heigth: 100%;
-}
-
 a {
 	text-decoration: none;
-	color: inherit;
+	color: $text-color-link;
 	&:hover {
-		color: $theme-dark;
-	}
-
-	&:focus {
-		text-shadow: 0 0 3px $highlight-strong;
+		color: $text-color-link-hover;
 	}
 }
 
-ul.inline-list {
-	list-style: none;
-	li {
-		float: right;
-		display: block;
-	}
-
-	@include clearfix;
+body {
+	background-color: #F3F3F3;
+	background-image: url('bg-pattern.png');
+	background-size: 250px 250px;
 }

@@ -1,4 +1,4 @@
-/* global */
+$max-width: 950px;
 $inputs-font-size: .8em;
 
 $radius-small: 6px;
@@ -11,42 +11,31 @@ $space: 18px;
 $space-large: 24px;
 $space-larger: 30px;
 
-$focus-highlight-color: #00AEFF; // private
-$focus-highlight: transparentize($focus-highlight-color, .4);
-$focus-highlight-weak: transparentize($focus-highlight-color, .5);
-$focus-highlight-strong: transparentize($focus-highlight-color, 0);
+$focus-color-base: #00AEFF; // private
+$focus-color: transparentize($focus-color-base, .4);
+$focus-color-weak: transparentize($focus-color-base, .5);
+$focus-color-strong: transparentize($focus-color-base, 0);
 
-$shadow: rgba(0, 0, 0, .2);
-$shadow-weak: rgba(0, 0, 0, .1);
-$shadow-strong: rgba(0, 0, 0, .4);
+$shadow-color: rgba(0, 0, 0, .2);
+$shadow-color-weak: rgba(0, 0, 0, .1);
+$shadow-color-strong: rgba(0, 0, 0, .4);
+$shadow-color-stronger: rgba(0, 0, 0, .55);
 
-$highlight: rgba(255, 255, 255, .2);
-$highlight-weak: rgba(255, 255, 255, .1);
-$highlight-strong: rgba(255, 255, 255, .4);
+$highlight-color: rgba(255, 255, 255, .2);
+$highlight-color-weak: rgba(255, 255, 255, .1);
+$highlight-color-strong: rgba(255, 255, 255, .4);
+$highlight-color-stronger: rgba(255, 255, 255, .55);
 
-$theme: #81B678;
-$theme-light: lighten($theme, 15%);
-$theme-lighter: lighten($theme, 25%);
-$theme-dark: darken($theme, 18%);
-$theme-darker: darken($theme, 35%);
+$theme-color: #284B2D;
+$theme-color-dark: #172A1B;
+$theme-color-light: #358C43;
 
-$accent: #99CD56;
-$accent-light: saturate(lighten($accent, 18%), 25%);
-$accent-lighter: saturate(lighten($accent, 30%), 20%);
-$accent-dark: saturate(darken($accent, 18%), 10%);
-$accent-darker: saturate(darken($accent, 35%), 20%);
+$accent-color: #7F5736;
 
-$text-primary: desaturate($theme-darker, 10%);
-$text-secondary: $theme-dark;
+$text-color-light: #234228;
+$text-color-dark: white;
 
-$text-primary-dark: white;
-$text-secondary-dark: $theme-lighter;
+$text-color-link: #349CDD;
+$text-color-link-hover: #4FBCFF;
 
-/* apps */
-$apps-default-width: 900px;
-
-$apps-mention: #FF999B;
-
-$apps-background: #D0D0D0;
-$apps-background-card: #F2F2F2;
-$apps-background-dark: #414141;
+$text-color-footer: #606060;

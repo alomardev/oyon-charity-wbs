@@ -1,9 +1,9 @@
-@mixin clearfix {
-	&::after {
-		display: block;
-		content: '';
-		clear: both;
-	}
+@mixin decorated-block($color: $theme-color) {
+	border: solid 1px darken($color, 10%);
+	box-shadow: inset 0 1px 0 $highlight-color-stronger;
+	background-image: url('nav-pattern.svg');
+	background-color: $color;
+	color: $text-color-dark;
 }
 
 @mixin flexing($dir, $justify: null, $align: null) {

@@ -1,72 +1,123 @@
 body.site {
-	background: #EBEBEB;
 	.container {
-		max-width: 900px;
+		max-width: $max-width;
 		margin: 0 auto;
-	}
-
-	header .container {
-		margin-top: 10px;
-		.logo {
-			background-image: url(charity-logo.png);
-			background-size: 0.15 * 1000px 0.15 * 854px;
-			margin: 0 auto;
-			width: 0.15 * 1000px;
-			height: 0.15 * 854px;
-		}
-		h1 {
-			font-size: .8em;
-			text-align: center;
+		@media screen and (max-width: $max-width + $space * 2) {
+			margin: 0 $space;
 		}
 	}
 
-	section .container {
-		box-shadow: 0 3px 5px $shadow-weak;
-		margin-top: 10px;
-		border-radius: $radius;
-		background: #F8F8F8;
-		nav {
-			background: $theme;
-			border: solid 1px $theme-dark;
-			border-top-right-radius: $radius;
-			border-top-left-radius: $radius;
-			padding: 0 $radius;
-			box-shadow: inset 0 1px 0 white;
-			ul {
+	header {
+		a, img {
+			display: block;
+		}
+		.container {
+			padding-top: $space-large;
+			padding-bottom: $space;
+		}
+		#header-sub-logos {
+			a:last-child {
+				margin-left: $space-small;
+			}
+		}
+		@media screen and (max-width: 900px) {
+			#header-sub-logos {
+				width: 108 * 2 + $space-small;
+				padding-top: $space
+			}
+			#header-main-logo {
+				width: 96 + 318px;
+			}
+			#header-sub-logos, #header-main-logo {
+				float: none;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	footer {
+		font-size: .83em;
+		.container {
+			padding: $space 0;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		#copyrights {
+			line-height: 1.3em;
+			margin-left: $space * 2;
+		}
+		ul {
+			list-style: none;
+			a {
+				color: #7F7F7F;
+				display: block;
+				margin-left: $space;
+				&:hover {
+					color: #A0A0A0;
+				}
+			}
+		}
+		#social-links {
+			a {
+				margin-left: 0;
+				margin-right: $space-smaller;
+			}
+		}
+		#footer-links {
+			flex: 1 0 auto;
+		}
+	}
+
+	#main-wrapper {
+		.container {
+			box-shadow: 0 5px 25px $shadow-color;
+		}
+	}
+	#main-nav {
+		position: relative;
+		@include decorated-block;
+		ul {
+			float: right;
+			list-style: none;
+			li {
 				float: right;
-				li {
+				&.active {
 					a {
-						display: block;
-						padding: $space-smaller $space-small;
-						color: darken($theme-darker, 10%);
-						transition-property: background-color;
-						transition-duration: 200ms;
-						&:hover {
-							background-color: $highlight-strong;
-						}
+						
+					background-color: transparentize($theme-color-light, 0.45);
 					}
 				}
 			}
-			.search {
-				background-color: $theme-lighter;
-				float: left;
-				margin-top: $space-smaller;
-				margin-left: -$space-smaller;
-				border-color: $theme-dark;
-				&:focus {
-					background: white;
-					box-shadow: 0 0 5px white;
-				}
+			a {
+				display: block;
+				font-size: 0.95em;
+				color: $text-color-dark;
+				padding: $space-smaller $space-small;
+				transform-style: background-color, box-shadow;
+				transition-duration: 200ms;
 			}
-			@include clearfix;
+			li.active a, li a:hover{
+				box-shadow: inset 0 1px $highlight-color-stronger;
+				background-color: transparentize($theme-color-light, 0.45);
+			}
+			&::after {
+				@extend .u-cf;
+			}
 		}
-		.content {
-			padding: $space-small;
-			border-bottom-right-radius: $radius;
-			border-bottom-left-radius: $radius;
-			border-bottom: solid 1px $shadow-strong;
-			border-left: solid 1px $shadow-strong;
-			border-right: solid 1px $shadow-strong;
+		#search-btn {
+			position: absolute;
+			left: 0;
+			padding: $space-smaller;
+			top: 50%;
+			transform: translateY(-50%);
 		}
+		@extend .u-cf;
+	}
+	#main-section {
+		background-color: white;
+		border-left: solid 1px $shadow-color-stronger;
+		border-right: solid 1px $shadow-color-stronger;
+		border-bottom: solid 1px $shadow-color-stronger;
 	}
 }
