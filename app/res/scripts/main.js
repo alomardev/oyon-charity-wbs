@@ -47,43 +47,48 @@ $(function() {
       var data3 = new google.visualization.DataTable();
       data1.addColumn('string', 'Name');
       data1.addColumn('string', 'Manager');
+      data1.addColumn('string', 'ToolTip');
       data2.addColumn('string', 'Name');
       data2.addColumn('string', 'Manager');
+      data2.addColumn('string', 'ToolTip');
       data3.addColumn('string', 'Name');
       data3.addColumn('string', 'Manager');
+      data3.addColumn('string', 'ToolTip');
 
       // For each orgchart box, provide the name, manager, and tooltip to show.
       data1.addRows([
-        [{f: 'الرئيس', v: 'a'}, ''],
-	      ['أمين الصندوق', 'a'],
-	      ['الأمين العام', 'a'],
-	      ['نائب الرئيس', 'a']
+        [{f: 'الرئيس', v: 'a'}, '', 'الأستاذ خالد الحسين'],
+	      ['أمين الصندوق', 'a', 'الأستاذ منصور جمعة العساف'],
+	      ['الأمين العام', 'a', 'الأستاذ إبراهيم بن حمود الكليب'],
+	      ['نائب الرئيس', 'a', 'الأستاذ صالح بن أحمد الماضي']
       ]);
       data2.addRows([
-	      [{f: '<a href="/committees.html">اللجان العاملة</a>', v: 'b'}, ''],
-	      ['<a href="/committees.html#c7">الروضة</a>', 'b'],
-	      ['<a href="/committees.html#c5">المشاريع والتطوير</a>', 'b'],
-	      ['<a href="/committees.html#c4">العلاقات العامة والإعلام</a>', 'b'],
-	      ['<a href="/committees.html#c1">الإدارة المالية</a>', 'b'],
-	      ['<a href="/committees.html#c6">الأيتام والأسر</a>', 'b'],
-	      [{f: '<a href="/committees.html#c2">اللجنة الاجتماعية</a>', v: 'c'}, 'b'],
-	      ['<a href="/committees.html#c3">اللجنة النسائية</a>', 'c']
+	      [{f: '<a href="/committees.html">اللجان العاملة</a>', v: 'b'}, '', ''],
+	      ['<a href="/committees.html#c7">الروضة</a>', 'b', 'الأستاذ صالح بن أحمد الماضي'],
+	      ['<a href="/committees.html#c5">المشاريع والتطوير</a>', 'b', 'الأستاذ فالح بن سعود العمر'],
+	      ['<a href="/committees.html#c4">العلاقات العامة والإعلام</a>', 'b', 'الأستاذ فهد بن سعد العساف'],
+	      ['<a href="/committees.html#c1">الإدارة المالية</a>', 'b', 'الأستاذ منصور جمعة العساف'],
+	      ['<a href="/committees.html#c6">الأيتام والأسر</a>', 'b', 'الأستاذ إبراهيم بن حمود الكليب'],
+	      [{f: '<a href="/committees.html#c2">اللجنة الاجتماعية</a>', v: 'c'}, 'b', 'الأستاذ أحمد بن عيسى الشاهين'],
+	      ['<a href="/committees.html#c3">اللجنة النسائية</a>', 'c', 'الأستاذ أحمد بن عيسى الشاهين']
       ]);
       data3.addRows([
-	      [{f: 'القوى العاملة', v: 'd'}, ''],
-	      ['المستخدمون', 'd'],
-	      ['موظفو وموظفات الروضة', 'd'],
-	      ['مدخل بيانات', 'd'],
-	      ['المحاسب', 'd'],
-	      ['المحصل', 'd'],
-	      ['الباحث الاجتماعية', 'd'],
+	      [{f: 'القوى العاملة', v: 'd'}, '', ''],
+	      ['المستخدمون', 'd', ''],
+	      ['موظفو وموظفات الروضة', 'd', ''],
+	      ['مدخل بيانات', 'd', ''],
+	      ['المحاسب', 'd', ''],
+	      ['المحصل', 'd', ''],
+	      ['الباحث الاجتماعية', 'd', ''],
       ]);
 
       var chart1 = new google.visualization.OrgChart(orgchart.find('#chart1')[0]);
       var chart2 = new google.visualization.OrgChart(orgchart.find('#chart2')[0]);
       var chart3 = new google.visualization.OrgChart(orgchart.find('#chart3')[0]);
 
-      chart1.draw(data1);
+      chart1.draw(data1, {onmouseover: function() {
+      	console.log(this);
+      }});
       chart2.draw(data2, {allowHtml: true});
       chart3.draw(data3);
     });

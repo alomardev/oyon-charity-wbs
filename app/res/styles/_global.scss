@@ -125,6 +125,7 @@ footer {
 			}
 			&:last-child {
 				float: left;
+				display: none;
 			}
 		}
 		a {
@@ -162,6 +163,15 @@ footer {
 		margin-left: -$space;
 		margin-right: -$space;
 		border-bottom: solid 1px $shadow-color-strong;
+	}
+	hr {
+		height: 1px;
+		border: none;
+		background-color: $shadow-color-strong;
+		margin-left: -$space;
+		margin-right: -$space;
+		margin-top: $space;
+		margin-bottom: $space;
 	}
 }
 
