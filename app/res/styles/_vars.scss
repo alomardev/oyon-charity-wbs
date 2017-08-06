@@ -1,3 +1,5 @@
+$font-family: 'Droid Arabic Kufi', 'Tahoma', sans-serif;
+
 $max-width: 950px;
 
 $input-font-size: 0.8em;
@@ -27,11 +29,14 @@ $highlight-color-weak: rgba(255, 255, 255, .1);
 $highlight-color-strong: rgba(255, 255, 255, .4);
 $highlight-color-stronger: rgba(255, 255, 255, .55);
 
+$highlight-color-light: #387CB2;
+
 $theme-color: #284B2D;
 $theme-color-dark: #172A1B;
 $theme-color-light: #358C43;
 
 $accent-color: #7F5736;
+$accent-color-light: lighten($accent-color, 10%);
 
 $text-color-light: #234228;
 $text-color-dark: white;
@@ -43,4 +48,6 @@ $text-color-footer: #606060;
 
 
 $input-color: #217877;
-$input-color-focus: saturate(lighten($input-color, 10%), 20%);
+$input-color-text-border: #2A9B99;
+$input-color-hover: saturate(lighten($input-color, 10%), 20%);
+$input-color-focus: transparentize(saturate(lighten($input-color, 10%), 20%), 0.5);

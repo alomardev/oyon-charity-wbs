@@ -1,0 +1,30 @@
+#orgchart {
+	cursor: default;
+	#chart2 {
+		margin-top: $space-larger;
+	}
+	.google-visualization-orgchart-table {
+		margin: 0 auto;
+	}
+	.google-visualization-orgchart-node {
+		transition: background-color 100ms;
+		line-height: 1.2em;
+		font-family: $font-family;
+		@include decorated-block($accent-color);
+		padding: $space-smaller / 2 $space-smaller;
+	}
+	tr:nth-child(2) {
+		.google-visualization-orgchart-node {
+			@include decorated-block($theme-color);
+			font-weight: bold;
+			min-width: 80px;
+		}
+	}
+	.google-visualization-orgchart-linenode {
+		border-color: black;
+		border-width: 2px;
+	}
+	a {
+		color: inherit;
+	}
+}

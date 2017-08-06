@@ -1,6 +1,9 @@
-body.site {
+#home {
+	padding: 0;
+	
 	$banner-height: 575px * 0.5;
 	$banner-width: 2000px * 0.5;
+
 	.slide-show {
 		background: #BFBFBF;
 		border: solid 1px white;
@@ -154,15 +157,13 @@ body.site {
 		width: 50%;
 		.content-box {
 			padding: $space-smaller $space-small;
-			ol {
-				margin-right: 1em;
-			}
 		}
 	}
 	#card-ibans {
 		width: 50%;
 		.content-box {
 			table {
+				border-spacing: 2px;
 				color: white;
 				width: 100%;
 				td {

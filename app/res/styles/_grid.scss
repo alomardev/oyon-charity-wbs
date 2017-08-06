@@ -1,0 +1,20 @@
+.row {
+	.col-1-4 {
+		float: right;
+		width: 100% * 0.25;
+	}
+	.col-2-4 {
+		float: right;
+		width: 100% * 0.25 * 2;
+	}
+	.col-3-4 {
+		float: right;
+		width: 100% * 0.25 * 3;
+	}
+
+	&::after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+}

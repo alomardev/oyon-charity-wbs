@@ -40,7 +40,7 @@ gulp.task('styles', ['clean:styles'], function() {
 gulp.task('htmls', ['clean:htmls'], function() {
 	return gulp.src([dir.app + '/**/*.html', '!' + dir.app + '/**/_*.html'])
 	.pipe(plumber())
-	.pipe(fileinclude(/* Default: {prefix: '@@', path: '@file'} */))
+	.pipe(fileinclude())
 	.pipe(gulp.dest(dir.dev))
 	.pipe(connect.reload());
 });

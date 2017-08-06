@@ -1,5 +1,6 @@
-@@include("_top.html", {"type": "site", "title": "جمعية العيون الخيرية"})
+@@include("_top.html", {"title": "جمعية العيون الخيرية"})
 @@include("_header.html", {"active": "home"})
+<div class='page-wrapper' id='home'>
 <div class='slide-show'>
 	<div class='slide-show-pager'></div>
 	<div class='slide-show-next-btn icon-slide-show-next'></div>
@@ -39,15 +40,15 @@
 				<ol>
 					<li>الاستقطاع الشهري: ويتم عن طريق زيارة مقر الجمعية أو أحد فروع البنوك بتعبئة استمارة الاستقطاع الشهري</li>
 					<li>الصراف الآلي: ويتم عن طريق التحويل من حسابكم إلى حسابات الجمعية</li>
-					<li>إسعادنا بزيارة <a href='/about.html#map'>مقر الجمعية</a> لتسليم التبرعات النقدية والعينية (غذائية، أجهزة، أثاث)</li>
+					<li>إسعادنا بزيارة <a href='/contact.html'>مقر الجمعية</a> لتسليم التبرعات النقدية والعينية (غذائية، أجهزة، أثاث)</li>
 					<li>عمل شيك باسم (جمعية العيون الخيرية للخدمات الاجتماعية) والتفضل بتسليمه في مقر الجمعية أو <a href='/contact.html'>الاتصال بنا</a></li>
 				</ol>
 			</div>
 		</div>
 		<div id='card-ibans' class='card'>
 			<div class='subject'><h3>الحسابات البنكية</h3></div>
-			<div class='content-box content-show-btn'>
-				<span class='small-note'>قم بالضغط لعرض الحسابات...</span>
+			<div class='content-box'>
+				<div class='loading-medium'></div>
 			</div>
 		</div>
 	</div>
@@ -84,6 +85,7 @@
 			</div>
 		</div>
 	</div> -->
+</div>
 </div>
 @@include("_footer.html")
 @@include("_bottom.html")

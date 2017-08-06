@@ -1,0 +1,25 @@
+#partners {
+	.partner {
+		height: 230px;
+		text-align: center;
+		margin-top: $space-large;
+		line-height: 1.3em;
+		font-size: 0.75em;
+		.logo-container {
+			border: solid 1px $shadow-color;
+			background-color: $shadow-color-weak;
+			border-radius: $radius;
+			margin: 0 auto;
+			width: 150px;
+			height: 150px;
+			padding-bottom: $space;
+			+ div {
+				margin-top: $space;
+			}
+		}
+
+		@media screen and (max-width: 870px) {
+			width: 50%;
+		}
+	}
+}

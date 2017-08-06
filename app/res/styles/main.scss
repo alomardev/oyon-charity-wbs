@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Cairo');
+// @import url('https://fonts.googleapis.com/css?family=Cairo');
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+@import 'normalize';
 @import 'vars';
 @import 'mixins';
+@import 'grid';
 @import 'utils';
 @import 'icons';
+@import 'logos';
 @import 'global';
 @import 'inputs';
-@import 'site';
 @import 'home';
-@import 'admins';
+@import 'orgchart';
+@import 'contact';
+@import 'about';
+@import 'committees';
+@import 'parteners';
+
+@import 'login';
