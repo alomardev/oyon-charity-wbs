@@ -249,3 +249,12 @@ footer {
 		}
 	}
 }
+
+.sub-links {
+	.link-item {
+		border: solid 1px $shadow-color-strong;
+		border-radius: $radius;
+		padding: $space-smaller / 2 $space-small;
+		text-align: center;
+	}
+}

@@ -1,4 +1,38 @@
 $(function() {
+	/* clock */
+	if (exists('clock')) {
+		var today = new Date();
+		var days = ["السبت", "الأحد", "الأثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة"];
+		var startTime = function () {
+			today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			var ampm = 'صباحًا';
+			if (h >= 12) {
+				ampm = 'مساءً';
+				h -= 12;
+			}
+			m = m < 10 ? "0" + m : m;
+			s = s < 10 ? "0" + s : s;
+			$('#clock .digital').html(h + ":" + m + ":" + s + " " + ampm);
+		};
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+
+		var yyyy = today.getFullYear();
+		if(dd<10){
+		    dd='0'+dd;
+		} 
+		if(mm<10){
+		    mm='0'+mm;
+		} 
+		$('#clock .date').html(days[today.getDay()] + "، " + '<bdo dir="ltr">'+yyyy+'-'+mm+'-'+dd+"</bdo>م");
+
+		startTime();
+
+		var i = setInterval(startTime, 500);
+	}
 	/* slide show */
 	var i = 0;
 	var images = ['banner1.jpg', 'banner2.jpg'];
@@ -100,7 +134,8 @@ $(function() {
         [{f: 'الرئيس', v: 'a'}, '', 'الأستاذ خالد الحسين'],
 	      ['أمين الصندوق', 'a', 'الأستاذ منصور جمعة العساف'],
 	      ['الأمين العام', 'a', 'الأستاذ إبراهيم بن حمود الكليب'],
-	      ['نائب الرئيس', 'a', 'الأستاذ صالح بن أحمد الماضي']
+	      ['نائب الرئيس', 'a', 'الأستاذ صالح بن أحمد الماضي'],
+	      ['المدير التنفيذي', 'a', 'الأستاذ ناصر بن خالد السبيعي']
       ]);
       data2.addRows([
 	      [{f: '<a href="/committees.html">اللجان العاملة</a>', v: 'b'}, '', ''],

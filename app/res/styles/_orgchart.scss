@@ -40,13 +40,14 @@
 		0 5px 15px $shadow-color-strong;
 	}
 
-	.member-item {
+	.row .col-2 {
+		padding-right: $space;
 		border-right: solid 2px $theme-color;
+	}
+	.member-item {
 		margin-bottom: $space-small;
-		margin-right: 2px;
-		padding-right: $space-small;
 		> span {
-			margin-top: -$space-smaller;
+			margin-top: -0.45em;
 			display: block;
 			color: #7F7F7F;
 		}

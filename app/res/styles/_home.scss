@@ -7,22 +7,32 @@
 	.top-section {
 		display: table;
 		border-bottom: solid 1px $shadow-color-strong;
-		#clock-container {
-			min-width: 300px;
-			background-color: red;
-		}
 		#services, #clock-container {
 			display: table-cell;
 		}
 		#services {
 			width: 100%;
 		}
+		#clock-container {
+			min-width: 300px;
+			vertical-align: middle;
+			text-align: center;
+			border-left: solid 1px $shadow-color-strong;
+			.digital {
+				font-size: 1.3em;
+				margin-bottom: -$space-small;
+				margin-top: $space-smaller;
+			}
+			.date {
+				font-size: 0.9em;
+			}
+		}
 	}
 	#services {
 		padding: $space-small;
 		> h2 {
-			padding-right: $space-small;
 			font-weight: normal;
+			text-align: center;
 		}
 		> .services-row {
 			@include decorated-block($accent-color);

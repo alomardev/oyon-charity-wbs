@@ -1,0 +1,15 @@
+#admin-content {
+	.sub-links .link-item {
+		width: 49.3%;
+		a {
+			display: block;
+			border-bottom: solid 1px $shadow-color-strong;
+			padding: $space-smaller / 2 $space-smaller;
+			margin-left: -$space-small;
+			margin-right: -$space-small;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}

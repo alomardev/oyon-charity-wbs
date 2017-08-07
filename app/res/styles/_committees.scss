@@ -1,6 +1,8 @@
 #committees {
 	.highlight-committee {
 		color: $highlight-color-light;
-
+	}
+	p small a {
+		display: none;
 	}
 }
