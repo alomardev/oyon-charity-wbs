@@ -20,26 +20,66 @@ $(function() {
 	};
 	var interval = setInterval(function() {changeImage(1);}, 4000);
 
-	/* ibans button */
-	var ibansBox = $('#card-ibans .content-box');
-	var showIbans = function () {
-		$.ajax({
-			url: "/raw/ibans.json",
-			success: function(data) {
-				var rows = "";
-				for (var i in data) {
-					rows += "<tr style='background-color: " + data[i].color + ";'><td>" + data[i].title + "</td><td>" + data[i].iban + "</td></tr>";
-				}
-				ibansBox.html("<table><tbody>" + rows + "</tbody></table>");
+	/* services */
+	if (exists("services")) {
+		var s = $("#services > .services-row > div");
+		var services = [
+		"توزيع الزكاة",
+		"مساعدات سداد إيجار",
+		"كفالة أيتام وأسر",
+		"كسوة الصيف والشتاء",
+		"مساعدات رمضانية",
+		"تحسين المساكن",
+		"تدريب وتأهيل",
+		"مساعدات أسر السجناء",
+		"الوقف الخيري",
+		"سداد الكهرباء",
+		"روضة الأطفال",
+		"مساعدات زواج",
+		"السلة الغذائية",
+		"سقيا الماء",
+		"مساعدات طلابية",
+		"فرحة مولود"
+		];
+		var ds = $('#services > .services-row > div');
+		var offset = 0;
+		var max = ds.length;
+		setInterval(function () {
+			offset += max;
+			if (offset > services.length - 1) {
+				offset = 0;
 			}
-		});
-	};
-	$('#card-ibans .content-show-btn').on('click', showIbans());
-	showIbans();
+			ds.animate({opacity: 0}, 500, "linear", function () {
+				for (var i = 0; i < max; i++) {
+					$(ds[i]).html(services[offset + i]);
+				}
+			});
+			ds.animate({opacity: 1}, 500).delay(1000);
+		}, 4000);
+	}
+
+	/* ibans button */
+	if (exists("card-ibans")) {
+		var ibansBox = $('#card-ibans .content-box');
+		var showIbans = function () {
+			$.ajax({
+				url: "/raw/ibans.json",
+				success: function(data) {
+					var rows = "";
+					for (var i in data) {
+						rows += "<tr style='background-color: " + data[i].color + ";'><td>" + data[i].title + "</td><td>" + data[i].iban + "</td></tr>";
+					}
+					ibansBox.html("<table><tbody>" + rows + "</tbody></table>");
+				}
+			});
+		};
+		$('#card-ibans .content-show-btn').on('click', showIbans());
+		showIbans();
+	}
 
 	/* orgchart */
-	var orgchart = $('#orgchart');
-	if (orgchart[0] !== undefined) {
+	if (exists("orgchart")) {
+		var orgchart = $('#orgchart');
 		google.charts.load('current', {packages:["orgchart"]});
     google.charts.setOnLoadCallback(function () {
       var data1 = new google.visualization.DataTable();
@@ -95,11 +135,14 @@ $(function() {
 	}
 
 	/* committees highlighting */
-	var committees = $('#committees');
-	if (committees !== undefined && window.location.hash) {
+	if (exists("committees") && window.location.hash) {
 		var header = $(window.location.hash + ", " + window.location.hash + " + p");
 		if (header.length > 0) {
 			header.addClass('highlight-committee');
 		}
 	}
 });
+
+function exists(id) {
+	return document.getElementById(id) !== null;
+}
