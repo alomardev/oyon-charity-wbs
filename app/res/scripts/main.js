@@ -154,7 +154,7 @@ $(function() {
 	      ['مدخل بيانات', 'd', ''],
 	      ['المحاسب', 'd', ''],
 	      ['المحصل', 'd', ''],
-	      ['الباحث الاجتماعية', 'd', ''],
+	      ['الباحث الاجتماعي', 'd', ''],
       ]);
 
       var chart1 = new google.visualization.OrgChart(orgchart.find('#chart1')[0]);
