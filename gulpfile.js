@@ -115,7 +115,7 @@ gulp.task('build:prod', ['build'], function() {
 	.pipe(plumber())
 	.pipe(gulpif(condcss, cssnano()))
 	.pipe(gulpif(condjs, uglify()))
-	.pipe(gulpif(condhtml, htmlmin({collapseWhitespace: true})))
+	//.pipe(gulpif(condhtml, htmlmin({collapseWhitespace: true})))
 	.pipe(gulp.dest(dir.prod));
 
 });
