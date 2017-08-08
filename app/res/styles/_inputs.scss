@@ -35,3 +35,7 @@ input[type=text], input[type=password], input[type=number], select, textarea {
 		}
 	}
 }
+
+select {
+	padding: $space-smaller / 2 $space-smaller / 2;
+}

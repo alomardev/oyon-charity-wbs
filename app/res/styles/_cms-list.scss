@@ -1,0 +1,40 @@
+#cms-list {
+	.top-inputs {
+		.u-fl {
+			margin-right: $space;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	#messages-list {
+		margin-top: -$space-small;
+		.list-item {
+			margin-left: -$space;
+			margin-right: -$space;
+			padding: $space-smaller $space;
+			display: block;
+			border-bottom: solid 1px $shadow-color-strong;
+			.subject, .date {
+				display: block;
+			}
+			.subject, .icon {
+				float: right;
+			}
+			.date {
+				display: block;
+				float: left;
+			}
+			&::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			color: inherit;
+			transition: background-color 200ms;
+			&:hover {
+				background-color: $shadow-color-weak;
+			}
+		}
+	}
+}

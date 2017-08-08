@@ -1,7 +1,7 @@
 @@include("../../_top.html", {"type": "site", "title": "خارطة الموقع"})
 @@include("../../_header.html", {"active": "login"})
 <div class='page-wrapper' id='cms-new'>
-@@include("_toolbar.html", {"active": "new-message"})
+@@include("_toolbar.html", {"active": "new"})
 	<form>
 		<div class="top-inputs u-cf">
 			<label class='u-fr'>العنوان: <input name='subject' type="text"></label>
@@ -9,24 +9,18 @@
 			<label class='u-fl'>التاريخ: <input size='10' name='date' type='text' readonly value="2017-07-26"></label>
 		</div>
 		<hr>
-		<table><tbody>
-			<tr>
-				<td class='side comnum u-cf'>
-					<label class='u-fl'>عدد اللجان المعنية:
-						<select name="comnum">
-							<option value="1">لجنة واحدة</option>
-							<option value="2">لجنتان</option>
-							<option value="3">ثلاث لجان</option>
-							<option value="4">أربع لجان</option>
-							<option value="5">خمس لجان</option>
-						</select>
-					</label>
-					
-				</td>
-				<td rowspan="2" class='area'><textarea name="message"></textarea></td>
-			</tr>
-			<tr>
-				<td class='side workflow'>
+		<div class='middle-inputs'>
+			<div class='committees-info'>
+				<div class='committee-number-container u-cf'>
+					<label class='u-fr'>عدد ماحل التوجيه:</label>
+					<select class='u-fl' name="comnum">
+						<option value="1">مرحلة</option>
+						<option value="2">مرحلتان</option>
+						<option value="3">3 مراحل</option>
+						<option value="4">4 مراحل</option>
+						<option value="5">5 مراحل</option>
+					</select>
+				</div>
 				<div class="workflow-container">
 					<div class="workflow-item">
 						<label>١.</label>
@@ -53,9 +47,9 @@
 						</select>
 					</div>
 				</div>
-				</td>
-			</tr>
-		</tbody></table>
+			</div>
+			<textarea name="message"></textarea>
+		</div>
 		<hr>
 		<div class="u-cf">
 			<button class='u-fl'>إنشاء الخطاب</button>

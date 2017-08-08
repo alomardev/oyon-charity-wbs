@@ -4,31 +4,27 @@
 			padding-left: 10px;
 		}
 		input[name=subject] {
-			width: 300px;
+			width: 200px;
 		}
 	}
-	table {
+	.middle-inputs {
 		width: 100%;
-		.side {
-			min-width: 270px;
-			&.comnum {
-				padding-bottom: $space-small;
-			}
-			&.workflow {
-				border: solid 1px $shadow-color-strong;
-				padding: $space-small;
-				border-radius: $radius-small;
-			}
+		display: table;
+		.committees-info, textarea {
+			display: table-cell;
+			vertical-align: top;
 		}
-		.area {
+		textarea {
 			width: 100%;
-			height: 100%;
-			padding-right: $space-small;
-			textarea {
-				resize: none;
+			min-height: 250px;
+			resize: vertical;
+		}
+		.committees-info {
+			width: 300px;
+			padding-left: $space-small;
+			.workflow-container {
 				margin-top: $space-small;
-				width: 100%;
-				height: 100%;
+				padding-top: 1px; // fix ie problem
 			}
 		}
 	}
@@ -42,6 +38,7 @@
 		label {
 			display: table-cell;
 			width: 25px;
+			vertical-align: middle;
 		}
 		select {
 			display: table-cell;
