@@ -1,0 +1,51 @@
+#cms-new {
+	.top-inputs {
+		label.u-fr {
+			padding-left: 10px;
+		}
+		input[name=subject] {
+			width: 300px;
+		}
+	}
+	table {
+		width: 100%;
+		.side {
+			min-width: 270px;
+			&.comnum {
+				padding-bottom: $space-small;
+			}
+			&.workflow {
+				border: solid 1px $shadow-color-strong;
+				padding: $space-small;
+				border-radius: $radius-small;
+			}
+		}
+		.area {
+			width: 100%;
+			height: 100%;
+			padding-right: $space-small;
+			textarea {
+				resize: none;
+				margin-top: $space-small;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.workflow-item {
+		display: table;
+		width: 100%;
+		padding-bottom: $space-smaller;
+		&:last-child {
+			padding-bottom: 0;
+		}
+		label {
+			display: table-cell;
+			width: 25px;
+		}
+		select {
+			display: table-cell;
+			width: 100%;
+		}
+	}
+}

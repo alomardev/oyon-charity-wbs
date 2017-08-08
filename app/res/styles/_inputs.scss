@@ -1,3 +1,4 @@
+$inset-shadow: inset 0 2px 3px $shadow-color-weak;
 input, button, textarea, select {
 	font-size: $input-font-size;
 }
@@ -21,10 +22,16 @@ input[type=text], input[type=password], input[type=number], select, textarea {
 	padding: $space-smaller / 2 $space-small;
 	border-radius: $radius-small;
 	border: 1px solid $shadow-color-stronger;
-	box-shadow: inset 0 3px 5px $shadow-color-weak;
+	box-shadow: $inset-shadow;
 	&:focus {
 		border-color: $input-color-hover;
-		box-shadow: inset 0 3px 5px $shadow-color-weak,
+		box-shadow: $inset-shadow,
 		0 0 15px $input-color-focus;
+	}
+	&[readonly] {
+		background-color: rgba(0, 0, 0, 0.04);
+		&:focus {
+			border-color: darken($input-color-hover, 10%);
+		}
 	}
 }

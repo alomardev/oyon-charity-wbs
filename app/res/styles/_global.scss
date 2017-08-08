@@ -125,7 +125,6 @@ footer {
 			}
 			&:last-child {
 				float: left;
-				display: none;
 			}
 		}
 		a {
@@ -257,4 +256,8 @@ footer {
 		padding: $space-smaller / 2 $space-small;
 		text-align: center;
 	}
+}
+
+.hidden {
+	display: none;
 }
