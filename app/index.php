@@ -1,5 +1,5 @@
-@@include("_top.html", {"title": "جمعية العيون الخيرية"})
-@@include("_header.html", {"active": "home"})
+@@include("_top.php", {"title": "جمعية العيون الخيرية"})
+@@include("_header.php", {"active": "home"})
 <div class='page-wrapper' id='home'>
 <div class='slide-show'>
 	<div class='slide-show-pager'></div>
@@ -23,8 +23,8 @@
 		</div>
 	</div>
 </div>
-<div id='cards'>
-	<div class='cards-row'>
+<div id='cards' class='u-cf'>
+	<div class="cards-col u-fr">
 		<div id='card-donation' class='card'>
 			<div class='subject'><h3>كيف تتبرع</h3></div>
 			<div class='content-box'>
@@ -32,8 +32,8 @@
 				<ol>
 					<li>الاستقطاع الشهري: ويتم عن طريق زيارة مقر الجمعية أو أحد فروع البنوك بتعبئة استمارة الاستقطاع الشهري</li>
 					<li>الصراف الآلي: ويتم عن طريق التحويل من حسابكم إلى حسابات الجمعية</li>
-					<li>إسعادنا بزيارة <a href='/contact.html'>مقر الجمعية</a> لتسليم التبرعات النقدية والعينية (غذائية، أجهزة، أثاث)</li>
-					<li>عمل شيك باسم (جمعية العيون الخيرية للخدمات الاجتماعية) والتفضل بتسليمه في مقر الجمعية أو <a href='/contact.html'>الاتصال بنا</a></li>
+					<li>إسعادنا بزيارة <a href="/contact.php">مقر الجمعية</a> لتسليم التبرعات النقدية والعينية (غذائية، أجهزة، أثاث)</li>
+					<li>عمل شيك باسم (جمعية العيون الخيرية للخدمات الاجتماعية) والتفضل بتسليمه في مقر الجمعية أو <a href="/contact.php">الاتصال بنا</a></li>
 				</ol>
 			</div>
 		</div>
@@ -43,22 +43,7 @@
 				<div class='loading-medium'></div>
 			</div>
 		</div>
-	</div>
-		<!-- <div id='card-news' class='card'>
-			<div class='subject'><h3>أحدث الأخبار</h3></div>
-			<div class='content-box'>
-						<a href='#' class='news-item'>
-							<img><div class='news-text'>خبر جديد<br>محتوى قصير</div>
-						</a>
-						<a href='#' class='news-item'>
-							<img><div class='news-text'>خبر جديد<br>محتوى قصير</div>
-						</a>
-						<a href='#' class='news-item'>
-							<img><div class='news-text'>خبر جديد<br>محتوى قصير</div>
-						</a>
-			</div>
-		</div> 
-		<div class='card'>
+		<!-- <div class='card'>
 			<div class='subject'><h3>روابط تهمك</h3></div>
 			<div id='content-box-links' class='content-box'>
 				<ul>
@@ -70,14 +55,30 @@
 				</ul>
 			</div>
 		</div> -->
-	<!-- <div class='cards-row'>
-		<div class='card'>
-			<div class='subject'><h3>راسلنا</h3></div>
-			<div id='content-box-contact-us' class='content-box'>
+	</div>
+	<div class='cards-col u-fr'>
+		<div id='card-news' class='card'>
+			<div class='subject'><h3>أحدث الأخبار</h3></div>
+			<div class='content-box'>
+						<a href='#' class='news-item'>
+							<img><div class='news-text'>خبر جديد<span>محتوى قصير</span></div>
+						</a>
+						<a href='#' class='news-item'>
+							<img><div class='news-text'>خبر جديد<span>محتوى قصير</span></div>
+						</a>
+						<a href='#' class='news-item'>
+							<img><div class='news-text'>خبر جديد<span>محتوى قصير</span></div>
+						</a>
 			</div>
 		</div>
-	</div> -->
+		<div id="card-twitter" class="card">
+			<div class="subject"><h3>تويتر</h3></div>
+			<div class="content-box">
+				<a class="twitter-timeline" data-lang="ar" data-height="400" href="https://twitter.com/gmaloyon">Tweets by gmaloyon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div>
+	</div>
 </div>
 </div>
-@@include("_footer.html")
-@@include("_bottom.html")
+@@include("_footer.php")
+@@include("_bottom.php")

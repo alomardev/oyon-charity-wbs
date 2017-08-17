@@ -1,5 +1,5 @@
-@@include("_top.html", {"title": "تواصل معنا"})
-@@include("_header.html", {"active": "contact"})
+@@include("_top.php", {"title": "تواصل معنا"})
+@@include("_header.php", {"active": "contact"})
 <div class='page-wrapper' id='contact'>
 <h1 class='page-title'>تواصل معنا</h1>
 <div class='map-container'>
@@ -19,5 +19,5 @@
 
 
 </div>
-@@include("_footer.html")
-@@include("_bottom.html")
+@@include("_footer.php")
+@@include("_bottom.php")

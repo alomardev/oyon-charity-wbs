@@ -1,5 +1,5 @@
-@@include("../_top.html", {"type": "site", "title": "خارطة الموقع"})
-@@include("../_header.html", {"active": "login"})
+@@include("../_top.php", {"type": "site", "title": "خارطة الموقع"})
+@@include("../_header.php", {"active": "login"})
 <div class='page-wrapper' id='login'>
 	<h1 class='page-title'>تسجيل الدخول إلى النظام</h1>
 
@@ -11,5 +11,5 @@
 			<div class='u-cf'><button name='submit' class='u-fl'>تسجيل الدخول</button></div>
 	</form>
 </div>
-@@include("../_footer.html")
-@@include("../_bottom.html")
+@@include("../_footer.php")
+@@include("../_bottom.php")

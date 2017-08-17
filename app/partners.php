@@ -1,5 +1,5 @@
-@@include("_top.html", {"title": "شركاؤنا"})
-@@include("_header.html", {"active": "partners"})
+@@include("_top.php", {"title": "شركاؤنا"})
+@@include("_header.php", {"active": "partners"})
 <div id='partners' class='page-wrapper'>
 <h1 class='page-title'>الشركاء</h1>
 <div class='row'>
@@ -47,5 +47,5 @@
 </div>
 </div>
 </div>
-@@include("_footer.html")
-@@include("_bottom.html")
+@@include("_footer.php")
+@@include("_bottom.php")

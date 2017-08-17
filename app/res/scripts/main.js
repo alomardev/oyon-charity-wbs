@@ -1,3 +1,30 @@
+var ibans_data = {
+	"al-rajhi": {
+		"title": "مصرف الراجحي",
+		"iban": "SA 2880 0004 6560 8010 0388 65",
+		"color": "#142C8E"
+	},
+	"al-ahli": {
+		"title": "البنك الأهلي التجاري",
+		"iban": "SA 6510 0000 0572 1669 0001 07",
+		"color": "#269C31"
+	},
+	"samba": {
+		"title": "مجموعة سامبا المالية",
+		"iban": "SA 2440 0000 0000 0406 9067 26",
+		"color": "#1D588B"
+	},
+	"al-riyadh": {
+		"title": "بنك الرياض",
+		"iban": "SA 6820 0000 0324 0025 9999 01",
+		"color": "#289387"
+	},
+	"al-inma": {
+		"title": "مصرف الإنماء",
+		"iban": "SA 8405 0000 6820 1149 1510 00",
+		"color": "#6C4B35"
+	}
+};
 $(function() {
 	/* clock */
 	if (exists('clock')) {
@@ -31,10 +58,10 @@ $(function() {
 
 		startTime();
 
-		var i = setInterval(startTime, 500);
+		setInterval(startTime, 500);
 	}
 	/* slide show */
-	var i = 0;
+	var ipointer = 0;
 	var images = ['banner1.jpg', 'banner2.jpg'];
 	$('.slide-show-next-btn').on('click', function() {
 		changeImage(1);
@@ -43,14 +70,14 @@ $(function() {
 		changeImage(-1);
 	});
 	var changeImage = function(increment) {
-		i += increment;
-		if (i > images.length - 1) {
-			i = 0;
+		ipointer += increment;
+		if (ipointer > images.length - 1) {
+			ipointer = 0;
 		}
-		if (i < 0) {
-			i = images.length - 1;
+		if (ipointer < 0) {
+			ipointer = images.length - 1;
 		}
-		$('.slide-show-image').css('background-image', "url(/res/" + images[i] + ")");
+		$('.slide-show-image').css('background-image', "url(/res/" + images[ipointer] + ")");
 	};
 	var interval = setInterval(function() {changeImage(1);}, 4000);
 
@@ -95,20 +122,11 @@ $(function() {
 	/* ibans button */
 	if (exists("card-ibans")) {
 		var ibansBox = $('#card-ibans .content-box');
-		var showIbans = function () {
-			$.ajax({
-				url: "/raw/ibans.json",
-				success: function(data) {
-					var rows = "";
-					for (var i in data) {
-						rows += "<tr style='background-color: " + data[i].color + ";'><td>" + data[i].title + "</td><td>" + data[i].iban + "</td></tr>";
-					}
-					ibansBox.html("<table><tbody>" + rows + "</tbody></table>");
-				}
-			});
-		};
-		$('#card-ibans .content-show-btn').on('click', showIbans());
-		showIbans();
+		var rows = "";
+		for (var i in ibans_data) {
+			rows += "<tr style='background-color: " + ibans_data[i].color + ";'><td>" + ibans_data[i].title + "</td><td>" + ibans_data[i].iban + "</td></tr>";
+		}
+		ibansBox.html("<table><tbody>" + rows + "</tbody></table>");
 	}
 
 	/* orgchart */
@@ -138,14 +156,14 @@ $(function() {
 	      ['المدير التنفيذي', 'a', 'الأستاذ ناصر بن خالد السبيعي']
       ]);
       data2.addRows([
-	      [{f: '<a href="/committees.html">اللجان العاملة</a>', v: 'b'}, '', ''],
-	      ['<a href="/committees.html#c7">الروضة</a>', 'b', 'الأستاذ صالح بن أحمد الماضي'],
-	      ['<a href="/committees.html#c5">المشاريع والتطوير</a>', 'b', 'الأستاذ فالح بن سعود العمر'],
-	      ['<a href="/committees.html#c4">العلاقات العامة والإعلام</a>', 'b', 'الأستاذ فهد بن سعد العساف'],
-	      ['<a href="/committees.html#c1">الإدارة المالية</a>', 'b', 'الأستاذ منصور جمعة العساف'],
-	      ['<a href="/committees.html#c6">الأيتام والأسر</a>', 'b', 'الأستاذ إبراهيم بن حمود الكليب'],
-	      [{f: '<a href="/committees.html#c2">اللجنة الاجتماعية</a>', v: 'c'}, 'b', 'الأستاذ أحمد بن عيسى الشاهين'],
-	      ['<a href="/committees.html#c3">اللجنة النسائية</a>', 'c', 'الأستاذ أحمد بن عيسى الشاهين']
+	      [{f: '<a href="/committees.php">اللجان العاملة</a>', v: 'b'}, '', ''],
+	      ['<a href="/committees.php?c=7">الروضة</a>', 'b', 'الأستاذ صالح بن أحمد الماضي'],
+	      ['<a href="/committees.php?c=5">المشاريع والتطوير</a>', 'b', 'الأستاذ فالح بن سعود العمر'],
+	      ['<a href="/committees.php?c=4">العلاقات العامة والإعلام</a>', 'b', 'الأستاذ فهد بن سعد العساف'],
+	      ['<a href="/committees.php?c=1">الإدارة المالية</a>', 'b', 'الأستاذ منصور جمعة العساف'],
+	      ['<a href="/committees.php?c=6">الأيتام والأسر</a>', 'b', 'الأستاذ إبراهيم بن حمود الكليب'],
+	      [{f: '<a href="/committees.php?c=2">اللجنة الاجتماعية</a>', v: 'c'}, 'b', 'الأستاذ أحمد بن عيسى الشاهين'],
+	      ['<a href="/committees.php?c=3">اللجنة النسائية</a>', 'c', 'الأستاذ أحمد بن عيسى الشاهين']
       ]);
       data3.addRows([
 	      [{f: 'القوى العاملة', v: 'd'}, '', ''],

@@ -1,5 +1,5 @@
-@@include("_top.html", {"title": "اللجان"})
-@@include("_header.html", {"active": "content"})
+@@include("_top.php", {"title": "اللجان"})
+@@include("_header.php", {"active": "content"})
 <div id='admin-content' class='page-wrapper text-content'>
 <h1 class='page-title'>المحتوى الإداري</h1>
 <div class='sub-links u-cf'>
@@ -21,5 +21,5 @@
 </div>
 <hr>
 </div>
-@@include("_footer.html")
-@@include("_bottom.html")
+@@include("_footer.php")
+@@include("_bottom.php")

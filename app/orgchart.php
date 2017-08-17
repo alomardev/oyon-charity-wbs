@@ -1,5 +1,5 @@
-@@include("_top.html", {"title": "الهيكل الإداري"})
-@@include("_header.html", {"active": "admins"})
+@@include("_top.php", {"title": "الهيكل الإداري"})
+@@include("_header.php", {"active": "orgchart"})
 <div class='page-wrapper' id='orgchart'>
 <h1 class='page-title'>الهيكل الإداري في جمعية العيون الخيرية</h1>
 <div id='chart1' class='chart-holder'><div class='loading-medium'></div></div>
@@ -24,12 +24,12 @@
 		<div class="member-item">خليفة  يوسف الشاهين<span>محاسب</span></div>
 		<div class="member-item">ناصر خالد السبيعي<span>مدير تنفيذي</span></div>
 		<div class="member-item">علي محمد السليم<span>محصل</span></div>
-		<div class="member-item">سعبد بن أحمد السهلي<span>باحث اجتماعي</span></div>
+		<div class="member-item">سعد أحمد السهلي<span>باحث اجتماعي</span></div>
 		<div class="member-item">عبدالله سالم العطوي<span>سائق</span></div>
 		<div class="member-item">عبدالرحمن العمر<span>مدخل بيانات (مؤقت)</span></div>
 	</div>
 </div>
 </div>
-@@include("_footer.html")
+@@include("_footer.php")
 <script src='https://www.gstatic.com/charts/loader.js'></script>
-@@include("_bottom.html")
+@@include("_bottom.php")

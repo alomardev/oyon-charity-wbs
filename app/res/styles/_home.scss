@@ -80,23 +80,16 @@
 		}
 	}
 	#cards {
-		padding: $space;
-		.cards-row {
-			display: table;
-			.card {
-				display: table-cell;
-				padding-left: $space-small;
-				&:last-child {
-					padding-left: 0;
-				}
+		.cards-col {
+			width: 50%;
+			padding: $space;
+			&:first-child {
+				padding-left: 0;
 			}
-			@media screen and (max-width: 750px) {
-				display: block;
-				.card {
-					padding-left: 0;
-					display: block;
-					width: 100%;
-					padding-bottom: $space-small;
+			.card {
+				padding-bottom: $space;
+				&:last-child {
+					padding-bottom: 0;
 				}
 			}
 		}
@@ -118,19 +111,6 @@
 				border-right: solid 1px $shadow-color-stronger;
 				border-bottom: solid 1px $shadow-color-stronger;
 			}
-		}
-	}
-	.content-show-btn {
-		padding: 0 $space-small;
-		min-height: 100px;
-		cursor: pointer;
-		background-repeat: no-repeat;
-		background-position: 50% 63%;
-		background-image: url('/res/ic_visibility_off.svg');
-		transition: background-color 100ms, background-image 200ms;
-		&:hover {
-			background-image: url('/res/ic_visibility_on.svg');
-			background-color: $shadow-color-weak;
 		}
 	}
 	#card-news {
@@ -163,19 +143,21 @@
 					width: 100%;
 					display: table-cell;
 					vertical-align: middle;
+					span {
+						display: block;
+						font-size: 0.8em;
+					}
 				}
 				@extends .u-cf;
 			}
 		}
 	}
 	#card-donation {
-		width: 50%;
 		.content-box {
 			padding: $space-smaller $space-small;
 		}
 	}
 	#card-ibans {
-		width: 50%;
 		.content-box {
 			table {
 				border-spacing: 2px;

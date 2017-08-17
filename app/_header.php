@@ -15,13 +15,13 @@
 		<nav id='main-nav'>
 			<ul>
 				<li @@if (active == 'home') {class='active'}><a href='/'>الرئيسية</a></li>
-				<li @@if (active == 'orgchart') {class='active'}><a href='/orgchart.html'>الهيكل الإداري</a></li>
-				<li @@if (active == 'content') {class='active'}><a href='/content.html'>الصفحة الإدارية</a></li>
-				<li @@if (active == 'committees') {class='active'}><a href='/committees.html'>اللجان العاملة</a></li>
-				<li @@if (active == 'partners') {class='active'}><a href='/partners.html'>شركاؤنا</a></li>
-				<li @@if (active == 'about') {class='active'}><a href='/about.html'>من نحن</a></li>
-				<li @@if (active == 'contact') {class='active'}><a href='/contact.html'>تواصل معنا</a></li>
-				<li class='hidden' @@if (active == 'login') {class='active'}><a href='/apps/login.html'>تسجيل الدخول</a></li>
+				<li @@if (active == 'orgchart') {class='active'}><a href="/orgchart.php">الهيكل الإداري</a></li>
+				<li @@if (active == 'content') {class='active'}><a href="/content.php">الصفحة الإدارية</a></li>
+				<li @@if (active == 'committees') {class='active'}><a href="/committees.php">اللجان العاملة</a></li>
+				<li @@if (active == 'partners') {class='active'}><a href="/partners.php">شركاؤنا</a></li>
+				<li @@if (active == 'about') {class='active'}><a href="/about.php">من نحن</a></li>
+				<li @@if (active == 'contact') {class='active'}><a href="/contact.php">تواصل معنا</a></li>
+				<li class='hidden' @@if (active == 'login') {class='active'}><a href="/apps/login.php">تسجيل الدخول</a></li>
 			</ul>
 		</nav>
 		<section id='main-section'>

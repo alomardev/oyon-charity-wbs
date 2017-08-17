@@ -7,8 +7,8 @@
 			<p>جميع الحقوق محفوظة &copy; جمعية العيون الخيرية، ٢٠١٧</p>
 		</div>
 		<!-- <ul id='footer-links' class='u-cf'>
-			<li class='u-fr'><a href='/sitemap.html'>خريطة الموقع</a></li>
-			<li class='u-fr'><a href='/privacy.html'>سياسة الخصوصية</a></li>
+			<li class='u-fr'><a href="/sitemap.php">خريطة الموقع</a></li>
+			<li class='u-fr'><a href="/privacy.php">سياسة الخصوصية</a></li>
 		</ul> -->
 		<ul id='social-links' class='u-cf'>
 			<li class='u-fl'><a target='_blank' href='https://twitter.com/gmaloyon' class='icon-block'><div class='icon-twitter'></div></a></li>

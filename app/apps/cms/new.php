@@ -1,7 +1,7 @@
-@@include("../../_top.html", {"type": "site", "title": "خارطة الموقع"})
-@@include("../../_header.html", {"active": "login"})
+@@include("../../_top.php", {"type": "site", "title": "خارطة الموقع"})
+@@include("../../_header.php", {"active": "login"})
 <div class='page-wrapper' id='cms-new'>
-@@include("_toolbar.html", {"active": "new"})
+@@include("_toolbar.php", {"active": "new"})
 	<form>
 		<div class="top-inputs u-cf">
 			<label class='u-fr'>العنوان: <input name='subject' type="text"></label>
@@ -56,5 +56,5 @@
 		</div>
 	</form>
 </div>
-@@include("../../_footer.html")
-@@include("../../_bottom.html")
+@@include("../../_footer.php")
+@@include("../../_bottom.php")

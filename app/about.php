@@ -1,5 +1,5 @@
-@@include("_top.html", {"title": "من نحن"})
-@@include("_header.html", {"active": "about"})
+@@include("_top.php", {"title": "من نحن"})
+@@include("_header.php", {"active": "about"})
 <div class='page-wrapper text-content' id='about'>
 <h1 class='page-title'>من نحن..</h1>
 <h2>عن الجمعية</h2>
@@ -32,5 +32,5 @@
 </ol>
 
 </div>
-@@include("_footer.html")
-@@include("_bottom.html")
+@@include("_footer.php")
+@@include("_bottom.php")
