@@ -25,8 +25,8 @@ var config = {
 		dev: 'build/development'
 	},
 	php: {
-		bin: iswin ? 'C:\\Users\\coop\\backend\\php\\php.exe' : '',
-		ini: iswin ? 'C:\\Users\\coop\\backend\\php\\php.ini' : ''
+		bin: iswin ? 'C:\\Users\\coop\\backend\\php\\php.exe' : '/usr/bin/php',
+		ini: iswin ? 'C:\\Users\\coop\\backend\\php\\php.ini' : '/etc/php.ini'
 	}
 };
 
