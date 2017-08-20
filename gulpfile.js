@@ -58,7 +58,7 @@ gulp.task('styles', ['clean:styles'], function() {
 
 /* Markup */
 gulp.task('markup', ['clean:markup'], function() {
-	return gulp.src([config.dir.app + '/**/*.{html,php}', '!' + config.dir.app + '/**/_*.html'])
+	return gulp.src([config.dir.app + '/**/*.{html,php}', '!' + config.dir.app + '/**/_*.{html,php}'])
 	.pipe(plumber())
 	.pipe(fileinclude())
 	.pipe(gulp.dest(config.dir.dev));
