@@ -76,6 +76,11 @@ gulp.task('copy:raw', ['clean:raw'], function() {
 	.pipe(gulp.dest(config.dir.dev + '/raw'));
 });
 
+gulp.task('copy:plugins', ['clean:plugins'], function() {
+	return gulp.src(config.dir.app + '/plugins/**/*')
+	.pipe(gulp.dest(config.dir.dev + '/plugins'));
+});
+
 /* Clean */
 gulp.task('clean:scripts', function() {
 	del.sync(config.dir.dev + '/res/*.js');
@@ -97,6 +102,10 @@ gulp.task('clean:raw', function() {
 	del.sync(config.dir.dev + '/raw');
 });
 
+gulp.task('clean:plugins', function() {
+	del.sync(config.dir.dev + '/plugins');
+});
+
 gulp.task('clean:empty', function() {
 	delempty.sync(config.dir.dev + '/');
 });
@@ -107,7 +116,7 @@ gulp.task('clean', function() {
 });
 
 /* Build */
-gulp.task('build', ['scripts', 'styles', 'markup', 'copy:images', 'copy:raw']);
+gulp.task('build', ['scripts', 'styles', 'markup', 'copy:images', 'copy:raw', 'copy:plugins']);
 gulp.task('build:dev', ['build']);
 gulp.task('build:prod', ['build'], function() {
 	del.sync(config.dir.prod);
@@ -139,6 +148,7 @@ gulp.task('watch', ['build'], function() {
 	gulp.watch(config.dir.app + '/res/images/*.{png,gif,jpg,jpeg,svg}', ['copy:images']);
 	
 	gulp.watch(config.dir.app + '/raw/**/*', ['copy:raw']);
+	gulp.watch(config.dir.app + '/plugins/**/*', ['copy:plugins']);
 });
 
 /* Server */

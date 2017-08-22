@@ -50,24 +50,8 @@ header {
 	.container {
 		padding-top: $space-large;
 		padding-bottom: $space;
-	}
-	#header-sub-logos {
-		a:last-child {
-			margin-left: $space-small;
-		}
-	}
-	@media screen and (max-width: 900px) {
-		#header-sub-logos {
-			width: 108 * 2 + $space-small;
-			padding-top: $space
-		}
-		#header-main-logo {
-			width: 96 + 318px;
-		}
-		#header-sub-logos, #header-main-logo {
-			float: none;
-			margin: 0 auto;
-		}
+		display: flex;
+		justify-content: space-between;
 	}
 }
 

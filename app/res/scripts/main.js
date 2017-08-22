@@ -61,26 +61,27 @@ $(function() {
 		setInterval(startTime, 500);
 	}
 	/* slide show */
-	var ipointer = 0;
-	var images = ['banner1.jpg', 'banner2.jpg'];
-	$('.slide-show-next-btn').on('click', function() {
-		changeImage(1);
-	});
-	$('.slide-show-prev-btn').on('click', function() {
-		changeImage(-1);
-	});
-	var changeImage = function(increment) {
-		ipointer += increment;
-		if (ipointer > images.length - 1) {
-			ipointer = 0;
-		}
-		if (ipointer < 0) {
-			ipointer = images.length - 1;
-		}
-		$('.slide-show-image').css('background-image', "url(/res/" + images[ipointer] + ")");
-	};
-	var interval = setInterval(function() {changeImage(1);}, 4000);
-
+	if (exists('slide-show')) {
+		var ipointer = 0;
+		var images = ['banner1.jpg', 'banner2.jpg'];
+		$('.slide-show-next-btn').on('click', function() {
+			changeImage(1);
+		});
+		$('.slide-show-prev-btn').on('click', function() {
+			changeImage(-1);
+		});
+		var changeImage = function(increment) {
+			ipointer += increment;
+			if (ipointer > images.length - 1) {
+				ipointer = 0;
+			}
+			if (ipointer < 0) {
+				ipointer = images.length - 1;
+			}
+			$('.slide-show-image').css('background-image', "url(/res/" + images[ipointer] + ")");
+		};
+		var interval = setInterval(function() {changeImage(1);}, 4000);
+	}
 	/* services */
 	if (exists("services")) {
 		var s = $("#services > .services-row > div");
