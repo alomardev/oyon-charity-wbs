@@ -4,25 +4,10 @@
 @@include("_toolbar.php", {"active": "new"})
 <div id="editor-container">
 	<form>
-		<textarea name="editor" id="editor"></textarea>
+		<div class='loading-medium'></div>
+		<textarea name="editor"></textarea>
 	</form>
 </div>
 </div>
 @@include("../../_footer.php")
-<script src="https://cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>
-<script>
-CKEDITOR.replace('editor', {
-	language: 'ar',
-	toolbar :
-		[
-			{ name: 'clipboard', items : [ 'Cut','Copy','Paste', '-','Undo','Redo' ] },
-			{ name: 'basicstyles', items : ['Bold', 'Italic'] },
-			{ name: 'links', items : [ 'Link','Unlink','Anchor' ] },
-			{ name: 'insert', items : [ 'Image','Table','HorizontalRule'] },
-			{ name: 'colors', items : [ 'TextColor','BGColor' ] },
-			{ name: 'paragraph', items : ['NumberedList','BulletedList'] },
-			{ name: 'tools', items : ['Maximize'] }
-		]
-});
-</script>
-@@include("../../_bottom.php")
+@@include("../../_bottom.php", {"scripts": ["https://cdn.ckeditor.com/4.7.2/standard/ckeditor.js", "/res/news-edit.js"]})

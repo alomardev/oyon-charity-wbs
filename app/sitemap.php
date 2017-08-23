@@ -3,4 +3,4 @@
 <h1>خارطة الموقع</h1>
 
 @@include("_footer.php")
-@@include("_bottom.php")
+@@include("_bottom.php", {"scripts": []})

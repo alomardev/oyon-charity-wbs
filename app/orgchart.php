@@ -32,4 +32,4 @@
 </div>
 @@include("_footer.php")
 <script src='https://www.gstatic.com/charts/loader.js'></script>
-@@include("_bottom.php")
+@@include("_bottom.php", {"scripts": []})

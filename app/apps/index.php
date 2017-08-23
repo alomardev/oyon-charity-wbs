@@ -2,4 +2,4 @@
 @@include("../_header.php", {"active": "login"})
 
 @@include("../_footer.php")
-@@include("../_bottom.php")
+@@include("../_bottom.php", {"scripts": []})

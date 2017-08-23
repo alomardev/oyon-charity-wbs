@@ -4,4 +4,4 @@
 <h1>سياسة الخصوصية</h1>
 </div>
 @@include("_footer.php")
-@@include("_bottom.php")
+@@include("_bottom.php", {"scripts": []})

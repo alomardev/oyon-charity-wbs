@@ -4,4 +4,4 @@
 @@include("_toolbar.php", {"active": "list"})
 </div>
 @@include("../../_footer.php")
-@@include("../../_bottom.php")
+@@include("../../_bottom.php", {"scripts": []})

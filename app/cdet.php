@@ -18,4 +18,4 @@
 
 </div>
 @@include("_footer.php")
-@@include("_bottom.php")
+@@include("_bottom.php", {"scripts": []})
