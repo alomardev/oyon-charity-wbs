@@ -12,7 +12,7 @@
 	<div class='container'>
 		<nav id='main-nav'>
 			<ul>
-				<li><a href='/'>الرئيسية</a></li>
+				<li @@if (active == 'home') {class='active'}><a href='/'>الرئيسية</a></li>
 				<li class='dropdown-nav'>
 					<div>الإدارة</div>
 					<ul>
