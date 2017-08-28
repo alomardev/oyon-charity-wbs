@@ -1,4 +1,10 @@
 $(function() {
+	
+	$("input[name=date]").datepicker({
+		autoHide: true,
+		format: 'yyyy-mm-dd'
+	});
+
 	CKEDITOR.replace('editor', {
 		language: 'ar',
 		toolbar :
@@ -14,40 +20,43 @@ $(function() {
 	CKEDITOR.on('instanceReady', function() {
 		$(".loading-medium").css("display", "none");
 	});
+	var action = "";
 	$("button[name=save]").on('click', function() {
-		message("جاري الحفظ...");
-	});
-	$("button[name=publish]").on('click', function() {
-		message("جاري النشر...");
+		message("جاري الحفظ...", false);
+		action = "save";
 	});
 	$("button[name=delete]").on('click', function() {
-		message("جاري الحذف...");
+		message("جاري الحذف...", true);
+		action = "delete";
 	});
 
-	var submitted = false;
 	var form = $("form[name=news-form]");
 	form.submit(function(e) {
+
 		e.preventDefault();
-		if (!submitted) {
-			submitted = true;
 			
 			$.ajax({
 				url: "/phps/editor-requests.php",
 				type: "POST",
-				data: form.serialize(),
+				data: form.serialize()+"&action="+action+"&content="+CKEDITOR.instances['editor'].getData(),
 				success: function(data) {
 					if (data.error) {
-						submitted = false;
 						message(data.message, true);
 					} else {
+						if (data.message.startsWith("inserted")) {
+							window.location="/apps/nms/edit.php?id="+data.message.split("|")[1];
+						}
+						if (data.message.startsWith("deleted")) {
+							window.location="/apps/nms/list.php";
+						}
 						message(data.message, false);
 					}
 				},
 				error: function(xhr, status, error) {
+					message("لم تتم العملية!... عاود المحاولة.");
 				}
 			});
-		}
-	});
+		});
 });
 
 function message(message, error) {

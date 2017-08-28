@@ -6,30 +6,41 @@ $id = $id == 'new' ? 0 : $id;
 <div class='page-wrapper' id='news-edit'>
 @@include("_toolbar.php", {"active": "edit"})
 <div id="editor-container">
+
+<?php
+$news_post = NULL;
+if ($id > 0) {
+	$result = select("SELECT * FROM `news_post` WHERE `id`=$id");
+	if ($result) {
+		$news_post = mysqli_fetch_assoc($result);
+	}
+}
+?>
+
 	<form name='news-form' action='POST'>
+		<input type="hidden" name='id' value="<?php echo $id; ?>">
 		<div class="inputs-container">
 			<div class='input fill-width inputs-container'>
 				<label class='input label' for="title">العنوان:</label>
-				<input class='input fill-width' type="text" name='title'>
+				<input class='input fill-width' type="text" name='title' value="<?php echo is_null($news_post) ? "" : $news_post["title"]; ?>">
 			</div>
-			<label class='input' for="date">التاريخ: <input type="date" name='date'></label>
+			<label class='input' for="date">التاريخ: <bdo dir="ltr"><input type="text" name='date'></bdo><!-- <input type="date" name='date' value="<?php echo is_null($news_post) ? "" : $news_post["date"]; ?>"> --></label>
 		</div>
 		<hr>
 		<div class='loading-medium'></div>
-		<textarea name="editor"></textarea>
+		<textarea id='editor'><?php echo is_null($news_post) ? "" : $news_post["content"]; ?></textarea>
 		<hr>
 		<div class="inputs-container">
-			<label class='input label' for="title">رابط صورة الخبر:</label>
-			<input class='input fill-width' type="text" name='title'>
+			<label class='input label' for="header_image">رابط صورة الخبر:</label>
+			<input class='input fill-width' type="text" name='header_image' value="<?php echo is_null($news_post) ? "" : $news_post["header_image"]; ?>">
 		</div>
 		<hr>
 		<div class="actions-container u-cf">
 			<div id='message' class="u-fr"></div>
-			<button class='u-fl' name='publish'>نشر</button>
 			<button class='u-fl' name='save'>حفظ</button>
 			<button class='u-fl danger' name='delete'>حذف</button>
 		</div>
 	</form>
 </div>
 </div>
-@@include("../../_footer.php", {"scripts": ["https://cdn.ckeditor.com/4.7.2/standard/ckeditor.js", "/res/news-edit.js"]})
+@@include("../../_footer.php", {"scripts": ["/res/datepicker.min.js", "https://cdn.ckeditor.com/4.7.2/standard/ckeditor.js", "/res/news-edit.js"]})

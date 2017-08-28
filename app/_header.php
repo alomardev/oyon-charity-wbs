@@ -2,6 +2,8 @@
 set_include_path($_SERVER['DOCUMENT_ROOT']);
 require_once("phps/app.php");
 
+$app_links_nav = false;
+
 /* authentication */
 
 if (inPath('apps/login.php')) {
@@ -13,6 +15,8 @@ if (inPath('apps/login.php')) {
 	if (!getUser()) {
 		header('Location: /apps/login.php');
 		exit;
+	} else {
+		$app_links_nav = true;
 	}
 }
 if (inPath('apps/nms')) {
@@ -69,16 +73,17 @@ if (inPath('apps/bms')) {
 					</ul>
 				</li>
 				<li @@if (active == 'contact') {class='active'}><a href="/contact.php">تواصل معنا</a></li>
-			<?php if ($user = getUser()) { ?><li class='dropdown-nav'>
+				<?php if ($user = getUser()) { ?>
+				<li class='dropdown-nav'>
 					<div><?php echo $user['nickname']; ?></div>
 					<ul>
 						<li><a href="/apps">الخدمات</a></li>
 						<li><a href="/apps/logout.php">تسجيل الخروج</a></li>
 					</ul>
 				</li>
-			<?php } else { ?>
+				<?php } else { ?>
 				<li @@if (active == 'login') {class='active'}><a href="/apps/login.php">تسجيل الدخول</a></li>
-			<?php } ?>
+				<?php } ?>
 			</ul>
 		</nav>
 		<section id='main-section'>

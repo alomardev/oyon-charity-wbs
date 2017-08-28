@@ -18,12 +18,14 @@ CREATE TABLE `user_app`
 CREATE TABLE `news_post`
 (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `author_id` INT NOT NULL,
   `title` VARCHAR(25) NOT NULL,
-  `content` TEXT NOT NULL,
   `date` DATETIME NOT NULL,
+  `content` TEXT NOT NULL,
+  `header_image` VARCHAR(255),
   `likes` INT DEFAULT 0,
   `visits` INT DEFAULT 0,
-  `author_id` INT NOT NULL,
+  `published` BOOLEAN DEFAULT 0,
   PRIMARY KEY (`id`)
 );
 
@@ -44,6 +46,8 @@ CREATE TABLE `slideshow_image`
   `link` VARCHAR(25) NOT NULL,
   PRIMARY KEY (`index`)
 );
+
+ALTER TABLE `news_post` AUTO_INCREMENT=1000;
 
 INSERT INTO `user` (`id`, `username`, `password`, `nickname`) VALUES
   (1, "root admin", "123", "مدير الموقع"),

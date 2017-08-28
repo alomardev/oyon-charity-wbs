@@ -57,7 +57,7 @@ select {
 }
 
 .actions-container {
-	button {
+	button, input[type=submit] {
 		margin-right: $space-smaller;
 		&:first-child {
 			margin-right: 0;

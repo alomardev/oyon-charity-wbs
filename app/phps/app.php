@@ -118,10 +118,10 @@ function inPath($check_path) {
 	$root_offset = strlen($_SERVER['DOCUMENT_ROOT']);
 	$file_path = substr($_SERVER['SCRIPT_FILENAME'], $root_offset + 1);
 	
-	$file_seq = explode('/', $file_path);
+	$file_seq = preg_split("/(\\\\|\\/)/", $file_path);
 	$file_seq_len = count($file_seq);
 
-	$check_seq = explode('/', $check_path);
+	$check_seq = preg_split("/(\\\\|\\/)/", $check_path);
 	$check_seq_len = count($check_seq);
 
 	if ($file_seq_len < $check_seq_len) {

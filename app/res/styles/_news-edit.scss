@@ -1,9 +1,12 @@
 #news-edit {
-	*[name=editor] {
+	#editor {
 		border-radius: 0;
 		border: 0;
 		shadow: none;
 		visibility: hidden;
 	}
-	
+	input[name=date] {
+		width: 120px;
+		text-align: center;
+	}
 }
