@@ -1,5 +1,4 @@
-@@include("_top.php", {"title": "اللجان"})
-@@include("_header.php", {"active": "none"})
+@@include("_header.php", {"title": "اللجان", "active": "none"})
 <div id='committee-details' class='page-wrapper text-content'>
 <div id='c1-details'>
 </div>
@@ -17,5 +16,4 @@
 </div>
 
 </div>
-@@include("_footer.php")
-@@include("_bottom.php")
+@@include("_footer.php", {"scripts": []})

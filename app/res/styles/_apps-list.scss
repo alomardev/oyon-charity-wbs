@@ -1,0 +1,26 @@
+#apps-list {
+	ul {
+		list-style: none;
+		margin-top: $space-large;
+		margin-bottom: $space-smaller;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 0;
+		text-align: center;
+		li {
+			display: inline-block;
+			margin-left: $space-small / 2;
+			margin-right: $space-small / 2;
+			a {
+				@include decorated-block($accent-color);
+				padding: $space-smaller $space-small;
+				border-radius: $radius-small;
+				font-size: 1.2em;
+				transition: background-color 150ms;
+				&:hover {
+					background-color: lighten($accent-color, 10%);
+				}
+			}
+		}
+	}
+}

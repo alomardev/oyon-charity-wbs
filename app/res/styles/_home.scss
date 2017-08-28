@@ -29,12 +29,22 @@
 		}
 	}
 	#services {
+		display: table;
 		padding: $space-small;
+		margin-top: $space;
+		margin-bottom: $space;
 		> h2 {
-			font-weight: normal;
+			display: table-cell;
+			font-size: 1.05em;
+			margin-left: $space-small;
+			font-weight: bold;
 			text-align: center;
+			float: right;
+			min-width: 10px;
 		}
 		> .services-row {
+			width: 800px;
+			display: table-cell;
 			@include decorated-block($accent-color);
 			border-radius: $radius-large;
 			div {
@@ -76,7 +86,7 @@
 			background-size: $banner-width $banner-height;
 			background-position: 50%;
 			width: 100%;
-			height: 260px;
+			height: 180px;
 		}
 	}
 	#cards {

@@ -50,3 +50,6 @@ $input-color: #217877;
 $input-color-text-border: #2A9B99;
 $input-color-hover: saturate(lighten($input-color, 10%), 20%);
 $input-color-focus: transparentize(saturate(lighten($input-color, 10%), 20%), 0.5);
+
+$input-danger-color: #770000;
+$input-normal-color: desaturate(lighten($input-color, 6%), 75%);

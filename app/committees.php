@@ -1,5 +1,4 @@
-@@include("_top.php", {"title": "اللجان"})
-@@include("_header.php", {"active": "committees"})
+@@include("_header.php", {"title": "اللجان", "active": "committees"})
 <div id='committees' class='page-wrapper text-content'>
 <h1 class='page-title'>اللجان العاملة</h1>
 <h2 id='c1'>اللجنة المالية والإدارية</h2>
@@ -43,5 +42,4 @@
 المدرسية والعمل العام. <small class='hidden'><a href="/cdet.php?c=7">تعرف أكثر...</a></small></p>
 
 </div>
-@@include("_footer.php")
-@@include("_bottom.php")
+@@include("_footer.php", {"scripts": []})

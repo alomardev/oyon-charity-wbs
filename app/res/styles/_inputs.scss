@@ -18,7 +18,7 @@ button, input[type=submit] {
 	}
 }
 
-input[type=text], input[type=password], input[type=number], select, textarea {
+input[type=text], input[type=password], input[type=number],input[type=date], select, textarea {
 	padding: $space-smaller / 2 $space-small;
 	border-radius: $radius-small;
 	border: 1px solid $shadow-color-stronger;
@@ -38,4 +38,43 @@ input[type=text], input[type=password], input[type=number], select, textarea {
 
 select {
 	padding: $space-smaller / 2 $space-smaller / 2;
+}
+
+.inputs-container {
+	display: flex;
+	.input {
+		margin-left: $space-small;
+		&.label {
+			margin-left: $space-smaller;
+		}
+		&:last-child {
+			margin-left: 0;
+		}
+	}
+	.fill-width {
+		flex: 1 0 auto;
+	}
+}
+
+.actions-container {
+	button {
+		margin-right: $space-smaller;
+		&:first-child {
+			margin-right: 0;
+		}
+		&.danger {
+			background-color: $input-danger-color;
+			border-color: darken($input-danger-color, 10%);
+			&:hover {
+				background-color: lighten($input-danger-color, 10%);
+			}
+		}
+		&.normal {
+			background-color: $input-normal-color;
+			border-color: darken($input-normal-color, 10%);
+			&:hover {
+				background-color: lighten($input-normal-color, 10%);
+			}	
+		}
+	}
 }

@@ -1,7 +1,6 @@
-@@include("_top.php", {"title": "جمعية العيون الخيرية"})
-@@include("_header.php", {"active": "home"})
+@@include("_header.php", {"title": "جمعية العيون الخيرية", "active": "home"})
 <div class='page-wrapper' id='home'>
-<div class='slide-show'>
+<div id='slide-show' class='slide-show'>
 	<div class='slide-show-pager'></div>
 	<div class='slide-show-next-btn icon-slide-show-next'></div>
 	<div class='slide-show-prev-btn icon-slide-show-prev'></div>
@@ -74,11 +73,10 @@
 		<div id="card-twitter" class="card">
 			<div class="subject"><h3>تويتر</h3></div>
 			<div class="content-box">
-				<a class="twitter-timeline" data-lang="ar" data-height="400" href="https://twitter.com/gmaloyon">Tweets by gmaloyon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<a class="twitter-timeline" data-lang="ar" data-height="300" href="https://twitter.com/gmaloyon">Tweets by gmaloyon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
 	</div>
 </div>
 </div>
-@@include("_footer.php")
-@@include("_bottom.php")
+@@include("_footer.php", {"scripts": []})

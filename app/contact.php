@@ -1,5 +1,4 @@
-@@include("_top.php", {"title": "تواصل معنا"})
-@@include("_header.php", {"active": "contact"})
+@@include("_header.php", {"title": "تواصل معنا", "active": "contact"})
 <div class='page-wrapper' id='contact'>
 <h1 class='page-title'>تواصل معنا</h1>
 <div class='map-container'>
@@ -14,5 +13,4 @@
 	<tr><td>البريد الإلكتروني</td><td colspan='3'><a href='mailto:oyon-charity@hotmail.com'>oyon-charity@hotmail.com</a></td></tr>
 </tbody></table>
 </div>
-@@include("_footer.php")
-@@include("_bottom.php")
+@@include("_footer.php", {"scripts": []})

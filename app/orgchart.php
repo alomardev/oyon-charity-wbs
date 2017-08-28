@@ -1,5 +1,4 @@
-@@include("_top.php", {"title": "الهيكل الإداري"})
-@@include("_header.php", {"active": "orgchart"})
+@@include("_header.php", {"title": "الهيكل الإداري", "active": "orgchart"})
 <div class='page-wrapper' id='orgchart'>
 <h1 class='page-title'>الهيكل الإداري في جمعية العيون الخيرية</h1>
 <div id='chart1' class='chart-holder'><div class='loading-medium'></div></div>
@@ -30,6 +29,5 @@
 	</div>
 </div>
 </div>
-@@include("_footer.php")
 <script src='https://www.gstatic.com/charts/loader.js'></script>
-@@include("_bottom.php")
+@@include("_footer.php", {"scripts": []})

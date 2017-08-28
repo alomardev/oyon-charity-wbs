@@ -7,12 +7,15 @@
 			input {
 				width: 100%;
 			}
-			&:nth-child(3) {
+			&:nth-child(3), &:nth-child(5) {
 				margin-top: $space-small;
 			}
-			&:last-child {
-				margin-top: $space;
-			}
+		}
+
+		#message {
+			text-align: center;
+			padding-top: $space-smaller;
+			font-size: 0.8em;
 		}
 	}
 }
