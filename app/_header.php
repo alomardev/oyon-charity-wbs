@@ -41,12 +41,12 @@ if (inPath('apps/bms')) {
 <body>
 <header>
 	<div class='container'>
+		<a class='u-fl' target="_blank" href='https://mlsd.gov.sa'><img src='/res/mlsd-logo.png' width='108' height='86'></a>
 		<a id='header-main-logo' class='u-cf' href='/' class='u-cf'>
 			<img class='u-fr' src='/res/charity-logo.png' width='96' height='86'>
 			<img class='u-fr' src='/res/charity-title.png' width='317' height='86'>
 		</a>
 		<a class='u-fl' target="_blank" href='http://vision2030.gov.sa'><img src='/res/vision-logo.png' width='108' height='86'></a>
-		<a class='u-fl' target="_blank" href='https://mlsd.gov.sa'><img src='/res/mlsd-logo.png' width='108' height='86'></a>
 	</div>
 </header>
 <div id='main-wrapper'>

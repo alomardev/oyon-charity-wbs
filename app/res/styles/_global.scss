@@ -47,6 +47,9 @@ header {
 	a, img {
 		display: block;
 	}
+	a:first-child {
+		margin-right: -20px;
+	}
 	.container {
 		padding-top: $space-large;
 		padding-bottom: $space;
@@ -134,8 +137,6 @@ footer {
 
 				> ul {
 					background: white;
-					border-bottom-left-radius: $radius-small;
-					border-bottom-right-radius: $radius-small;
 					list-style: none;
 					display: none;
 					border-top: 1px solid black;
@@ -158,8 +159,6 @@ footer {
 
 						&:last-child {
 							a {
-								border-bottom-left-radius: $radius-small;
-								border-bottom-right-radius: $radius-small;
 								border-top: none;
 							}
 						}
@@ -177,9 +176,6 @@ footer {
 				
 				&:last-child > ul {
 					left: 0;
-					> li a {
-						border-bottom-left-radius: 0;
-					}
 				}
 			}
 		}
