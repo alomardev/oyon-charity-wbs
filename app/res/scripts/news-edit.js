@@ -16,6 +16,10 @@ $(function() {
 		$(".loading-medium").css("display", "none");
 	});
 	var action = "";
+	$("button[name=preview]").on('click', function() {
+		message("جاري الحفظ والمعاينة...", false);
+		action = "preview";
+	});
 	$("button[name=save]").on('click', function() {
 		message("جاري الحفظ...", false);
 		action = "save";
@@ -40,11 +44,13 @@ $(function() {
 					} else {
 						if (data.message.startsWith("inserted")) {
 							window.location="/apps/nms/edit.php?id="+data.message.split("|")[1];
-						}
-						if (data.message.startsWith("deleted")) {
+						} else if (data.message.startsWith("deleted")) {
 							window.location="/apps/nms/list.php";
+						} else if (data.message.startsWith("preview")) {
+							window.location="/apps/nms/preview.php?id="+data.message.split("|")[1];
+						} else {
+							message(data.message, false);
 						}
-						message(data.message, false);
 					}
 				},
 				error: function(xhr, status, error) {

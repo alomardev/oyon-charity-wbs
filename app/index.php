@@ -1,4 +1,38 @@
 @@include("_header.php", {"title": "جمعية العيون الخيرية", "active": "home"})
+
+<?php
+$hps = array();
+
+$result = select("SELECT * FROM `highlighted_news_post;");
+
+if ($result) {
+	$where = "WHERE";
+	$first = true;
+	while ($row = mysqli_fetch_assoc($result)) {
+		$hps[] = $row['post_id'];
+
+		if (!$first) {
+			$where .= " or";
+		}
+		
+		$where .= " `id`=$row[post_id]";
+
+		$first = false;
+	}
+}
+
+$posts_info[] = array();
+if (!empty($hps)) {
+	$result = select("SELECT * FROM `news_post` $where;");
+	while ($row = mysqli_fetch_assoc($result)) {
+		$posts_info[] = $row;
+	}
+}
+
+print_r($posts_info);
+?>
+
+
 <div class='page-wrapper' id='home'>
 <div id='slide-show' class='slide-show'>
 	<div class='slide-show-pager'></div>
@@ -73,7 +107,7 @@
 		<div id="card-twitter" class="card">
 			<div class="subject"><h3>تويتر</h3></div>
 			<div class="content-box">
-				<a class="twitter-timeline" data-lang="ar" data-height="300" href="https://twitter.com/gmaloyon">Tweets by gmaloyon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<a class="twitter-timeline" data-lang="ar" data-height="300" href="https://twitter.com/gmaloyon">تغريدات الجمعية</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
 	</div>

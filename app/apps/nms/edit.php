@@ -51,10 +51,12 @@ if ($id > 0) {
 		<div class="inputs-container">
 			<label class='input label' for="header_image">رابط الصورة:</label>
 			<input class='input fill-width' type="text" name='header_image' value="<?php echo is_null($news_post) ? "" : $news_post["header_image"]; ?>">
+			<label class='input'><input type="checkbox" name='publish' value='1' <?php if($news_post['published']) echo "checked"; ?>> نشر</label>
 		</div>
 		<hr>
 		<div class="actions-container u-cf">
 			<div id='message' class="u-fr"></div>
+			<button class='u-fl' name='preview'>حفظ ومعاينة</button>
 			<button class='u-fl' name='save'>حفظ</button>
 			<button class='u-fl danger' name='delete'>حذف</button>
 		</div>

@@ -1,0 +1,29 @@
+$header-image-height: 100px;
+
+.post-header-image {
+	height: $header-image-height;
+	background-size: cover;
+	background-position: 50%;
+	border-radius: $radius-small;
+}
+
+.post-title {
+	position: relative;
+	margin-top: $space-small;
+	border-bottom: 1px solid $shadow-color;
+	h2 {
+		font-size: 1.1em;
+		padding: $space-smaller 0;
+	}
+	.date {
+		position: absolute;
+		bottom: 0;
+		margin-bottom: $space-smaller;
+		left: 0;
+		font-size: 0.7em;
+	}
+}
+
+.post-content {
+	padding: $space-small 0;
+}

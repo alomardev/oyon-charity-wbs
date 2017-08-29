@@ -22,7 +22,6 @@ CREATE TABLE `user_app`
 CREATE TABLE `news_post`
 (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `author_id` INT NOT NULL,
   `title` VARCHAR(255) NOT NULL,
   `date` DATETIME NOT NULL,
   `content` TEXT NOT NULL,
@@ -31,6 +30,11 @@ CREATE TABLE `news_post`
   `visits` INT DEFAULT 0,
   `published` BOOLEAN DEFAULT 0,
   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `highlighted_news_post`
+(
+  `post_id` INT NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE `comments`

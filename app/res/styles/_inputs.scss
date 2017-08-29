@@ -1,20 +1,37 @@
 $inset-shadow: inset 0 2px 3px $shadow-color-weak;
-input, button, textarea, select {
+input, button, textarea, select, .button {
 	font-size: $input-font-size;
 }
-button, input[type=submit] {
+button, input[type=submit], .button {
 	cursor: pointer;
 	@include decorated-block($input-color, false);
 	padding: $space-smaller / 2 $space-small;
 	border-radius: $radius-small;
 	transition: background-color 100ms;
 	&:hover {
+		color: white;
 		background-color: $input-color-hover;
 		border-color: $input-color;
 	}
 	&:focus {
+		color: white;
 		box-shadow: inset 0 1px 0 $highlight-color-stronger,
 		0 0 15px $input-color-focus;
+	}
+
+	&.danger {
+		background-color: $input-danger-color;
+		border-color: darken($input-danger-color, 10%);
+		&:hover {
+			background-color: lighten($input-danger-color, 10%);
+		}
+	}
+	&.normal {
+		background-color: $input-normal-color;
+		border-color: darken($input-normal-color, 10%);
+		&:hover {
+			background-color: lighten($input-normal-color, 10%);
+		}	
 	}
 }
 
@@ -57,24 +74,12 @@ select {
 }
 
 .actions-container {
-	button, input[type=submit] {
-		margin-right: $space-smaller;
-		&:first-child {
-			margin-right: 0;
+	button, input[type=submit], .button {
+		&.u-fl {
+			margin-right: $space-smaller;
 		}
-		&.danger {
-			background-color: $input-danger-color;
-			border-color: darken($input-danger-color, 10%);
-			&:hover {
-				background-color: lighten($input-danger-color, 10%);
-			}
-		}
-		&.normal {
-			background-color: $input-normal-color;
-			border-color: darken($input-normal-color, 10%);
-			&:hover {
-				background-color: lighten($input-normal-color, 10%);
-			}	
+		&.u-fr {
+			margin-left: $space-smaller;
 		}
 	}
 }
