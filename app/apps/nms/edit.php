@@ -24,14 +24,15 @@ if ($id > 0) {
 				<label class='input label' for="title">العنوان:</label>
 				<input class='input fill-width' type="text" name='title' value="<?php echo is_null($news_post) ? "" : $news_post["title"]; ?>">
 			</div>
-			<label class='input' for="date">التاريخ: <bdo dir="ltr"><input type="text" name='date'></bdo><!-- <input type="date" name='date' value="<?php echo is_null($news_post) ? "" : $news_post["date"]; ?>"> --></label>
+			<label class='input' title="التاريخ بالميلادي">التاريخ: <bdo dir="ltr"><input type="text" name='date-year' placeholder="السنة"> - <input type="number" name='date-month' placeholder="الشهر"> - <input type="number" name='date-day' placeholder="اليوم"></bdo></label>
+			<label class='input' title="الوقت بنظام ٢٤">الوقت: <bdo dir="ltr"><input type="number" name='time-hours' placeholder="س">:<input type="number" name='time-minutes' placeholder="د"></bdo></label>
 		</div>
 		<hr>
 		<div class='loading-medium'></div>
 		<textarea id='editor'><?php echo is_null($news_post) ? "" : $news_post["content"]; ?></textarea>
 		<hr>
 		<div class="inputs-container">
-			<label class='input label' for="header_image">رابط صورة الخبر:</label>
+			<label class='input label' for="header_image">رابط الصورة:</label>
 			<input class='input fill-width' type="text" name='header_image' value="<?php echo is_null($news_post) ? "" : $news_post["header_image"]; ?>">
 		</div>
 		<hr>

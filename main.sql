@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS `charity-main`;
+CREATE DATABASE `charity-main`;
+USE `charity-main`;
+
 CREATE TABLE `user`
 (
   `id` INT NOT NULL,

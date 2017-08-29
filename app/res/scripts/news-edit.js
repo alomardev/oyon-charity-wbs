@@ -1,9 +1,4 @@
 $(function() {
-	
-	$("input[name=date]").datepicker({
-		autoHide: true,
-		format: 'yyyy-mm-dd'
-	});
 
 	CKEDITOR.replace('editor', {
 		language: 'ar',
@@ -20,6 +15,12 @@ $(function() {
 	CKEDITOR.on('instanceReady', function() {
 		$(".loading-medium").css("display", "none");
 	});
+	CKEDITOR.on('click', function(e) {
+		console.log(e );
+	});
+		$("#editor").click(function() {
+			console.log("clicked");
+		});
 	var action = "";
 	$("button[name=save]").on('click', function() {
 		message("جاري الحفظ...", false);

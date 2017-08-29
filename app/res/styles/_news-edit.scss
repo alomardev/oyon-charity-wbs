@@ -5,8 +5,21 @@
 		shadow: none;
 		visibility: hidden;
 	}
-	input[name=date] {
-		width: 120px;
+	input[name^=date], input[name^=time] {
+		width: 45px;
 		text-align: center;
+	}
+	input[name^=date] {
+		width: 60px;
+	}
+	input[name=date-year] {
+		width: 80px;
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	    /* display: none; <- Crashes Chrome on hover */
+	    -webkit-appearance: none;
+	    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 	}
 }

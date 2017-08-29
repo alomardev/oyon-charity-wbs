@@ -10,8 +10,22 @@ if (!authorized(APP_NMS) || !isset($_POST["id"])) {
 
 $id = $_POST["id"];
 $title = isset($_POST["title"]) ? "'".$_POST["title"]."'" : "";
-$date = isset($_POST["date"]) ? "'".$_POST["date"]."'" : "CURRENT_TIMESTAMP";
 $content = isset($_POST["content"]) ? "'".htmlspecialchars($_POST["content"])."'" : "!";
+
+$year = isset($_POST["date-year"]) ? $_POST["date-year"] : "";
+$month = isset($_POST["date-month"]) ? $_POST["date-month"] : "";
+$day = isset($_POST["date-day"]) ? $_POST["date-day"] : "";
+$hours = isset($_POST["time-hours"]) ? $_POST["time-hours"] : "";
+$minutes = isset($_POST["time-minutes"]) ? $_POST["time-minutes"] : "";
+
+if (empty($year) || empty($month) || empty($day)) {
+	$date = "NOW()"
+} else {
+	$hours = empty($hours) ? "00" : $hours;
+	$minutes = empty($minutes) ? "00" : $minutes;
+	$date = "'$year-$month-$day $hours:$minutes:00'";
+}
+
 $header_image = isset($_POST["header_image"]) ? "'".$_POST["header_image"]."'" : "";
 $author_id = getUser()['id'];
 $action = isset($_POST["action"]) ? $_POST["action"] : "";
