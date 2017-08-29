@@ -137,6 +137,11 @@ function inPath($check_path) {
 	return true;
 }
 
+function validURL($url) {
+	$file_headers = @get_headers($url);
+	return !(!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found');
+}
+
 function feedback($message, $error = false) {
 	header('Content-Type: application/json; charset=utf-8');
 	return json_encode(array("message" => $message, "error" => $error));

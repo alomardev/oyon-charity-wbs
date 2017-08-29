@@ -23,7 +23,7 @@ CREATE TABLE `news_post`
 (
   `id` INT NOT NULL AUTO_INCREMENT,
   `author_id` INT NOT NULL,
-  `title` VARCHAR(25) NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
   `date` DATETIME NOT NULL,
   `content` TEXT NOT NULL,
   `header_image` VARCHAR(255),

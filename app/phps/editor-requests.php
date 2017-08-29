@@ -19,7 +19,7 @@ $hours = isset($_POST["time-hours"]) ? $_POST["time-hours"] : "";
 $minutes = isset($_POST["time-minutes"]) ? $_POST["time-minutes"] : "";
 
 if (empty($year) || empty($month) || empty($day)) {
-	$date = "NOW()"
+	$date = "NOW()";
 } else {
 	$hours = empty($hours) ? "00" : $hours;
 	$minutes = empty($minutes) ? "00" : $minutes;
