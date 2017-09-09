@@ -1,0 +1,23 @@
+#show-post {
+	#post-container {
+		width: 67%;
+		float: right;
+	}
+	.most-visited-container {
+		width: 33%;
+		float: left;
+		padding-right: $space;
+		h4 {
+			border-bottom: 1px solid $shadow-color;
+			margin-bottom: $space-small;
+		}
+		.news-post-item {
+			font-size: 0.8em;
+		}
+	}
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}

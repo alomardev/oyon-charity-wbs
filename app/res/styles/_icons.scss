@@ -45,6 +45,26 @@
 	font-size: 14px;
 }
 
+.icon-share-twitter {
+	@include icon(1, 9);
+}
+
+.icon-share-facebook {
+	@include icon(1, 10);
+}
+
+.icon-share-googleplus {
+	@include icon(1, 11);
+}
+
+.icon-share-whatsapp {
+	@include icon(1, 12);
+}
+
+.icon-share-instagram {
+	@include icon(1, 13);
+}
+
 .icon-add {
 	@include icon(2, 0);
 }

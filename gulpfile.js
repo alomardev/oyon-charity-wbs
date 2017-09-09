@@ -66,7 +66,7 @@ gulp.task('markup', ['clean:markup'], function() {
 
 /* Copy images */
 gulp.task('copy:images', ['clean:images'], function() {
-	return gulp.src(config.dir.app + '/res/images/*.{png,gif,jpg,jpeg,svg}')
+	return gulp.src(config.dir.app + '/res/images/*.{png,gif,jpg,jpeg,svg,ico}')
 	.pipe(gulp.dest(config.dir.dev + '/res/'));
 });
 
@@ -95,7 +95,7 @@ gulp.task('clean:markup', ['clean:empty'], function() {
 });
 
 gulp.task('clean:images', function() {
-	del.sync(config.dir.dev + '/res/images/*.{png,gif,jpg,jpeg,svg}');
+	del.sync(config.dir.dev + '/res/images/*.{png,gif,jpg,jpeg,svg,ico}');
 });
 
 gulp.task('clean:raw', function() {
@@ -137,6 +137,7 @@ gulp.task('build:prod', ['build'], function() {
 	.pipe(gulpif(condjs, uglify()))
 	//.pipe(gulpif(condhtml, htmlmin({collapseWhitespace: true})))
 	.pipe(gulp.dest(config.dir.prod));
+	gulp.src(config.dir.app + '/**/.htaccess').pipe(gulp.dest(config.dir.prod));
 
 });
 
@@ -145,7 +146,7 @@ gulp.task('watch', ['build'], function() {
 	gulp.watch(config.dir.app + '/res/scripts/*.js', ['scripts']);
 	gulp.watch(config.dir.app + '/res/styles/*.{scss,sass}', ['styles']);
 	gulp.watch(config.dir.app + '/**/*.{html,php}', ['markup']);
-	gulp.watch(config.dir.app + '/res/images/*.{png,gif,jpg,jpeg,svg}', ['copy:images']);
+	gulp.watch(config.dir.app + '/res/images/*.{png,gif,jpg,jpeg,svg,ico}', ['copy:images']);
 	
 	gulp.watch(config.dir.app + '/raw/**/*', ['copy:raw']);
 	gulp.watch(config.dir.app + '/plugins/**/*', ['copy:plugins']);

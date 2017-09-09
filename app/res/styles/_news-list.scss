@@ -37,6 +37,7 @@ $post-item-height: 100px;
 				color: white;
 				border-bottom-right-radius: $radius-small;
 				border-bottom-left-radius: $radius-small;
+				padding: 1px $space-smaller;
 			}
 			> .post-item-date {
 				position: absolute;

@@ -34,6 +34,6 @@
 </div> -->
 <script src='/res/jquery.min.js'></script>
 <script src='/res/main.js'></script>
-@@for (var i = 0; i < scripts.length; i++) {<script src='`+scripts[i]+`'></script>};
+@@for (var i = 0; i < scripts.length; i++) {<script src='`+scripts[i]+`'></script>}
 </body>
 </html>

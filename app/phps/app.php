@@ -112,6 +112,76 @@ function getAppInfo($app_id) {
 	return false;
 }
 
+/* news */
+function getHighlightedPosts() {
+	$hps = array();
+
+	$result = select("SELECT * FROM `highlighted_news_post;");
+
+	if ($result) {
+		while ($row = mysqli_fetch_assoc($result)) {
+			$hps[] = $row['post_id'];
+		}
+	}
+
+	return getPosts("visits", $hps, 0, 100);
+}
+
+function getPosts($sort = 'date', $limit = 0, $offset = 0, $summary = 0) {
+	global $link;
+	$posts_info = array();
+	if ($summary > 0) {
+		$content = "SUBSTR(`content`, 1, $summary) AS `content`";
+	} else {
+		$content = `content`;
+	}
+	$query = "SELECT `id`, `title`, `date`, $content, `header_image`, (SELECT COUNT(*) FROM `visitor` WHERE `news_post`.`id`=`visitor`.`post_id`) AS `visits` FROM `news_post`";
+
+	$sort_extra = " ORDER BY `$sort` DESC";
+	$limit_extra = (is_array($limit) or $limit < 1) ? "" : " LIMIT $limit OFFSET $offset";
+	$where_extra = "";
+
+	if (is_array($limit)) {
+		if (empty($limit)) {
+			return array();
+		}
+		$where_extra = "";
+		$first = true;
+		foreach ($limit as $v) {
+			if (!$first) {
+				$where_extra .= " or";
+			} else {
+				$where_extra = " WHERE";
+			}
+			$where_extra .= " `id`=$v";
+			$first = false;
+		}
+	}
+	$query .= $where_extra . $sort_extra . $limit_extra;
+	$result = select($query);
+	while ($row = mysqli_fetch_assoc($result)) {
+		if ($summary > 0) {
+			$row['content'] = strip_tags($row['content']);
+			$row['content'] = substr($row['content'], 0, strripos($row['content'], " "))."...";
+		}
+		$posts_info[] = $row;
+	}
+	return $posts_info;
+}
+
+function incrementVisitor($post_id) {
+	$ip = getIP();
+	$result = select("SELECT UNIX_TIMESTAMP(`time`) AS `time` FROM `visitor` WHERE `ip`='$ip' AND `post_id`=$post_id ORDER BY `time` DESC LIMIT 1");
+	if (mysqli_num_rows($result) > 0) {
+		$visitor = mysqli_fetch_assoc($result);
+	}
+	if (!isset($visitor) or time() > $visitor['time'] + 86400 * 2) {
+		select("INSERT INTO `visitor` (`ip`, `post_id`) VALUES ('$ip', '$post_id')");
+		return true;
+	}
+	return false;
+}
+
 /* MISC */
 
 function inPath($check_path) {
@@ -169,5 +239,16 @@ function isImage($url) {
 function feedback($message, $error = false) {
 	header('Content-Type: application/json; charset=utf-8');
 	return json_encode(array("message" => $message, "error" => $error));
+}
+
+function getIP() {
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) { //check ip from share internet
+      $ip=$_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) { //to check ip is pass from proxy
+      $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+      $ip=$_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
 }
 ?>

@@ -1,10 +1,10 @@
-$header-image-height: 100px;
+$header-image-height: 200px;
 
 .post-header-image {
 	height: $header-image-height;
 	background-size: cover;
 	background-position: 50%;
-	border-radius: $radius-small;
+	@include image-border;
 }
 
 .post-title {
@@ -26,4 +26,9 @@ $header-image-height: 100px;
 
 .post-content {
 	padding: $space-small 0;
+}
+
+.post-footer {
+	border-top: 1px solid $shadow-color;
+	padding-top: $space-smaller;
 }

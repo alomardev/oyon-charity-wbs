@@ -49,7 +49,7 @@ function addPost($row) {
 		echo ">";
 	}
 	echo "<div class='post-item-actions'><div><a class='button' href='/apps/nms/edit.php?id=$row[id]'>تعديل</a><a class='button' href='/apps/nms/preview.php?id=$row[id]'>معاينة</a></div></div>";
-	echo "<div class='post-item-title'>$row[title]</div>";
+	echo "<div class='post-item-title ellipsis'>$row[title]</div>";
 	echo "<div class='post-item-date'>$date</div>";
 	echo "</div>";
 }

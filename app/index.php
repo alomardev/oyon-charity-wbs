@@ -1,35 +1,9 @@
 @@include("_header.php", {"title": "جمعية العيون الخيرية", "active": "home"})
 
 <?php
-$hps = array();
 
-$result = select("SELECT * FROM `highlighted_news_post;");
+$posts_info = getHighlightedPosts();
 
-if ($result) {
-	$where = "WHERE";
-	$first = true;
-	while ($row = mysqli_fetch_assoc($result)) {
-		$hps[] = $row['post_id'];
-
-		if (!$first) {
-			$where .= " or";
-		}
-		
-		$where .= " `id`=$row[post_id]";
-
-		$first = false;
-	}
-}
-
-$posts_info[] = array();
-if (!empty($hps)) {
-	$result = select("SELECT * FROM `news_post` $where;");
-	while ($row = mysqli_fetch_assoc($result)) {
-		$posts_info[] = $row;
-	}
-}
-
-print_r($posts_info);
 ?>
 
 
@@ -40,11 +14,26 @@ print_r($posts_info);
 	<div class='slide-show-prev-btn icon-slide-show-prev'></div>
 	<div class='slide-show-image'></div>
 </div>
+<div id="news-ticker-container">
+	<?php
+	$result = select("SELECT * FROM `news_ticker` ORDER BY `id`;");
+	if ($result) {
+		while ($row = mysqli_fetch_assoc($result)) {
+			echo "<div>$row[content]</div>";
+		}
+	} else {
+		echo mysqli_error($result);
+	}
+	?>
+</div>
+<div id="ad-section">
+	ad section
+</div>
 <div class="top-section">
 	<div id="clock-container">
 		<div id='clock'>
-			<div class='digital'>00:00:00 صباحا</div>
-			<div class='date'>0505050</div>
+			<div class='digital'></div>
+			<div class='date'></div>
 		</div>
 	</div>
 	<div id='services'>
@@ -91,17 +80,22 @@ print_r($posts_info);
 	</div>
 	<div class='cards-col u-fr'>
 		<div id='card-news' class='card'>
-			<div class='subject'><h3>أحدث الأخبار</h3></div>
-			<div class='content-box'>
-						<a href='#' class='news-item'>
-							<img><div class='news-text'>خبر جديد<span>محتوى قصير</span></div>
-						</a>
-						<a href='#' class='news-item'>
-							<img><div class='news-text'>خبر جديد<span>محتوى قصير</span></div>
-						</a>
-						<a href='#' class='news-item'>
-							<img><div class='news-text'>خبر جديد<span>محتوى قصير</span></div>
-						</a>
+			<div class='subject'><h3>أهم الأخبار</h3></div>
+			<div class='content-box news-holder'>
+			<?php
+
+			foreach ($posts_info as $p) {
+				$summary = strip_tags($p['content']);
+				$summary = strlen($summary) > 200 ? substr($summary, 0, 200) : $summary;
+			?>
+				<a href='show.php?p=<?php echo $p['id']; ?>' class='news-post-item'>
+					<div class='news-post-image' style="background-image: url(<?php echo $p['header_image']; ?>)"></div>
+					<div class='news-post-content'>
+						<div class='news-post-title ellipsis'><?php echo $p['title']; ?></div>
+						<div class='news-post-summary ellipsis'><?php echo $summary; ?></div>
+					</div>
+				</a>
+			<?php } ?>
 			</div>
 		</div>
 		<div id="card-twitter" class="card">

@@ -1,0 +1,61 @@
+$image-width: 150px;
+$image-height: 100px;
+#news {
+	#large-post-container {
+		width: 67%;
+		float: right;
+		h4 {
+			border-bottom: 1px solid $shadow-color;
+			margin-bottom: $space-small;
+		}
+		.large-post-next-page {
+			display: block;
+			border-top: 1px solid $shadow-color;
+			margin-top: $space-small;
+			a {
+				float: left;
+			}
+		}
+		.large-post-holder {
+			.large-post-item {
+				cursor: default;
+				position: relative;
+				margin-bottom: $space-small;
+				.large-post-image {
+					margin-left: $space-small;
+					width: $image-width;
+					height: $image-height;
+					float: right;
+					background-size: cover;
+					background-position: 50%;
+					background-image: url(http://via.placeholder.com/320x130);
+					@include image-border;
+				}
+				.large-post-content {
+					.large-post-content-title {
+						font-weight: bold;
+					}
+					.large-post-content-summary {
+						line-height: 1.3em;
+						font-size: 0.9em;
+					}
+				}
+				.large-post-visits {
+					position: absolute;
+					bottom: 0;
+					right: $space-small + $image-width;
+					color: darkgrey;
+				}
+				@extend .u-cf;
+			}
+		}
+	}
+
+	.most-visited-container {
+		width: 33%;
+		float: left;
+		padding-right: $space;
+	}
+
+	@extend .u-cf;
+}

@@ -10,7 +10,7 @@ if (!authorized(APP_NMS) || !isset($_POST["id"])) {
 
 $id = $_POST["id"];
 $title = isset($_POST["title"]) ? "'".$_POST["title"]."'" : "";
-$content = isset($_POST["content"]) ? "'".htmlspecialchars($_POST["content"])."'" : "!";
+$content = isset($_POST["content"]) ? "'".$_POST["content"]."'" : "!";
 $published = (isset($_POST["publish"]) and $_POST['publish'] == 1) ? 1 : 0;
 
 $year = isset($_POST["date-year"]) ? $_POST["date-year"] : "";

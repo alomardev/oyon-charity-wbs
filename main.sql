@@ -1,5 +1,9 @@
 DROP DATABASE IF EXISTS `charity-main`;
-CREATE DATABASE `charity-main`;
+
+CREATE DATABASE `charity-main`
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
 USE `charity-main`;
 
 CREATE TABLE `user`
@@ -26,15 +30,22 @@ CREATE TABLE `news_post`
   `date` DATETIME NOT NULL,
   `content` TEXT NOT NULL,
   `header_image` VARCHAR(255),
-  `likes` INT DEFAULT 0,
-  `visits` INT DEFAULT 0,
   `published` BOOLEAN DEFAULT 0,
   PRIMARY KEY (`id`)
 );
+ALTER TABLE `news_post` AUTO_INCREMENT=1000;
 
 CREATE TABLE `highlighted_news_post`
 (
   `post_id` INT NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE `visitor`
+(
+  `post_id` INT NOT NULL,
+  `ip` VARCHAR(40) NOT NULL,
+  `time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+  `liked` BOOLEAN DEFAULT 0
 );
 
 CREATE TABLE `comments`
@@ -55,11 +66,15 @@ CREATE TABLE `slideshow_image`
   PRIMARY KEY (`index`)
 );
 
-ALTER TABLE `news_post` AUTO_INCREMENT=1000;
+CREATE TABLE `news_ticker`
+(
+  `id` INT NOT NULL PRIMARY KEY,
+  `content` TEXT NOT NULL
+);
 
 INSERT INTO `user` (`id`, `username`, `password`, `nickname`) VALUES
-  (1, "root admin", "123", "مدير الموقع"),
-  (2, "editor", "123", "محرر أخبار");
+  (1, "root admin", "Oy0n132Org$a", "مدير الموقع"),
+  (2, "editor", "Oy0n132Org$a", "محرر أخبار");
 
 INSERT INTO `user_app` VALUES
   (1, 3),

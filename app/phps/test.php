@@ -1,4 +1,6 @@
+<pre>
 <?php 
 require_once "app.php";
-var_dump(authorized(APP_NMS));
+var_dump("1000" + 1);
 ?>
+</pre>

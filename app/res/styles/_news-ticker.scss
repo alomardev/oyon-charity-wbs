@@ -1,0 +1,26 @@
+#news-ticker {
+	input[name=count] {
+		width: 70px;
+		padding-left: $space-smaller;
+		padding-right: $space-smaller;
+		text-align: center;
+	}
+	#news-text-fields {
+		margin-top: $space-small;
+		> label {
+			margin-top: $space-smaller;
+			display: table;
+			width: 100%;
+			> div {
+				width: 40px;
+				text-align: left;
+				display: table-cell;
+			}
+			> input {
+				width: 99%;
+				display: table-cell;
+				margin-right: $space-smaller;
+			}
+		}
+	}
+}

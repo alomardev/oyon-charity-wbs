@@ -39,6 +39,7 @@ if (inPath('apps/bms')) {
 <head>
 	<meta charset='UTF-8'>
 	<!-- <meta name='viewport' content='width=device-width, initial-scale=1.0'> -->
+	<link rel='shortcut icon' type='image/x-icon' href='/res/fav.ico'>
 	<link rel='stylesheet' href='/res/main.css'>
 	<title>جمعية العيون الخيرية - @@title</title>
 </head>
@@ -72,7 +73,8 @@ if (inPath('apps/bms')) {
 						<li @@if (active == 'about') {class='active'}><a href="/about.php">من نحن</a></li>
 					</ul>
 				</li>
-				<li @@if (active == 'contact') {class='active'}><a href="/contact.php">تواصل معنا</a></li>
+				<li @@if (active == 'news') {class='active'}><a href="/news.php">الأخبار</a></li>
+				<li @@if (active == 'contact') {class='active'}><a href="/contact.php">اتصل بنا</a></li>
 				<?php if ($user = getUser()) { ?>
 				<li class='dropdown-nav'>
 					<div><?php echo $user['nickname']; ?></div>
