@@ -73,8 +73,8 @@ CREATE TABLE `news_ticker`
 );
 
 INSERT INTO `user` (`id`, `username`, `password`, `nickname`) VALUES
-  (1, "root admin", "Oy0n132Org$a", "مدير الموقع"),
-  (2, "editor", "Oy0n132Org$a", "محرر أخبار");
+  (1, "root admin", "root123", "مدير الموقع"),
+  (2, "editor", "editor123", "محرر أخبار");
 
 INSERT INTO `user_app` VALUES
   (1, 3),

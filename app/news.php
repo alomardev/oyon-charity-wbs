@@ -2,14 +2,11 @@
 
 <?php
 $limit = isset($_GET['t']) ? $_GET['t'] : 10;
-$page = isset($_GET['p']) ? $_GET['p'] : 1;
+$page = isset($_GET['p']) ? $_GET['p'] : 0;
 
-$count = mysqli_fetch_assoc(select("SELECT COUNT(*) AS `` FROM `news_post`;"))['count'];
-if ($count > $limit) {
-
-}
+$count = mysqli_fetch_assoc(select("SELECT COUNT(*) AS `count` FROM `news_post`;"))['count'];
 $posts_info_most_visited = getPosts("visits", 0, 0, 100);
-$posts_info = getPosts('date', $limit, $p, 120);
+$posts_info = getPosts('date', $limit, $page * $limit, 120);
 
 ?>
 

@@ -34,6 +34,49 @@ var ibans_data = {
 	}
 };
 $(function() {
+
+	/* inputs */
+	var tacs = $("[data-role=tac] > input");
+	var tacs_list_items = tacs.parent().find("li");
+	tacs_list_items.on('click', function() {
+		$(this).parent("ul").siblings("input").val($(this).text());
+	});
+
+	tacs.keyup(function() {
+		var items = $(this).parent().find("li");
+		var count = 0;
+		for (var i = 0; i < items.length; i++) {
+			var e = $(items[i]);
+			if (e.text().indexOf($(this).val()) > -1) {
+				e.css("display", "block");
+				count++;
+			} else {
+				e.css("display", "none");
+			}
+		}
+		if (count == 0) {
+			$(this).siblings("ul").css("display", "none");
+		} else {
+			$(this).siblings("ul").css("display", "block");
+		}
+	});
+	tacs.focus(function() {
+		var input = $(this);
+		var list = input.siblings("ul");
+		list.css("z-index", "20000");
+		list.css("display", "block");
+		list.outerWidth(input.outerWidth());
+	});
+	
+	tacs.blur(function() {
+		var list = $(this).siblings("ul");
+		list.fadeOut(200,function() {
+			list.find("li").css("display", "block");
+			list.css("display", "none");
+			list.css("z-index", "auto");
+		});
+	});
+
 	/* news ticker */
 	if (exists('news-ticker-container')) {
 

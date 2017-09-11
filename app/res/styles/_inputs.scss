@@ -78,3 +78,31 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+[data-role=tac] {
+	position: relative;
+	ul {
+		display: none;
+		position: absolute;
+		margin-top: $space-smaller;
+		border: 1px solid darken($input-color-hover, 10%);
+		list-style: none;
+		box-shadow: 0 0 15px $input-color-focus;
+		background-color: white;
+		li {
+			cursor: pointer;
+			box-shadow: 0 1px 0 darken($input-color-hover, 10%);
+			padding: $space-smaller / 2 $space-small;
+			font-size: $input-font-size;
+			&:first-child {
+			}
+
+			&:last-child {
+			}
+
+			&:hover {
+				background-color: saturate(lighten($input-color-focus, 40%), 5%);
+			}
+		}
+	}
+}

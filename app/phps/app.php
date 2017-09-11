@@ -159,6 +159,9 @@ function getPosts($sort = 'date', $limit = 0, $offset = 0, $summary = 0) {
 	}
 	$query .= $where_extra . $sort_extra . $limit_extra;
 	$result = select($query);
+	if (!$result) {
+		echo mysqli_error($link);
+	}
 	while ($row = mysqli_fetch_assoc($result)) {
 		if ($summary > 0) {
 			$row['content'] = strip_tags($row['content']);

@@ -6,7 +6,8 @@
 <div class="preview-wrapper">
 
 <?php
-$result = select("SELECT * FROM `news_post` WHERE `id`=$id");
+$query = "SELECT `id`, `title`, `date`, `content`, `header_image`, (SELECT COUNT(*) FROM `visitor` WHERE `visitor`.`post_id`=$id) AS `visits` FROM `news_post` WHERE `id`=$id;";
+$result = select($query);
 if (!$result or mysqli_num_rows($result) == 0) {
 	echo "<p class='error'>لم يتم العثور على الخبر!</p>";
 } else {

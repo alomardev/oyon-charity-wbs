@@ -49,5 +49,5 @@ $count = $count < 3 ? 3 : $count;
 	</div>
 </form>
 </div>
-<?php echo "<script>var loadedData = ".json_encode($reloaded).";</script>" ?>
+<?php echo "<script>var loadedData = ".json_encode($reloaded).";</script>"; ?>
 @@include("../../_footer.php", {"scripts": ["/res/news-ticker.js"]})

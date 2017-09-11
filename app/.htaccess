@@ -1,6 +1,0 @@
-<Directory /home/oyonorg/public_html/>
-	Options Indexes FollowSymLinks MultiViews
-	AllowOverride All
-	Order allow,deny
-	allow from all
-</Directory>
