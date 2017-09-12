@@ -36,46 +36,7 @@ var ibans_data = {
 $(function() {
 
 	/* inputs */
-	var tacs = $("[data-role=tac] > input");
-	var tacs_list_items = tacs.parent().find("li");
-	tacs_list_items.on('click', function() {
-		$(this).parent("ul").siblings("input").val($(this).text());
-	});
-
-	tacs.keyup(function() {
-		var items = $(this).parent().find("li");
-		var count = 0;
-		for (var i = 0; i < items.length; i++) {
-			var e = $(items[i]);
-			if (e.text().indexOf($(this).val()) > -1) {
-				e.css("display", "block");
-				count++;
-			} else {
-				e.css("display", "none");
-			}
-		}
-		if (count == 0) {
-			$(this).siblings("ul").css("display", "none");
-		} else {
-			$(this).siblings("ul").css("display", "block");
-		}
-	});
-	tacs.focus(function() {
-		var input = $(this);
-		var list = input.siblings("ul");
-		list.css("z-index", "20000");
-		list.css("display", "block");
-		list.outerWidth(input.outerWidth());
-	});
-	
-	tacs.blur(function() {
-		var list = $(this).siblings("ul");
-		list.fadeOut(200,function() {
-			list.find("li").css("display", "block");
-			list.css("display", "none");
-			list.css("z-index", "auto");
-		});
-	});
+	setupTextAutocomplete();
 
 	/* news ticker */
 	if (exists('news-ticker-container')) {
@@ -302,4 +263,76 @@ $(function() {
 
 function exists(id) {
 	return document.getElementById(id) !== null;
+}
+
+function setupTextAutocomplete() {
+	var tacs = $("[data-role=tac] > input");
+	var tacs_list_items = tacs.parent().find("li");
+
+	tacs_list_items.on('click', function() {
+		$(this).parent("ul").siblings("input").val($(this).text());
+	});
+
+	var radius = tacs_list_items.parent("ul").css("border-radius");
+	var border = $(tacs_list_items[0]).css("border-bottom");
+
+	tacs.keyup(function() {
+		var items = $(this).parent().find("li");
+		items.css("border-bottom", border).css("border-radius", "0px");
+		var count = 0;
+		var firstChildIndex = 0;
+		var lastChildIndex = 0;
+		for (var i = 0; i < items.length; i++) {
+			var e = $(items[i]);
+
+			if (e.text().indexOf($(this).val()) > -1) {
+				e.css("display", "block");
+				count++;
+				if (count == 1) {
+					firstChildIndex = i;
+				}
+				lastChildIndex = i;
+			} else {
+				e.css("display", "none");
+			}
+		}
+		if (count > 0) {
+			var fe = $(items[firstChildIndex]);
+			fe.css("border-top-left-radius", radius)
+			.css("border-top-right-radius", radius);
+
+			var le = $(items[lastChildIndex]);
+			le.css("border-bottom", "none")
+			.css("border-bottom-left-radius", radius)
+			.css("border-bottom-right-radius", radius);
+		}
+		if (count == 0) {
+			$(this).siblings("ul").css("display", "none");
+		} else {
+			$(this).siblings("ul").css("display", "block");
+		}
+	});
+
+	tacs.focus(function() {
+		var input = $(this);
+		var list = input.siblings("ul");
+		list.css("z-index", "20000");
+		list.css("display", "block");
+		list.outerWidth(input.outerWidth());
+	});
+	
+	tacs.blur(function() {
+		var list = $(this).siblings("ul");
+		list.fadeOut(200,function() {
+			list.find("li").css("display", "block")
+			.css("border-bottom", border).css("border-radius", "0px");
+			list.find("li:first-child").css("border-top-left-radius", radius)
+			.css("border-top-right-radius", radius);
+			list.find("li:last-child").css("border-bottom-left-radius", radius)
+			.css("border-bottom-right-radius", radius)
+			.css("border-bottom", "none");
+			list.css("display", "none");
+			list.css("z-index", "auto");
+		});
+	});
 }

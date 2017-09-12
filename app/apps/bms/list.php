@@ -36,11 +36,13 @@
 				<li>تاء</li>
 			</ul>
 		</div>
-		
+		<br>
+		<br>
+		<br>
 		<div data-role='tac'>
 			<input type="text">
 			<ul>
-				<li>ألف</li>
+				<li>بسم الله الرحمن الرحيم</li>
 				<li>باء</li>
 				<li>تاء</li>
 			</ul>

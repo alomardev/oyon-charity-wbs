@@ -82,22 +82,29 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 [data-role=tac] {
 	position: relative;
 	ul {
+		border-radius: $radius-small;
 		display: none;
 		position: absolute;
-		margin-top: $space-smaller;
+		margin-top: 2px;
 		border: 1px solid darken($input-color-hover, 10%);
 		list-style: none;
-		box-shadow: 0 0 15px $input-color-focus;
+		box-shadow: 0 4px 13px $shadow-color;
 		background-color: white;
 		li {
 			cursor: pointer;
-			box-shadow: 0 1px 0 darken($input-color-hover, 10%);
+			border-bottom: 1px solid darken($input-color-hover, 10%);
 			padding: $space-smaller / 2 $space-small;
 			font-size: $input-font-size;
+
 			&:first-child {
+				border-top-left-radius: $radius-small;
+				border-top-right-radius: $radius-small;
 			}
 
 			&:last-child {
+				border-bottom: none;
+				border-bottom-left-radius: $radius-small;
+				border-bottom-right-radius: $radius-small;
 			}
 
 			&:hover {
