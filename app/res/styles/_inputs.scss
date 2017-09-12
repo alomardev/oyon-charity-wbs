@@ -113,3 +113,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 		}
 	}
 }
+
+.date-inputs {
+	white-space: nowrap;
+	input {
+		width: 60px;
+		text-align: center;
+	}
+	input:first-child {
+		width: 80px;
+	}
+}

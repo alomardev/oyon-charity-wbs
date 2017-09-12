@@ -27,7 +27,6 @@ $posts_info = getHighlightedPosts();
 	?>
 </div>
 <div id="ad-section">
-	ad section
 </div>
 <div class="top-section">
 	<div id="clock-container">
