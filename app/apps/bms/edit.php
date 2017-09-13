@@ -130,7 +130,7 @@
 <div class="row">
 	<div class="col-1-4">
 		<table class='one-line-inputs'><tbody>
-			<tr><td colspan="2">مصادر الدخل</td></tr>
+			<tr><td class='center' colspan="2">مصادر الدخل</td></tr>
 			<tr>
 				<td class='width-content'><label>واحد:</label></td>
 				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
@@ -179,7 +179,19 @@
 			</tr>
 		</tbody></table>
 		<hr>
-		<div></div>
+		<div>
+			<table><tbody>
+				<tr><td class='center' colspan="6">التابعين</td></tr>
+				<tr>
+					<td class='center'>رقم الحاسب</td>
+					<td class='center'>الاسم</td>
+					<td class='center'>الجنس</td>
+					<td class='center'>صلة القرابة</td>
+					<td class='center'>تاريخ الميلاد</td>
+					<td class='center'>المرحلة الدراسية</td>
+				</tr>
+			</tbody></table>
+		</div>
 	</div>
 </div>
 <hr>
