@@ -57,7 +57,7 @@
 			}
 		}
 	}
-	#person-info-table {
+	.one-line-inputs {
 		label {
 			display: block;
 			margin-right: $space-small;
@@ -66,11 +66,37 @@
 		td:first-child label {
 			margin-right: 0;
 		}
-		tr:first-child > td {
+		tr > td {
 			padding-bottom: $space-small;
 		}
-		[name=person_gov_id] {
-			letter-spacing: 8px;
+		tr:last-child > td {
+			padding-bottom: 0;
 		}
+	}
+
+	.row {
+		margin-left: -$space;
+		margin-right: -$space;
+		div {
+			padding: $space-small $space;
+			margin-top: -$space-small;
+			margin-bottom: -$space-small;
+			border-left: 1px solid $shadow-color-strong;
+			&:last-child {
+				border-left: 0;
+			}
+		}
+		.col-1-4 {
+			tr {
+				text-align: left;
+			}
+			tr:first-child {
+				text-align: center;
+			}
+		}
+	}
+
+	[name=person_gov_id] {
+		letter-spacing: 5px;
 	}
 }

@@ -77,6 +77,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `nickname`) VALUES
   (2, "editor", "editor123", "محرر أخبار");
 
 INSERT INTO `user_app` VALUES
+  (1, 2),
   (1, 3),
   (2, 2);
 

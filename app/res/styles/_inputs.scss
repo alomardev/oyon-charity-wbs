@@ -34,7 +34,9 @@ button, input[type=submit], .button {
 		}	
 	}
 }
-
+input[type=text], input[type=password], input[type=number],input[type=date], select {
+	height: 32px;
+}
 input[type=text], input[type=password], input[type=number],input[type=date], select, textarea {
 	padding: $space-smaller / 2 $space-small;
 	border-radius: $radius-small;
@@ -115,12 +117,20 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .date-inputs {
-	white-space: nowrap;
+	$total-width: 60px*2+80+$space-smaller*2;
+	width: $total-width;
 	input {
-		width: 60px;
+		float: left;
+		width: $total-width * 0.3 - $space-smaller;
 		text-align: center;
+		margin-left: $space-smaller;
 	}
 	input:first-child {
-		width: 80px;
+		width: $total-width * 0.4;
+		margin-left: 0;
 	}
+	input:last-child {
+		float: right;
+	}
+	@extend .u-cf;
 }
