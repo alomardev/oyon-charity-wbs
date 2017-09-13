@@ -27,8 +27,20 @@
 				width: 100%;
 			}
 		}
+		.width-1-5 {
+			width: $block-size * 1.5;
+			* {
+				width: 100%;
+			}
+		}
 		.width-2 {
 			width: $block-size*2;
+			* {
+				width: 100%;
+			}
+		}
+		.width-2-5 {
+			width: $block-size*2.5;
 			* {
 				width: 100%;
 			}
@@ -48,6 +60,7 @@
 
 		&.two-lines-inputs {
 			tr {
+				text-align: center;
 				td {
 					padding-left: $space-small;
 					&:last-child {
@@ -55,6 +68,13 @@
 					}
 				}
 			}
+		}
+
+		tr td.sep-left {
+			border-left: 1px solid $shadow-color-strong;
+		}
+		tr td.sep-left-pad {
+			padding-right: $space-small;
 		}
 	}
 	.one-line-inputs {
@@ -95,5 +115,12 @@
 
 	[name=person_gov_id] {
 		letter-spacing: 5px;
+	}
+
+	#dep-table {
+		border-spacing: $space-smaller;
+		label {
+			font-size: $input-font-size;
+		}
 	}
 }

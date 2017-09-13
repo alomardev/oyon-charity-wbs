@@ -1,7 +1,9 @@
 $inset-shadow: inset 0 2px 3px $shadow-color-weak;
+
 input, button, textarea, select, .button {
 	font-size: $input-font-size;
 }
+
 button, input[type=submit], .button {
 	cursor: pointer;
 	@include decorated-block($input-color, false);
@@ -34,9 +36,11 @@ button, input[type=submit], .button {
 		}	
 	}
 }
+
 input[type=text], input[type=password], input[type=number],input[type=date], select {
 	height: 32px;
 }
+
 input[type=text], input[type=password], input[type=number],input[type=date], select, textarea {
 	padding: $space-smaller / 2 $space-small;
 	border-radius: $radius-small;
@@ -52,6 +56,9 @@ input[type=text], input[type=password], input[type=number],input[type=date], sel
 		&:focus {
 			border-color: darken($input-color-hover, 10%);
 		}
+	}
+	&.error {
+		border-color: red;
 	}
 }
 

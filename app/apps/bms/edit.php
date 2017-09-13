@@ -12,7 +12,7 @@
 			<td class='width-content'><label for="person_full_name">الاسم:</label></td>
 			<td class='width-fill' colspan="3"><input name="person_full_name" type="text"></td>
 			<td class='width-content'><label for="person_gov_id">رقم الحاسب:</label></td>
-			<td class='width-fill'><bdo dir="ltr"><input name="person_gov_id" type="text"></bdo></td>
+			<td class='width-fill'><bdo dir="ltr"><input name="person_gov_id" type="text" input-prop-digits></bdo></td>
 		</tr>
 		<tr>
 			<td class='width-content'><label for="person_gender">الجنس:</label></td>
@@ -35,8 +35,8 @@
 			<td class='width-content'>
 				<div class="date-inputs">
 					<bdo dir="ltr"><input type="text" name='person_birth_date_year' placeholder="سنة"> 
-					<input type="number" name='person_birth_date_month' placeholder="شهر"> 
-					<input type="number" name='person_birth_date_day' placeholder="يوم"></bdo>
+					<input type="number" input-prop-digits name='person_birth_date_month' placeholder="شهر"> 
+					<input type="number" input-prop-digits name='person_birth_date_day' placeholder="يوم"></bdo>
 				</div>
 			</td>
 		</tr>
@@ -58,7 +58,7 @@
 				<option value="">فارغ</option>
 			</select>
 		</td>
-		<td class='width-2'><bdo dir="ltr"><input type="number" name='b_family_members_count'></bdo></td>
+		<td class='width-2'><bdo dir="ltr"><input type="number" input-prop-digits name='b_family_members_count'></bdo></td>
 		<td class='width-fill'>
 			<select name="b_health_status_id">
 				<option value="">فارغ</option>
@@ -95,8 +95,8 @@
 		<td class='width-content'>
 			<div class="date-inputs">
 				<bdo dir="ltr"><input type="text" name='b_payment_date_year' placeholder="سنة"> 
-				<input type="number" name='b_payment_date_month' placeholder="شهر"> 
-				<input type="number" name='b_payment_date_day' placeholder="يوم"></bdo>
+				<input type="number" input-prop-digits name='b_payment_date_month' placeholder="شهر"> 
+				<input type="number" input-prop-digits name='b_payment_date_day' placeholder="يوم"></bdo>
 			</div>
 		</td>
 		<td class='width-fill'>
@@ -106,13 +106,13 @@
 				<option value="">تجربة</option>
 			</select>
 		</td>
-		<td class='width-2'><bdo dir="ltr"><input name='b_rent_value' type="number"></bdo></td>
-		<td class='width-3'><bdo dir="ltr"><input name='b_giving_amount' type="number"></bdo></td>
+		<td class='width-2'><bdo dir="ltr"><input name='b_rent_value' type="number" input-prop-digits></bdo></td>
+		<td class='width-3'><bdo dir="ltr"><input name='b_giving_amount' type="number" input-prop-digits></bdo></td>
 		<td class='width-content'>
 			<div class="date-inputs">
 				<bdo dir="ltr"><input type="text" name='b_update_date_year' placeholder="سنة"> 
-				<input type="number" name='b_update_date_month' placeholder="شهر"> 
-				<input type="number" name='b_update_date_day' placeholder="يوم"></bdo>
+				<input type="number" input-prop-digits name='b_update_date_month' placeholder="شهر"> 
+				<input type="number" input-prop-digits name='b_update_date_day' placeholder="يوم"></bdo>
 			</div>
 		</td>
 	</tr>
@@ -127,74 +127,92 @@
 	</tr>
 </tbody></table>
 <hr>
-<div class="row">
-	<div class="col-1-4">
-		<table class='one-line-inputs'><tbody>
-			<tr><td class='center' colspan="2">مصادر الدخل</td></tr>
-			<tr>
-				<td class='width-content'><label>واحد:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
-			</tr>
-			<tr>
-				<td class='width-content'><label>اثنين:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
-			</tr>
-			<tr>
-				<td class='width-content'><label>ثلاثة:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
-			</tr>
-			<tr>
-				<td class='width-content'><label>أربعة:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
-			</tr>
-			<tr>
-				<td class='width-content'><label>خمسة:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
-			</tr>
-			<tr>
-				<td class='width-content'><label>ستة:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
-			</tr>
-			<tr>
-				<td class='width-content'><label>سبعة:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number"></bdo></td>
-			</tr>
-			<tr>
-				<td class='width-content'><label>المجموع:</label></td>
-				<td class='width-fill'><bdo dir="ltr"><input type="number" readonly></bdo></td>
-			</tr>
-		</tbody></table>
-	</div>
-	<div class="col-3-4">
-		<table class='two-lines-inputs'><tbody>
-			<tr>
-				<td class='width-fill'><label>هاتف المنزل</label></td>
-				<td class='width-fill'><label>الجوال</label></td>
-				<td class='width-fill'><label>هاتف آخر</label></td>
-			</tr>
-			<tr>
-				<td class='width-fill'><bdo dir='ltr'><input type="text"></bdo></td>
-				<td class='width-fill'><bdo dir='ltr'><input type="text"></bdo></td>
-				<td class='width-fill'><bdo dir='ltr'><input type="text"></bdo></td>
-			</tr>
-		</tbody></table>
-		<hr>
-		<div>
-			<table><tbody>
-				<tr><td class='center' colspan="6">التابعين</td></tr>
-				<tr>
-					<td class='center'>رقم الحاسب</td>
-					<td class='center'>الاسم</td>
-					<td class='center'>الجنس</td>
-					<td class='center'>صلة القرابة</td>
-					<td class='center'>تاريخ الميلاد</td>
-					<td class='center'>المرحلة الدراسية</td>
-				</tr>
-			</tbody></table>
-		</div>
-	</div>
-</div>
+<table class='two-lines-inputs'><tbody>
+	<tr>
+		<td class='width-fill'><label>هاتف المنزل</label></td>
+		<td class='width-fill'><label>الجوال</label></td>
+		<td class='width-fill'><label>هاتف آخر</label></td>
+	</tr>
+	<tr>
+		<td class='width-fill'><bdo dir='ltr'><input name="b_phone_home" type="text"></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input name="b_phone_mobile" type="text"></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input name="b_phone_other" type="text"></bdo></td>
+	</tr>
+</tbody></table>
 <hr>
+<table class='two-lines-inputs'><tbody>
+	<tr>
+		<td class='width-content sep-left' rowspan="2">مصادر الدخل</td>
+		<td class='width-fill sep-left-pad'><label>واحد</label></td>
+		<td class='width-fill'><label>اثنين</label></td>
+		<td class='width-fill'><label>ثلاثة</label></td>
+		<td class='width-fill'><label>أربعة</label></td>
+		<td class='width-fill'><label>خمسة</label></td>
+		<td class='width-fill'><label>ستة</label></td>
+		<td class='width-fill'><label>سبعة ثمانية</label></td>
+		<td class='width-fill'><label>المجموع</label></td>
+	</tr>
+	<tr>
+		<td class='width-fill sep-left-pad'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits readonly></bdo></td>
+	</tr>
+</tbody></table>
+<hr>
+<h4 class='center'>التابعين</h4>
+<table id='dep-table'><tbody>
+	<tr>
+		<td class='width-2 center'><label>رقم الحاسب</label></td>
+		<td class='width-fill center'><label>الاسم</label></td>
+		<td class='width-1-5 center'><label>الجنس</label></td>
+		<td class='width-1-5 center'><label>صلة القرابة</label></td>
+		<td class='width-content center'><label>تاريخ الميلاد</label></td>
+		<td class='width-2-5 center'><label>المرحلة الدراسية</label></td>
+	</tr>
+	<tr>
+		<td class='width-2'><bdo dir="ltr"><input type="text"></bdo></td>
+		<td class='width-fill'><input type="text"></td>
+		<td class='width-1-5'>
+			<select>
+				<option value="m">ذكر</option>
+				<option value="f">أنثى</option>
+			</select>
+		</td>
+		<td class='width-1-5'>
+			<select>
+				<option value="">بنت</option>
+				<option value="">ابن</option>
+				<option value="">زوجة</option>
+			</select>
+		</td>
+		<td class='width-content'>
+			<div class="date-inputs">
+				<bdo dir="ltr"><input type="text" name='b_update_date_year' placeholder="سنة"> 
+				<input type="number" input-prop-digits name='b_update_date_month' placeholder="شهر"> 
+				<input type="number" input-prop-digits name='b_update_date_day' placeholder="يوم"></bdo>
+			</div>
+		</td>
+		<td class='width-2-5'>
+			<select class='error'>
+				<option value="">بنت</option>
+				<option value="">ابن</option>
+				<option value="">زوجة</option>
+			</select>
+		</td>
+	</tr>
+</tbody></table>
+<hr>
+<div class="actions-container u-cf">
+	<div id='message' class="u-fr"></div>
+	<button class='u-fl' name='preview'>حفظ ومعاينة</button>
+	<button class='u-fl' name='save'>حفظ</button>
+	<button class='u-fl danger' name='delete'>حذف</button>
+</div>
 </form>
 </div>
 @@include("../../_footer.php", {"scripts": []})

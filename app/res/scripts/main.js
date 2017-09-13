@@ -37,6 +37,7 @@ $(function() {
 
 	/* inputs */
 	setupTextAutocomplete();
+	setupValidator();
 
 	/* news ticker */
 	if (exists('news-ticker-container')) {
@@ -333,6 +334,39 @@ function setupTextAutocomplete() {
 			.css("border-bottom", "none");
 			list.css("display", "none");
 			list.css("z-index", "auto");
+		});
+	});
+}
+
+function setupValidator() {
+	$("*[input-prop-minlength]").each(function() {
+		var e = $(this);
+		e.bind("propertychange change click keyup input paste", function() {
+			e.toggleClass("error", e.val().length < Number(e.attr("input-prop-minlength")));
+		});
+	});
+
+	$("*[input-prop-digits]").each(function() {
+		var e = $(this);
+		e.bind("propertychange change click keyup input paste", function() {
+			var regex = /^\d*$/;
+			e.toggleClass("error", !regex.test(e.val()));
+		});
+	});
+
+	$("*[input-prop-phone]").each(function() {
+		var e = $(this);
+		e.bind("propertychange change click keyup input paste", function() {
+			var regex = /(^$|^(05|\+9665|009665)\d{8}$)/;
+			e.toggleClass("error", !regex.test(e.val()));
+		});
+	});
+
+	$("*[input-prop-email]").each(function() {
+		var e = $(this);
+		e.bind("propertychange change click keyup input paste", function() {
+			var regex = /(^$|^\S+@\S+\.\S+$)/;
+			e.toggleClass("error", !regex.test(e.val()));
 		});
 	});
 }
