@@ -46,6 +46,7 @@ input[type=text], input[type=password], input[type=number],input[type=date], sel
 	border-radius: $radius-small;
 	border: 1px solid $shadow-color-stronger;
 	box-shadow: $inset-shadow;
+	background-color: white;
 	&:focus {
 		border-color: $input-color-hover;
 		box-shadow: $inset-shadow,
@@ -59,6 +60,10 @@ input[type=text], input[type=password], input[type=number],input[type=date], sel
 	}
 	&.error {
 		border-color: red;
+		&:focus {
+			box-shadow: $inset-shadow,
+			0 0 15px rgba(#ff0000, 0.35);
+		}
 	}
 }
 
@@ -124,20 +129,30 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .date-inputs {
-	$total-width: 60px*2+80+$space-smaller*2;
+	$total-width: 60px*2+80;
 	width: $total-width;
 	input {
 		float: left;
-		width: $total-width * 0.3 - $space-smaller;
+		width: $total-width * 0.3;
 		text-align: center;
-		margin-left: $space-smaller;
-	}
-	input:first-child {
-		width: $total-width * 0.4;
-		margin-left: 0;
-	}
-	input:last-child {
-		float: right;
+		border-radius: 0;
+		border-right: 0;
+		&:last-child {
+			border-top-right-radius: $radius-small;
+			border-bottom-right-radius: $radius-small;
+			border-right: 1px solid $shadow-color-stronger;
+		}
+		&:first-child {
+			width: $total-width * 0.4;
+			border-top-left-radius: $radius-small;
+			border-bottom-left-radius: $radius-small;
+		}
+		&:focus {
+			border-color: darken($input-color-hover, 10%);
+			+ input {
+				border-left-color: darken($input-color-hover, 10%);
+			}
+		}
 	}
 	@extend .u-cf;
 }

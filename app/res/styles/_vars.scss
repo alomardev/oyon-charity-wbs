@@ -53,3 +53,6 @@ $input-color-focus: transparentize(saturate(lighten($input-color, 10%), 20%), 0.
 
 $input-danger-color: #770000;
 $input-normal-color: desaturate(lighten($input-color, 6%), 75%);
+
+$tooltip-color: #004E35;
+$tooltip-error-color: #720009;

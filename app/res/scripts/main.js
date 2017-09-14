@@ -339,6 +339,25 @@ function setupTextAutocomplete() {
 }
 
 function setupValidator() {
+	var showTooltip = function(input, message, timeout) {
+		hideTooltip(input);
+		var dom = $("<div tooltip-source='" + input.attr("name") + "' class='tooltip error'>" + message + "</div>");
+		var tri = $("<div tooltip-source='" + input.attr("name") + "' class='tooltip-tri error'></div>");
+		$("body").append(dom);
+		$("body").append(tri);
+		dom.css("position", "absolute");
+		dom.css("top", (input.offset().top + input.outerHeight() + 6) + "px");
+		dom.css("left", ((input.offset().left) + input.outerWidth() / 2 - dom.outerWidth() / 2) + "px");
+		tri.css("position", "absolute");
+		tri.css("top", (input.offset().top + input.outerHeight()) + "px");
+		tri.css("left", (input.offset().left + input.outerWidth() / 2 - 5) + "px");
+	};
+
+	var hideTooltip = function(input) {
+		var tooltip = $("[tooltip-source=" + input.attr("name") + "]");
+		tooltip.remove();
+	};
+
 	$("*[input-prop-minlength]").each(function() {
 		var e = $(this);
 		e.bind("propertychange change click keyup input paste", function() {
@@ -354,12 +373,21 @@ function setupValidator() {
 		});
 	});
 
-	$("*[input-prop-phone]").each(function() {
+	$("[input-prop-phone]").each(function() {
 		var e = $(this);
 		e.bind("propertychange change click keyup input paste", function() {
 			var regex = /(^$|^(05|\+9665|009665)\d{8}$)/;
 			e.toggleClass("error", !regex.test(e.val()));
 		});
+		if (e.attr("input-prop-phone-message") !== "undefined" && e.attr("name") !== "undefined") {
+			e.blur(function() {
+				if ($(this).hasClass("error")) {
+					showTooltip($(this), $(this).attr("input-prop-phone-message"), 2000);
+				} else {
+					hideTooltip($(this));
+				}
+			});
+		} 
 	});
 
 	$("*[input-prop-email]").each(function() {

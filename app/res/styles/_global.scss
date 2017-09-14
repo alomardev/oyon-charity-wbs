@@ -421,3 +421,26 @@ footer {
 		font-size: 0.8em;
 	}
 }
+
+.tooltip {
+	font-size: 0.75em;
+	padding: 0 $space-small;
+	padding-bottom: 2px;
+	box-shadow: 0 7px 18px $shadow-color;
+	background-color: $tooltip-color;
+	border-radius: $radius-small;
+	color: white;
+	&.error {
+		background-color: $tooltip-error-color;
+	}
+}
+.tooltip-tri {
+	width: 0;
+	box-sizing: content-box;
+	border-bottom: 10px solid $tooltip-color;
+	border-left: 10px solid rgba(0, 0, 0, 0);
+	border-right: 10px solid rgba(0, 0, 0, 0);
+	&.error {
+		border-bottom-color: $tooltip-error-color;
+	}
+}

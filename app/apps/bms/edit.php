@@ -1,7 +1,6 @@
-0@@include("../../_header.php", {"title": "قائمة المستفيدين", "active": "news-app"})
+@@include("../../_header.php", {"title": "قائمة المستفيدين", "active": "news-app"})
 
 <?php
-
 ?>
 
 <div class='page-wrapper' id='bms-edit'>
@@ -10,13 +9,15 @@
 <table class='one-line-inputs' id='person-info-table'><tbody>
 		<tr>
 			<td class='width-content'><label for="person_full_name">الاسم:</label></td>
-			<td class='width-fill' colspan="3"><input name="person_full_name" type="text"></td>
+			<td class='width-fill' colspan="5" ><input name="person_full_name" type="text"></td>
 			<td class='width-content'><label for="person_gov_id">رقم الحاسب:</label></td>
 			<td class='width-fill'><bdo dir="ltr"><input name="person_gov_id" type="text" input-prop-digits></bdo></td>
 		</tr>
 		<tr>
+			<td class='width-content'><label for="b_file_number">الملف:</label></td>
+			<td class='width-1-5'><bdo dir='ltr'><input name="b_file_number" type="text" input-prop-digits></bdo></td>
 			<td class='width-content'><label for="person_gender">الجنس:</label></td>
-			<td class='width-2'>
+			<td class='width-1-5'>
 				<select name="person_gender">
 					<option value="m">ذكر</option>
 					<option value="f">أنثى</option>
@@ -132,11 +133,13 @@
 		<td class='width-fill'><label>هاتف المنزل</label></td>
 		<td class='width-fill'><label>الجوال</label></td>
 		<td class='width-fill'><label>هاتف آخر</label></td>
+		<td class='width-fill'><label>اسم قريب</label></td>
 	</tr>
 	<tr>
-		<td class='width-fill'><bdo dir='ltr'><input name="b_phone_home" type="text"></bdo></td>
-		<td class='width-fill'><bdo dir='ltr'><input name="b_phone_mobile" type="text"></bdo></td>
-		<td class='width-fill'><bdo dir='ltr'><input name="b_phone_other" type="text"></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input input-prop-phone-message="يرجى إدخال رقم صحيح" input-prop-phone name="b_phone_home" type="text"></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input input-prop-phone-message="يرجى إدخال رقم صحيح" input-prop-phone name="b_phone_mobile" type="text"></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input input-prop-phone-message="يرجى إدخال رقم صحيح" input-prop-phone name="b_phone_other" type="text"></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input name="b_alternative_contact_name" type="text"></bdo></td>
 	</tr>
 </tbody></table>
 <hr>
@@ -167,6 +170,7 @@
 <h4 class='center'>التابعين</h4>
 <table id='dep-table'><tbody>
 	<tr>
+		<td class='width-content'></td>
 		<td class='width-2 center'><label>رقم الحاسب</label></td>
 		<td class='width-fill center'><label>الاسم</label></td>
 		<td class='width-1-5 center'><label>الجنس</label></td>
@@ -175,6 +179,7 @@
 		<td class='width-2-5 center'><label>المرحلة الدراسية</label></td>
 	</tr>
 	<tr>
+		<td class='width-content' valign="middle"><div class="icon-mention"></div></td>
 		<td class='width-2'><bdo dir="ltr"><input type="text"></bdo></td>
 		<td class='width-fill'><input type="text"></td>
 		<td class='width-1-5'>
@@ -198,7 +203,7 @@
 			</div>
 		</td>
 		<td class='width-2-5'>
-			<select class='error'>
+			<select>
 				<option value="">بنت</option>
 				<option value="">ابن</option>
 				<option value="">زوجة</option>
@@ -208,8 +213,8 @@
 </tbody></table>
 <hr>
 <div class="actions-container u-cf">
+	<button class='u-fr' name='preview'>استمارة جديدة</button>
 	<div id='message' class="u-fr"></div>
-	<button class='u-fl' name='preview'>حفظ ومعاينة</button>
 	<button class='u-fl' name='save'>حفظ</button>
 	<button class='u-fl danger' name='delete'>حذف</button>
 </div>
