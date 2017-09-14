@@ -153,6 +153,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 				border-left-color: darken($input-color-hover, 10%);
 			}
 		}
+		&.error {
+			border-color: red;
+			+ input {
+				border-left-color: red;
+			}
+			&:focus {
+				box-shadow: $inset-shadow,
+				0 0 15px rgba(#ff0000, 0.35);
+			}
+		}
 	}
 	@extend .u-cf;
 }

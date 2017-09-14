@@ -366,6 +366,10 @@ footer {
 		&.u-fr {
 			margin-left: $space-smaller;
 		}
+		&.sep-l {
+			border-left: 1px solid $shadow-color-strong;
+			padding-left: $space-smaller;
+		}
 	}
 }
 

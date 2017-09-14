@@ -8,36 +8,36 @@
 <form action="" method='post'>
 <table class='one-line-inputs' id='person-info-table'><tbody>
 		<tr>
-			<td class='width-content'><label for="person_full_name">الاسم:</label></td>
-			<td class='width-fill' colspan="5" ><input name="person_full_name" type="text"></td>
-			<td class='width-content'><label for="person_gov_id">رقم الحاسب:</label></td>
-			<td class='width-fill'><bdo dir="ltr"><input name="person_gov_id" type="text" input-prop-digits></bdo></td>
+			<td class='width-content'><label for="person_full_name">الاسم</label></td>
+			<td class='width-fill' colspan="5" ><input name='person_full_name' type='text'></td>
+			<td class='width-content'><label for="person_gov_id">رقم الحاسب</label></td>
+			<td class='width-fill'><bdo dir="ltr"><input name='person_gov_id' type='text' input-prop-digits input-prop-digits-message="يرجى إدخال رقم صحيح"></bdo></td>
 		</tr>
 		<tr>
-			<td class='width-content'><label for="b_file_number">الملف:</label></td>
-			<td class='width-1-5'><bdo dir='ltr'><input name="b_file_number" type="text" input-prop-digits></bdo></td>
-			<td class='width-content'><label for="person_gender">الجنس:</label></td>
+			<td class='width-content'><label for="b_file_number">الملف</label></td>
+			<td class='width-1-5'><bdo dir='ltr'><input name='b_file_number' type='text' input-prop-digits input-prop-digits-message="يرجى إدخال رقم صحيح"></bdo></td>
+			<td class='width-content'><label for="person_gender">الجنس</label></td>
 			<td class='width-1-5'>
-				<select name="person_gender">
+				<select name='person_gender'>
 					<option value="m">ذكر</option>
 					<option value="f">أنثى</option>
 				</select>
 			</td>
-			<td class='width-content' ><label for='person_area_id'>الحي:</label></td>
+			<td class='width-content' ><label for='person_area_id'>الحي</label></td>
 			<td class='width-fill'>
-				<select name="person_area_id">
+				<select name='person_area_id'>
 					<option value="1">واحد</option>
 					<option value="2">اثنين</option>
 					<option value="3">ثلاثة</option>
 					<option value="4">أربعة</option>
 				</select>
 			</td>
-			<td class='width-content'><label>تاريخ الميلاد:</label></td>
+			<td class='width-content'><label>تاريخ الميلاد</label></td>
 			<td class='width-content'>
 				<div class="date-inputs">
-					<bdo dir="ltr"><input type="text" name='person_birth_date_year' placeholder="سنة"> 
-					<input type="number" input-prop-digits name='person_birth_date_month' placeholder="شهر"> 
-					<input type="number" input-prop-digits name='person_birth_date_day' placeholder="يوم"></bdo>
+					<bdo dir="ltr"><input name='person_birth_date_year' type='number' min='1817' max='2018' placeholder='سنة'> 
+					<input name='person_birth_date_month' type='number' min='1' max='12' placeholder='شهر'> 
+					<input name='person_birth_date_day' type='number' min='1' max='31' placeholder='يوم'></bdo>
 				</div>
 			</td>
 		</tr>
@@ -53,29 +53,29 @@
 	</tr>
 	<tr>
 		<td class='width-fill'>
-			<select name="b_social_status_id">
+			<select name='b_social_status_id'>
 				<option value="">فارغ</option>
 				<option value="">فارغ</option>
 				<option value="">فارغ</option>
 			</select>
 		</td>
-		<td class='width-2'><bdo dir="ltr"><input type="number" input-prop-digits name='b_family_members_count'></bdo></td>
+		<td class='width-2'><bdo dir="ltr"><input name='b_family_members_count' type='number' min='0'></bdo></td>
 		<td class='width-fill'>
-			<select name="b_health_status_id">
-				<option value="">فارغ</option>
-				<option value="">فارغ</option>
-				<option value="">فارغ</option>
-			</select>
-		</td>
-		<td class='width-fill'>
-			<select name="b_type">
+			<select name='b_health_status_id'>
 				<option value="">فارغ</option>
 				<option value="">فارغ</option>
 				<option value="">فارغ</option>
 			</select>
 		</td>
 		<td class='width-fill'>
-			<select name="b_period">
+			<select name='b_type'>
+				<option value="">فارغ</option>
+				<option value="">فارغ</option>
+				<option value="">فارغ</option>
+			</select>
+		</td>
+		<td class='width-fill'>
+			<select name='b_period'>
 				<option value="">bla bla bla</option>
 				<option value="">bla bla bla</option>
 				<option value="">bla bla bla</option>
@@ -95,25 +95,25 @@
 	<tr>
 		<td class='width-content'>
 			<div class="date-inputs">
-				<bdo dir="ltr"><input type="text" name='b_payment_date_year' placeholder="سنة"> 
-				<input type="number" input-prop-digits name='b_payment_date_month' placeholder="شهر"> 
-				<input type="number" input-prop-digits name='b_payment_date_day' placeholder="يوم"></bdo>
+				<bdo dir="ltr"><input name='b_payment_date_year' type='number' min='1817' max='2018' placeholder='سنة'> 
+				<input name='b_payment_date_month' type='number' min='1' max='12' placeholder='شهر'> 
+				<input name='b_payment_date_day' type='number' min='1' max='31' placeholder='يوم'></bdo>
 			</div>
 		</td>
 		<td class='width-fill'>
-			<select name="b_accom_type_id">
+			<select name='b_accom_type_id'>
 				<option value="">تجربة</option>
 				<option value="">تجربة</option>
 				<option value="">تجربة</option>
 			</select>
 		</td>
-		<td class='width-2'><bdo dir="ltr"><input name='b_rent_value' type="number" input-prop-digits></bdo></td>
-		<td class='width-3'><bdo dir="ltr"><input name='b_giving_amount' type="number" input-prop-digits></bdo></td>
+		<td class='width-2'><bdo dir="ltr"><input name='b_rent_value' type='number' min='0'></bdo></td>
+		<td class='width-3'><bdo dir="ltr"><div data-role='tac'><input name='b_giving_amount' type="text" input-prop-digits><ul><li>500</li><li>800</li><li>900</li></ul></div></bdo></td>
 		<td class='width-content'>
 			<div class="date-inputs">
-				<bdo dir="ltr"><input type="text" name='b_update_date_year' placeholder="سنة"> 
-				<input type="number" input-prop-digits name='b_update_date_month' placeholder="شهر"> 
-				<input type="number" input-prop-digits name='b_update_date_day' placeholder="يوم"></bdo>
+				<bdo dir="ltr"><input name='b_update_date_year' type='number' min='1817' max='2018' placeholder='سنة'> 
+				<input name='b_update_date_month' type='number' min='1' max='12' placeholder='شهر'> 
+				<input name='b_update_date_day' type='number' min='1' max='31' placeholder='يوم'></bdo>
 			</div>
 		</td>
 	</tr>
@@ -122,9 +122,9 @@
 <table class='one-line-inputs'><tbody>
 	<tr>
 		<td class='width-content'><label for="b_job">المهنة: </label></td>
-		<td class='width-fill'><input name='b_job' type="text"></td>
+		<td class='width-fill'><input name='b_job' type='text'></td>
 		<td class='width-content'><label for="b_jobـlocation">مقرها: </label></td>
-		<td class='width-fill'><input name='b_jobـlocation' type="text"></td>
+		<td class='width-fill'><input name='b_job_location' type='text'></td>
 	</tr>
 </tbody></table>
 <hr>
@@ -136,10 +136,10 @@
 		<td class='width-fill'><label>اسم قريب</label></td>
 	</tr>
 	<tr>
-		<td class='width-fill'><bdo dir='ltr'><input input-prop-phone-message="يرجى إدخال رقم صحيح" input-prop-phone name="b_phone_home" type="text"></bdo></td>
-		<td class='width-fill'><bdo dir='ltr'><input input-prop-phone-message="يرجى إدخال رقم صحيح" input-prop-phone name="b_phone_mobile" type="text"></bdo></td>
-		<td class='width-fill'><bdo dir='ltr'><input input-prop-phone-message="يرجى إدخال رقم صحيح" input-prop-phone name="b_phone_other" type="text"></bdo></td>
-		<td class='width-fill'><bdo dir='ltr'><input name="b_alternative_contact_name" type="text"></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input name='b_phone_home' input-prop-phone-message='يرجى إدخال رقم صحيح' input-prop-phone type='text'></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input name='b_phone_mobile' input-prop-phone-message='يرجى إدخال رقم صحيح' input-prop-phone type='text'></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input name='b_phone_other' input-prop-phone-message='يرجى إدخال رقم صحيح' input-prop-phone type='text'></bdo></td>
+		<td class='width-fill'><bdo dir='ltr'><input name='b_alternative_contact_name' type='text'></bdo></td>
 	</tr>
 </tbody></table>
 <hr>
@@ -156,14 +156,14 @@
 		<td class='width-fill'><label>المجموع</label></td>
 	</tr>
 	<tr>
-		<td class='width-fill sep-left-pad'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
-		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
-		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
-		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
-		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
-		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
-		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits></bdo></td>
-		<td class='width-fill'><bdo dir="ltr"><input type="number" input-prop-digits readonly></bdo></td>
+		<td class='width-fill sep-left-pad'><bdo dir="ltr"><input name='b_income_XX' min='0' type='number'></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input name='b_income_XX' min='0' type='number'></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input name='b_income_XX' min='0' type='number'></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input name='b_income_XX' min='0' type='number'></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input name='b_income_XX' min='0' type='number'></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input name='b_income_XX' min='0' type='number'></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input name='b_income_XX' min='0' type='number'></bdo></td>
+		<td class='width-fill'><bdo dir="ltr"><input type='number' readonly></bdo></td>
 	</tr>
 </tbody></table>
 <hr>
@@ -178,18 +178,18 @@
 		<td class='width-content center'><label>تاريخ الميلاد</label></td>
 		<td class='width-2-5 center'><label>المرحلة الدراسية</label></td>
 	</tr>
-	<tr>
+	<tr class='new-row'>
 		<td class='width-content' valign="middle"><div class="icon-mention"></div></td>
-		<td class='width-2'><bdo dir="ltr"><input type="text"></bdo></td>
-		<td class='width-fill'><input type="text"></td>
+		<td class='width-2'><bdo dir="ltr"><input name='d_XX_govid' type='text' input-prop-digits></bdo></td>
+		<td class='width-fill'><input name='d_XX_name' type='text'></td>
 		<td class='width-1-5'>
-			<select>
+			<select name='d_XX_gender'>
 				<option value="m">ذكر</option>
 				<option value="f">أنثى</option>
 			</select>
 		</td>
 		<td class='width-1-5'>
-			<select>
+			<select name='d_XX_relation'>
 				<option value="">بنت</option>
 				<option value="">ابن</option>
 				<option value="">زوجة</option>
@@ -197,13 +197,13 @@
 		</td>
 		<td class='width-content'>
 			<div class="date-inputs">
-				<bdo dir="ltr"><input type="text" name='b_update_date_year' placeholder="سنة"> 
-				<input type="number" input-prop-digits name='b_update_date_month' placeholder="شهر"> 
-				<input type="number" input-prop-digits name='b_update_date_day' placeholder="يوم"></bdo>
+				<bdo dir="ltr"><input name='d_XX_date_year' type='number' min='1817' max='2018' placeholder='سنة'> 
+				<input name='d_XX_date_month' type='number' min='1' max='12' placeholder='شهر'> 
+				<input name='d_XX_date_day' type='number' min='1' max='31' placeholder='يوم'></bdo>
 			</div>
 		</td>
 		<td class='width-2-5'>
-			<select>
+			<select name='d_XX_school'>
 				<option value="">بنت</option>
 				<option value="">ابن</option>
 				<option value="">زوجة</option>
@@ -213,11 +213,11 @@
 </tbody></table>
 <hr>
 <div class="actions-container u-cf">
-	<button class='u-fr' name='preview'>استمارة جديدة</button>
 	<div id='message' class="u-fr"></div>
 	<button class='u-fl' name='save'>حفظ</button>
 	<button class='u-fl danger' name='delete'>حذف</button>
+	<div class='sep-l u-fl'><button name='preview'>استمارة جديدة</button></div>
 </div>
 </form>
 </div>
-@@include("../../_footer.php", {"scripts": []})
+@@include("../../_footer.php", {"scripts": ["/res/bms-edit.js"]})

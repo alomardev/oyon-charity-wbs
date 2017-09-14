@@ -339,7 +339,7 @@ function setupTextAutocomplete() {
 }
 
 function setupValidator() {
-	var showTooltip = function(input, message, timeout) {
+	var showTooltip = function(input, message) {
 		hideTooltip(input);
 		var dom = $("<div tooltip-source='" + input.attr("name") + "' class='tooltip error'>" + message + "</div>");
 		var tri = $("<div tooltip-source='" + input.attr("name") + "' class='tooltip-tri error'></div>");
@@ -371,6 +371,15 @@ function setupValidator() {
 			var regex = /^\d*$/;
 			e.toggleClass("error", !regex.test(e.val()));
 		});
+		if (e.attr("name") !== "undefined") {
+			e.blur(function() {
+				if ($(this).hasClass("error")) {
+					showTooltip($(this), "يرجى إدخال أرقام فقط");
+				} else {
+					hideTooltip($(this));
+				}
+			});
+		}
 	});
 
 	$("[input-prop-phone]").each(function() {
@@ -382,7 +391,7 @@ function setupValidator() {
 		if (e.attr("input-prop-phone-message") !== "undefined" && e.attr("name") !== "undefined") {
 			e.blur(function() {
 				if ($(this).hasClass("error")) {
-					showTooltip($(this), $(this).attr("input-prop-phone-message"), 2000);
+					showTooltip($(this), $(this).attr("input-prop-phone-message"));
 				} else {
 					hideTooltip($(this));
 				}
@@ -395,6 +404,17 @@ function setupValidator() {
 		e.bind("propertychange change click keyup input paste", function() {
 			var regex = /(^$|^\S+@\S+\.\S+$)/;
 			e.toggleClass("error", !regex.test(e.val()));
+		});
+	});
+
+	$("input[type=number]").each(function() {
+		var e = $(this);
+		e.bind("propertychange change click keyup input paste", function() {
+			var min = e.attr("min");
+			var max = e.attr("max");
+			var toggle = (max !== "undefined" && Number(e.val()) > Number(max)) ||
+			(min !== "undefined" && Number(e.val()) < Number(min)) && e.val().length > 0;
+			e.toggleClass("error", toggle);
 		});
 	});
 }
