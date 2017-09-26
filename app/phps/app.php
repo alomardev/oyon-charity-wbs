@@ -217,7 +217,12 @@ function getBeneficiary($file_id = null) {
 		}
 
 		$result_dep = select("SELECT * FROM `dependency` WHERE `file_id`=$ben[file_id] ORDER BY `id`");
-		$deps = mysqli_fetch_all($result_dep, MYSQL_ASSOC);
+		$deps = array();
+		if ($result_dep) {
+			while ($row = mysqli_fetch_assoc($result_dep)) {
+				$deps[] = $row;
+			}
+		}
 		
 		$ben["phones"] = $phones;
 		$ben["incomes"] = $incomes;

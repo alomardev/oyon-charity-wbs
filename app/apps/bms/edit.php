@@ -3,6 +3,7 @@
 <?php
 $fid = isset($_GET['fid']) ? $_GET['fid'] : 0;
 
+/*
 $educational_levels = mysqli_fetch_all(select("SELECT `level` as `value`, `label` as `label` FROM `educational_level`;"), MYSQL_ASSOC);
 $beneficiary_types = mysqli_fetch_all(select("SELECT `id` as `value`, `label` as `label` FROM `beneficiary_type`;"), MYSQL_ASSOC);
 $accom_types = mysqli_fetch_all(select("SELECT `id` as `value`, `label` as `label` FROM `accom_type`;"), MYSQL_ASSOC);
@@ -12,6 +13,71 @@ $social_status_labels = mysqli_fetch_all(select("SELECT `id` as `value`, `label`
 $area_labels = mysqli_fetch_all(select("SELECT `id` as `value`, `label` as `label` FROM `area_label`;"), MYSQL_ASSOC);
 $schools = mysqli_fetch_all(select("SELECT `id` as `value`, `label` as `label` FROM `school`;"), MYSQL_ASSOC);
 $income_labels = mysqli_fetch_all(select("SELECT * FROM `income_label`;"), MYSQL_ASSOC);
+*/
+
+$educational_levels = array();	
+$result = select("SELECT `level` as `value`, `label` as `label` FROM `educational_level`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$educational_levels[] = $row;
+	}
+}
+$beneficiary_types = array();	
+$result = select("SELECT `id` as `value`, `label` as `label` FROM `beneficiary_type`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$beneficiary_types[] = $row;
+	}
+}
+$accom_types = array();	
+$result = select("SELECT `id` as `value`, `label` as `label` FROM `accom_type`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$accom_types[] = $row;
+	}
+}
+$relation_labels = array();	
+$result = select("SELECT `id` as `value`, `label` as `label` FROM `relation_label`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$relation_labels[] = $row;
+	}
+}
+$health_status_labels = array();	
+$result = select("SELECT `id` as `value`, `label` as `label` FROM `health_status_label`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$health_status_labels[] = $row;
+	}
+}
+$social_status_labels = array();	
+$result = select("SELECT `id` as `value`, `label` as `label` FROM `social_status_label`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$social_status_labels[] = $row;
+	}
+}
+$area_labels = array();	
+$result = select("SELECT `id` as `value`, `label` as `label` FROM `area_label`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$area_labels[] = $row;
+	}
+}
+$schools = array();	
+$result = select("SELECT `id` as `value`, `label` as `label` FROM `school`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$schools[] = $row;
+	}
+}
+$income_labels = array();	
+$result = select("SELECT * FROM `income_label`;");
+if ($result) {
+	while ($row = mysqli_fetch_assoc($result)) {
+		$income_labels[] = $row;
+	}
+}
 
 function echoOptions($arr, $empty_value = true) {
 	if ($empty_value)	echo "<option selected disable value style='display: none;'></option>";
