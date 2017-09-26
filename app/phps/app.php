@@ -185,7 +185,58 @@ function incrementVisitor($post_id) {
 	return false;
 }
 
+/* Beneficiaries */
+
+function getBeneficiary($file_id = null) {
+	$all = array();
+
+	$query = "SELECT * FROM `beneficiary`";
+	if ($file_id != null) {
+		$query .= " WHERE `file_id`=$file_id";
+	}
+	$query .= ";";
+	$result = select($query);
+
+	$hasAtLeastOne = false;
+	while ($row = mysqli_fetch_assoc($result)) {
+		$hasAtLeastOne = true;
+
+		$ben = $row;
+		$phones = null;
+		$incomes = null;
+		$deps = null;
+
+		$result_phone = select("SELECT * FROM `phone` WHERE `file_id`=$ben[file_id]");
+		while ($row = mysqli_fetch_assoc($result_phone)) {
+			$phones["phone_".$row['index']] = $row['phone_number'];
+		}
+
+		$result_income = select("SELECT * FROM `income` WHERE `file_id`=$ben[file_id]");
+		while ($row = mysqli_fetch_assoc($result_income)) {
+			$incomes["_".$row['label_id']] = $row['amount'];
+		}
+
+		$result_dep = select("SELECT * FROM `dependency` WHERE `file_id`=$ben[file_id] ORDER BY `id`");
+		$deps = mysqli_fetch_all($result_dep, MYSQL_ASSOC);
+		
+		$ben["phones"] = $phones;
+		$ben["incomes"] = $incomes;
+		$ben["deps"] = $deps;
+
+		$all[] = $ben;
+	}
+
+	return $file_id != null ? ($hasAtLeastOne ? $all[0] : false) : $all;
+}
+
 /* MISC */
+
+function formatQueryDate($year, $month, $day) {
+	if (empty($year) or empty($month) or empty($day) or !checkdate($month, $day, $year)) {
+		return 'NULL';
+	}
+	return "'$year-$month-$day'";
+}
 
 function inPath($check_path) {
 	$root_offset = strlen($_SERVER['DOCUMENT_ROOT']);

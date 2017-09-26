@@ -339,18 +339,23 @@ function setupTextAutocomplete() {
 }
 
 function setupValidator() {
-	var showTooltip = function(input, message) {
+	var body = $("body");
+
+	var showTooltip = function(input, message, timeout) {
 		hideTooltip(input);
 		var dom = $("<div tooltip-source='" + input.attr("name") + "' class='tooltip error'>" + message + "</div>");
 		var tri = $("<div tooltip-source='" + input.attr("name") + "' class='tooltip-tri error'></div>");
-		$("body").append(dom);
-		$("body").append(tri);
+		body.append(dom);
+		body.append(tri);
 		dom.css("position", "absolute");
 		dom.css("top", (input.offset().top + input.outerHeight() + 6) + "px");
 		dom.css("left", ((input.offset().left) + input.outerWidth() / 2 - dom.outerWidth() / 2) + "px");
 		tri.css("position", "absolute");
 		tri.css("top", (input.offset().top + input.outerHeight()) + "px");
 		tri.css("left", (input.offset().left + input.outerWidth() / 2 - 5) + "px");
+		if (timeout > 0) setTimeout(function() {
+			hideTooltip(input);
+		}, timeout);
 	};
 
 	var hideTooltip = function(input) {
@@ -358,63 +363,52 @@ function setupValidator() {
 		tooltip.remove();
 	};
 
-	$("*[input-prop-minlength]").each(function() {
-		var e = $(this);
-		e.bind("propertychange change click keyup input paste", function() {
-			e.toggleClass("error", e.val().length < Number(e.attr("input-prop-minlength")));
-		});
+	body.on("propertychange change click keyup input paste", "[input-prop-minlength]", function() {
+		$(this).toggleClass("error", $(this).val().length < Number($(this).attr("input-prop-minlength")));
 	});
 
-	$("*[input-prop-digits]").each(function() {
-		var e = $(this);
-		e.bind("propertychange change click keyup input paste", function() {
-			var regex = /^\d*$/;
-			e.toggleClass("error", !regex.test(e.val()));
-		});
-		if (e.attr("name") !== "undefined") {
-			e.blur(function() {
-				if ($(this).hasClass("error")) {
-					showTooltip($(this), "يرجى إدخال أرقام فقط");
-				} else {
-					hideTooltip($(this));
-				}
-			});
+	body.on("propertychange change click keyup input paste", '[input-prop-digits]', function() {
+		var regex = /^\d*$/;
+		$(this).toggleClass("error", !regex.test($(this).val()));
+	});
+
+	body.on('blur', '[input-prop-digits]', function() {
+		if ($(this).attr("name") === "undefined") {
+			return;
+		}
+
+		if ($(this).hasClass("error")) {
+			showTooltip($(this), "يرجى إدخال أرقام فقط", 3000);
+		} else {
+			hideTooltip($(this));
 		}
 	});
 
-	$("[input-prop-phone]").each(function() {
-		var e = $(this);
-		e.bind("propertychange change click keyup input paste", function() {
-			var regex = /(^$|^(05|\+9665|009665)\d{8}$)/;
-			e.toggleClass("error", !regex.test(e.val()));
-		});
-		if (e.attr("input-prop-phone-message") !== "undefined" && e.attr("name") !== "undefined") {
-			e.blur(function() {
-				if ($(this).hasClass("error")) {
-					showTooltip($(this), $(this).attr("input-prop-phone-message"));
-				} else {
-					hideTooltip($(this));
-				}
-			});
-		} 
+	body.on("propertychange change click keyup input paste", "[input-prop-phone]", function() {
+		var regex = /(^$|^(01|05|\+9665|009665|\+9661|009661)\d{8}$)/;
+		$(this).toggleClass("error", !regex.test($(this).val()));
+	});
+	body.on('blur', "[input-prop-phone]", function() {
+		if ($(this).attr("input-prop-phone-message") === "undefined" || $(this).attr("name") === "undefined") {
+			return;
+		}
+		if ($(this).hasClass("error")) {
+			showTooltip($(this), "الرقم غير صحيح!", 3000);
+		} else {
+			hideTooltip($(this));
+		}
 	});
 
-	$("*[input-prop-email]").each(function() {
-		var e = $(this);
-		e.bind("propertychange change click keyup input paste", function() {
-			var regex = /(^$|^\S+@\S+\.\S+$)/;
-			e.toggleClass("error", !regex.test(e.val()));
-		});
+	body.on("propertychange change click keyup input paste", "[input-prop-email]", function() {
+		var regex = /(^$|^\S+@\S+\.\S+$)/;
+		$(this).toggleClass("error", !regex.test($(this).val()));
 	});
-
-	$("input[type=number]").each(function() {
-		var e = $(this);
-		e.bind("propertychange change click keyup input paste", function() {
-			var min = e.attr("min");
-			var max = e.attr("max");
-			var toggle = (max !== "undefined" && Number(e.val()) > Number(max)) ||
-			(min !== "undefined" && Number(e.val()) < Number(min)) && e.val().length > 0;
-			e.toggleClass("error", toggle);
-		});
+	
+	body.on("propertychange change click keyup input paste", "input[type=number]", function() {
+		var min = $(this).attr("min");
+		var max = $(this).attr("max");
+		var toggle = (max !== "undefined" && Number($(this).val()) > Number(max)) ||
+		(min !== "undefined" && Number($(this).val()) < Number(min)) && $(this).val().length > 0;
+		$(this).toggleClass("error", toggle);
 	});
 }

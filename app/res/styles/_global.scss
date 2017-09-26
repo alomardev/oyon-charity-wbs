@@ -29,6 +29,9 @@ body {
 	background-repeat: no-repeat;
 	background-position: 50%;
 	margin: 0 auto;
+	&.dark {
+		background-image: url('loading-dark.svg');
+	}
 }
 
 .container {

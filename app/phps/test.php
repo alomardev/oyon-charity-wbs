@@ -1,6 +1,7 @@
 <pre>
 <?php 
 require_once "app.php";
-var_dump("1000" + 1);
+$b;
+echo json_encode(array("b"=>$b));
 ?>
 </pre>

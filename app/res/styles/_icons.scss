@@ -73,6 +73,10 @@
 	@include icon(2, 1);
 }
 
+.icon-new {
+	@include icon(2, 4);
+}
+
 .icon-mention {
 	@include icon(3, 0);
 }

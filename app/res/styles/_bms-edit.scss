@@ -122,5 +122,28 @@
 		label {
 			font-size: $input-font-size;
 		}
+		.icon-remove {
+			cursor: pointer;
+		}
+	}
+	#loading {
+		top: calc(45% - 25px);
+		left: calc(50% - 25px);
+		box-shadow: 0 0 100px $shadow-color-strong;
+		position: fixed;
+		border-radius: 50%;
+		background-color: $shadow-color-strong;
+	}
+	.required-notation {
+		position: relative;
+		&::after {
+			position: absolute;
+			content: '*';
+			color: red;
+			font-weight: bold;
+			position: absolute;
+			top: -5pt;
+			left: -2pt;
+		}
 	}
 }

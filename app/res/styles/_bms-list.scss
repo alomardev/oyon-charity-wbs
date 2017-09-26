@@ -1,9 +1,20 @@
-$max-list-height: 400px;
+$list-height: 400px;
 $sep-color: #bfbfbf;
 #bms-list {
+	table {
+		width: 100%;
+		.width-content {
+			width: 1%;
+		}
+		.width-fill {
+			* {
+				width: 100%;
+			}
+		}
+	}
 	#list-container {
 		width: 40%;
-		max-height: $max-list-height;
+		height: $list-height;
 		overflow-y: scroll;
 		margin-left: -$space;
 		border-right: 1px solid $shadow-color;
@@ -28,7 +39,38 @@ $sep-color: #bfbfbf;
 		}
 	}
 	#item-info {
+		position: relative;
 		width: 60%;
-		max-height: $max-list-height;
+		height: $list-height - $space-small * 2;
+		tr td {
+			padding-top: $space;
+		}
+		tr:nth-child(3) td {
+			padding-top: $space * 2;
+		}
+		tr:nth-child(2), tr:first-child {
+			td {
+				padding-top: 0;
+			}
+		}
+		.align-bottom {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+
+		}
+		.actions-container {
+			padding-top: $space;
+		}
+		.non-empty {
+			display: none;
+		}
+		.empty-notation {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
 	}
 }

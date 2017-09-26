@@ -31,7 +31,7 @@ $posts_info = getPosts('date', $limit, $page * $limit, 120);
 <div class="most-visited-container">
 	<h4>الأكثر قراءة</h4>
 	<div class="news-holder">
-		<?php	foreach ($posts_info as $p) {	?>
+		<?php	foreach ($posts_info_most_visited as $p) {	?>
 			<a href='show.php?p=<?php echo $p['id']; ?>' class='news-post-item'>
 				<div class='news-post-image' style="background-image: url(<?php echo $p['header_image']; ?>)"></div>
 				<div class='news-post-content'>
